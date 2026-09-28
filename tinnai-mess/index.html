@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Tinnai Mess – Gramiya Manam | Authentic Tamil Village Food in Chennai (RA Puram & Sholinganallur)</title>
+  <meta name="description" content="Experience authentic South Indian village cooking at Tinnai Mess, Chennai. Traditional Vazhai Ilai Sappadu, Kootanchoru, Thookuchatti Choru, and tableside Hot Gravy Trolley. Order direct with 0% delivery commission.">
+  <meta name="keywords" content="Tinnai Mess, Gramiya Manam, Tamil village food Chennai, Vazhai Ilai Sappadu, Kootanchoru, Thookuchatti, Chettinad restaurant RA Puram, Sholinganallur OMR restaurant">
+
+  <!-- OpenGraph Metadata for WhatsApp Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tinnai Mess – Gramiya Manam | Authentic Tamil Village Dining">
+  <meta property="og:description" content="Traditional Vazhai Ilai Sappadu, Kootanchoru, Thookuchatti Choru, and tableside Hot Gravy Trolley in RA Puram & Sholinganallur. Order direct and save!">
+  <meta property="og:image" content="./assets/images/hero-slide-1.jpg">
+  <meta property="og:url" content="https://www.tinnaimess.com">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="./assets/images/favicon.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- Schema.org Restaurant Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Tinnai Mess – Gramiya Manam",
+    "description": "Authentic Tamil village dining experience featuring banana leaf meals, Kootanchoru, Thookuchatti choru, and fresh country non-veg delicacies.",
+    "image": "./assets/images/hero-slide-1.jpg",
+    "servesCuisine": ["South Indian", "Chettinad", "Tamil Village"],
+    "priceRange": "₹₹",
+    "telephone": "+91 75829 85829",
+    "address": [
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "New No. 80, Old No. 29, 1st Floor, 2nd Main Rd, Raja Annamalaipuram",
+        "addressLocality": "Chennai",
+        "addressRegion": "Tamil Nadu",
+        "postalCode": "600028"
+      },
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "No: 65/26, Rajiv Gandhi Salai",
+        "addressLocality": "Sholinganallur, Chennai",
+        "addressRegion": "Tamil Nadu",
+        "postalCode": "600119"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- 1. VIP Client Concept Preview Notice (WebKartX) -->
+  <div class="preview-banner">
+    <div class="left-tag">
+      <span class="pulse-dot"></span>
+      <span>Live Website Preview Concept — Specially Created for <strong>Tinnai Mess Management</strong></span>
+    </div>
+    <div>
+      <a href="#menu" class="cta-link">Test 0% Commission Direct Ordering &rarr;</a>
+    </div>
+  </div>
+
+  <!-- 2. Header Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="#" class="brand-logo">
+          <img src="./assets/images/logo.png" alt="Tinnai Mess Gramiya Manam Logo" onerror="this.style.display='none'; document.getElementById('brandTextFallback').style.display='flex';">
+          <div class="brand-fallback-text" id="brandTextFallback" style="display: none;">
+            <span class="title">TINNAI <span>MESS</span></span>
+            <span class="subtitle">Gramiya Manam • Chennai</span>
+          </div>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#trio">Signature Specials</a></li>
+          <li><a href="#menu">Online Menu</a></li>
+          <li><a href="#story">Tinnai Culture</a></li>
+          <li><a href="#branches">Branches</a></li>
+          <li><a href="#reservations">Table Booking</a></li>
+        </ul>
+
+        <div class="header-actions">
+          <a href="#reservations" class="btn-reserve-nav">
+            <i data-lucide="calendar" style="width: 15px; height: 15px;"></i>
+            <span>Book Table</span>
+          </a>
+          <button class="btn-cart-nav" id="openCartBtn">
+            <i data-lucide="shopping-bag" style="width: 16px; height: 16px;"></i>
+            <span>Order Direct</span>
+            <span class="cart-count-badge" style="display: none;">0</span>
+          </button>
+          <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Mobile Menu">
+            <i data-lucide="menu"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3. Hero Section with Crossfade Background Slider -->
+  <section class="hero-section">
+    <div class="hero-bg-wrapper">
+      <div class="hero-bg-slide active" style="background-image: url('./assets/images/hero-slide-1.jpg');"></div>
+      <div class="hero-bg-slide" style="background-image: url('./assets/images/hero-slide-2.jpg');"></div>
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content">
+      <div class="hero-badge-pill">
+        <i data-lucide="sparkles" style="width: 15px; height: 15px;"></i>
+        <span>Authentic Tamil Village Food • Gramiya Manam</span>
+      </div>
+
+      <h1 class="hero-title">
+        Where South Indian Tradition<br><em>Comes Home to Your Leaf</em>
+      </h1>
+
+      <p class="hero-desc">
+        A warm village-style dining experience inspired by the timeless Tinnai hospitality of Tamil Nadu. Feast on unlimited Vazhai Ilai Sappadu, steaming Kootanchoru, and rustic Thookuchatti Choru crafted with authentic country recipes.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="#menu" class="btn-primary-hero">
+          <i data-lucide="utensils"></i>
+          <span>Order Online (0% Commission)</span>
+        </a>
+        <a href="#reservations" class="btn-secondary-hero">
+          <i data-lucide="calendar-check"></i>
+          <span>Reserve a Table</span>
+        </a>
+      </div>
+
+      <div class="hero-usp-ribbon">
+        <div class="hero-usp-item">
+          <i data-lucide="check-circle-2"></i>
+          <span>Unlimited Banana Leaf Meals</span>
+        </div>
+        <div class="hero-usp-item">
+          <i data-lucide="check-circle-2"></i>
+          <span>Tableside Hot Gravy Trolley</span>
+        </div>
+        <div class="hero-usp-item">
+          <i data-lucide="check-circle-2"></i>
+          <span>Country Cold-Pressed Oils</span>
+        </div>
+        <div class="hero-usp-item">
+          <i data-lucide="check-circle-2"></i>
+          <span>RA Puram & Sholinganallur</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Signature USPs: The Tinnai Trio (Featuring Real Property Graphics) -->
+  <section class="trio-section" id="trio">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">
+          <i data-lucide="flame" style="width: 14px; height: 14px;"></i>
+          <span>Gramiya Specialties</span>
+        </div>
+        <h2 class="section-title">The Signature Tinnai Experience</h2>
+        <p class="section-desc">
+          Time-honored rural traditions re-imagined with purity, nostalgia, and authentic village flavors.
+        </p>
+      </div>
+
+      <div class="trio-grid">
+        <!-- Trio Card 1: Vazhai Ilai Sappadu -->
+        <div class="trio-card">
+          <div class="trio-card-img">
+            <img src="./assets/images/vazhai-ilai-sappadu.png" alt="Traditional Vazhai Ilai Sappadu at Tinnai Mess">
+            <span class="trio-badge">Traditional Manam</span>
+          </div>
+          <div class="trio-card-body">
+            <h3>Vazhai Ilai Sappadu</h3>
+            <div class="trio-subtitle">Unlimited Banana Leaf Feast</div>
+            <p>
+              The quintessential Tamil meal served on a fresh banana leaf. Steaming hot Ponni rice accompanied by aromatic drumstick sambar, tangy vatha kulambu, pepper rasam, kootu, poriyal, more milagai, appalam, and sweet payasam.
+            </p>
+            <div class="trio-card-footer">
+              <div class="trio-price">₹240 <span>/ per person</span></div>
+              <button class="btn-add-trio" data-id="vazhai-sappadu">
+                <i data-lucide="plus"></i> Add to Order
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trio Card 2: Kootanchoru -->
+        <div class="trio-card">
+          <div class="trio-card-img">
+            <img src="./assets/images/kootanchoru.png" alt="Gramiya Kootanchoru Sharing Pot">
+            <span class="trio-badge">Sharing is Caring</span>
+          </div>
+          <div class="trio-card-body">
+            <h3>Gramiya Kootanchoru</h3>
+            <div class="trio-subtitle">Soulful Village Pot Rice</div>
+            <p>
+              In our villages, neighbors cook together in a single pot. Our Kootanchoru blends country rice, seasonal farm vegetables, crushed spices, and melted country ghee into a wholesome, comforting masterpiece.
+            </p>
+            <div class="trio-card-footer">
+              <div class="trio-price">₹260 <span>/ bowl</span></div>
+              <button class="btn-add-trio" data-id="kootanchoru">
+                <i data-lucide="plus"></i> Add to Order
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trio Card 3: Thookuchatti Choru -->
+        <div class="trio-card">
+          <div class="trio-card-img">
+            <img src="./assets/images/thookuchatti.png" alt="Gramiya Style Thookuchatti Carrier Feast">
+            <span class="trio-badge">Earthy Experience</span>
+          </div>
+          <div class="trio-card-body">
+            <h3>Gramiya Thookuchatti</h3>
+            <div class="trio-subtitle">Tiffin-Carrier Feast</div>
+            <p>
+              Remember the joy of unlatching a traditional brass tiffin carrier? Packed with fragrant rice, your choice of tender Mutton Chukka or Nattu Kozhi, aromatic gravies, boiled egg, and crispy accompaniments.
+            </p>
+            <div class="trio-card-footer">
+              <div class="trio-price">₹380 <span>/ carrier</span></div>
+              <button class="btn-add-trio" data-id="thookuchatti">
+                <i data-lucide="plus"></i> Add to Order
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Interactive Online Menu & Direct Ordering (0% Commission) -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">
+          <i data-lucide="book-open" style="width: 14px; height: 14px;"></i>
+          <span>Direct Kitchen Menu</span>
+        </div>
+        <h2 class="section-title">Explore Our Country Kitchen Menu</h2>
+        <p class="section-desc">
+          Order directly from our kitchen with zero 3rd-party delivery markups. 1-Tap checkout directly to our WhatsApp dispatch team for lightning-fast preparation.
+        </p>
+      </div>
+
+      <!-- Menu Category Filter Tabs -->
+      <div class="menu-category-tabs">
+        <button class="menu-cat-btn active" data-category="all">All Specialties</button>
+        <button class="menu-cat-btn" data-category="meals">Banana Leaf Meals</button>
+        <button class="menu-cat-btn" data-category="village">Tinnai Specials</button>
+        <button class="menu-cat-btn" data-category="nonveg">Country Non-Veg</button>
+        <button class="menu-cat-btn" data-category="biryani">Biryani & Parotta</button>
+        <button class="menu-cat-btn" data-category="drinks">Desserts & Drinks</button>
+      </div>
+
+      <!-- Dynamic Menu Grid -->
+      <div class="menu-items-grid" id="menuItemsGrid">
+        <!-- Rendered dynamically by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Special Experience: The Tinnai Culture & Hot Gravy Trolley -->
+  <section class="culture-section" id="story">
+    <div class="container">
+      <div class="culture-grid">
+        <div class="culture-gallery-composite">
+          <div class="culture-img-box large">
+            <img src="./assets/images/service-ambience.jpg" alt="Rustic Tinnai Dining Ambience">
+          </div>
+          <div class="culture-img-box">
+            <img src="./assets/images/ambience-1.jpg" alt="Warm Village Décor">
+          </div>
+          <div class="culture-img-box">
+            <img src="./assets/images/service-concept.jpg" alt="South Indian Hospitality">
+          </div>
+        </div>
+
+        <div class="culture-content">
+          <div class="section-eyebrow" style="background: rgba(245, 158, 11, 0.2); color: #fde68a;">
+            <i data-lucide="heart" style="width: 14px; height: 14px;"></i>
+            <span>Our Heritage</span>
+          </div>
+          <h2>The Soul of the Tinnai</h2>
+          <p>
+            The concept of the <em>Tinnai</em> is deeply rooted in Tamil culture. In ancestral village homes, the Tinnai is the raised front veranda open to the street—where passing travelers rest their feet, neighbors gather to chat, and everyone is greeted with a hearty meal.
+          </p>
+
+          <div class="culture-highlights">
+            <div class="culture-highlight-item">
+              <div class="icon"><i data-lucide="truck"></i></div>
+              <div>
+                <h4>Tableside Hot Gravy Trolley</h4>
+                <p>Our custom-built brass trolley rolls between tables, ladling boiling hot mutton, chicken, fish, and crab gravies onto your banana leaf as often as you desire.</p>
+              </div>
+            </div>
+            <div class="culture-highlight-item">
+              <div class="icon"><i data-lucide="leaf"></i></div>
+              <div>
+                <h4>Farm-Fresh Cold Pressed Oils</h4>
+                <p>We strictly cook with traditional cold-pressed sesame (nallennai) and groundnut oils with no artificial additives or preservatives.</p>
+              </div>
+            </div>
+            <div class="culture-highlight-item">
+              <div class="icon"><i data-lucide="smile"></i></div>
+              <div>
+                <h4>Guests Treated Like Family</h4>
+                <p>No formal barriers or rush—relax on our wooden benches, enjoy the aroma of roasted spices, and eat with your hands the way it was meant to be.</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="#reservations" class="btn-primary-hero">
+            <i data-lucide="calendar"></i>
+            <span>Book Your Tinnai Experience</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Dual Branch Locations (RA Puram & Sholinganallur) -->
+  <section class="branches-section" id="branches">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">
+          <i data-lucide="map-pin" style="width: 14px; height: 14px;"></i>
+          <span>Chennai Locations</span>
+        </div>
+        <h2 class="section-title">Visit Us at Our Two Prime Branches</h2>
+        <p class="section-desc">
+          Craving authentic village cooking in South Chennai? We welcome you at both RA Puram and Sholinganallur.
+        </p>
+      </div>
+
+      <div class="branches-grid">
+        <!-- Branch 1: RA Puram -->
+        <div class="branch-card">
+          <div class="branch-header">
+            <div>
+              <h3 class="branch-title">RA Puram Branch</h3>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Central Chennai Heritage Quarter</span>
+            </div>
+            <span class="branch-tag">Dine-In & Takeaway</span>
+          </div>
+
+          <div class="branch-details">
+            <div class="branch-detail-row">
+              <i data-lucide="map-pin"></i>
+              <div>
+                <strong>Address:</strong><br>
+                New No. 80, Old No. 29, First Floor, 2nd Main Rd, Raja Annamalaipuram, Chennai, Tamil Nadu 600028
+              </div>
+            </div>
+            <div class="branch-detail-row">
+              <i data-lucide="clock"></i>
+              <div>
+                <strong>Service Hours:</strong><br>
+                Lunch: 11:30 AM – 4:00 PM | Dinner: 6:30 PM – 11:00 PM (All 7 Days)
+              </div>
+            </div>
+            <div class="branch-detail-row">
+              <i data-lucide="phone"></i>
+              <div>
+                <strong>Reservations & Enquiries:</strong><br>
+                +91 75829 85829
+              </div>
+            </div>
+          </div>
+
+          <div class="branch-actions">
+            <a href="https://maps.google.com/?q=Tinnai+Mess+RA+Puram+Chennai" target="_blank" class="btn-branch-dir">
+              <i data-lucide="navigation"></i> Google Maps Directions
+            </a>
+            <a href="tel:+917582985829" class="btn-branch-call">
+              <i data-lucide="phone"></i> Call Branch
+            </a>
+          </div>
+        </div>
+
+        <!-- Branch 2: Sholinganallur -->
+        <div class="branch-card">
+          <div class="branch-header">
+            <div>
+              <h3 class="branch-title">Sholinganallur Branch</h3>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">OMR IT Corridor & Family Hub</span>
+            </div>
+            <span class="branch-tag">Dine-In & Takeaway</span>
+          </div>
+
+          <div class="branch-details">
+            <div class="branch-detail-row">
+              <i data-lucide="map-pin"></i>
+              <div>
+                <strong>Address:</strong><br>
+                No: 65/26, Rajiv Gandhi Salai (OMR), Sholinganallur, Chennai, Tamil Nadu 600119
+              </div>
+            </div>
+            <div class="branch-detail-row">
+              <i data-lucide="clock"></i>
+              <div>
+                <strong>Service Hours:</strong><br>
+                Lunch: 11:30 AM – 4:00 PM | Dinner: 6:30 PM – 11:00 PM (All 7 Days)
+              </div>
+            </div>
+            <div class="branch-detail-row">
+              <i data-lucide="phone"></i>
+              <div>
+                <strong>Reservations & Enquiries:</strong><br>
+                +91 75829 85829
+              </div>
+            </div>
+          </div>
+
+          <div class="branch-actions">
+            <a href="https://maps.google.com/?q=Tinnai+Mess+Sholinganallur+Chennai" target="_blank" class="btn-branch-dir">
+              <i data-lucide="navigation"></i> Google Maps Directions
+            </a>
+            <a href="tel:+917582985829" class="btn-branch-call">
+              <i data-lucide="phone"></i> Call Branch
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Table Reservation Section -->
+  <section class="reservation-section" id="reservations">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-eyebrow">
+          <i data-lucide="calendar" style="width: 14px; height: 14px;"></i>
+          <span>Instant Table Booking</span>
+        </div>
+        <h2 class="section-title">Reserve a Table for Family & Friends</h2>
+        <p class="section-desc">
+          Planning a weekend feast, family gathering, or team lunch? Reserve your table in advance and get priority seating.
+        </p>
+      </div>
+
+      <div class="reservation-wrapper">
+        <form id="tableReservationForm" class="reservation-form">
+          <div class="form-group">
+            <label for="resBranch">Select Branch</label>
+            <select id="resBranch" required>
+              <option value="RA Puram, Chennai">RA Puram Branch (2nd Main Rd)</option>
+              <option value="Sholinganallur, Chennai">Sholinganallur Branch (OMR)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="resGuests">Number of Guests</label>
+            <select id="resGuests" required>
+              <option value="2 Guests">2 Guests (Couple / Friends)</option>
+              <option value="4 Guests">4 Guests (Small Family)</option>
+              <option value="6 Guests">6 Guests (Family Table)</option>
+              <option value="8+ Guests (Large Feast)">8+ Guests (Group Gathering)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="resDate">Reservation Date</label>
+            <input type="date" id="resDate" required>
+          </div>
+
+          <div class="form-group">
+            <label for="resTime">Preferred Time Slot</label>
+            <select id="resTime" required>
+              <option value="12:30 PM (Lunch)">12:30 PM (Lunch)</option>
+              <option value="01:30 PM (Lunch)">01:30 PM (Lunch)</option>
+              <option value="02:30 PM (Lunch)">02:30 PM (Lunch)</option>
+              <option value="07:30 PM (Dinner)">07:30 PM (Dinner)</option>
+              <option value="08:30 PM (Dinner)">08:30 PM (Dinner)</option>
+              <option value="09:30 PM (Dinner)">09:30 PM (Dinner)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="resName">Your Full Name</label>
+            <input type="text" id="resName" placeholder="e.g. Karthik Sundaram" required>
+          </div>
+
+          <div class="form-group">
+            <label for="resPhone">WhatsApp Phone Number</label>
+            <input type="tel" id="resPhone" placeholder="e.g. 98400 12345" required>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="resNotes">Special Requests (Optional)</label>
+            <textarea id="resNotes" rows="2" placeholder="Any dietary preferences or celebration notes..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit-res">
+            <i data-lucide="message-circle"></i>
+            <span>Confirm Table Reservation via WhatsApp</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="./assets/images/logo.png" alt="Tinnai Mess Logo" style="height: 48px; margin-bottom: 1rem;" onerror="this.style.display='none';">
+          <h3>Tinnai Mess – Gramiya Manam</h3>
+          <p>
+            Chennai’s destination for authentic South Indian village cooking. Traditional Vazhai Ilai Sappadu, Kootanchoru, Thookuchatti Choru, and tableside Hot Gravy Trolley.
+          </p>
+          <div style="display: flex; gap: 0.75rem; margin-top: 1rem;">
+            <a href="https://www.instagram.com/tinnaimess/" target="_blank" style="width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: #fff;">
+              <i data-lucide="instagram" style="width: 18px;"></i>
+            </a>
+            <a href="https://www.facebook.com/tinnaimess/" target="_blank" style="width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; color: #fff;">
+              <i data-lucide="facebook" style="width: 18px;"></i>
+            </a>
+            <a href="https://wa.me/917582985829" target="_blank" style="width: 38px; height: 38px; border-radius: 50%; background: #25d366; display: flex; align-items: center; justify-content: center; color: #fff;">
+              <i data-lucide="message-circle" style="width: 18px;"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Signature Menu</h4>
+          <ul class="footer-links">
+            <li><a href="#trio">Vazhai Ilai Sappadu</a></li>
+            <li><a href="#trio">Gramiya Kootanchoru</a></li>
+            <li><a href="#trio">Thookuchatti Choru</a></li>
+            <li><a href="#menu">Nattu Kozhi Varuval</a></li>
+            <li><a href="#menu">Chettinad Mutton Chukka</a></li>
+            <li><a href="#menu">Seeraga Samba Biryani</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Branches</h4>
+          <ul class="footer-links">
+            <li><a href="#branches">RA Puram Branch</a></li>
+            <li><a href="#branches">Sholinganallur Branch</a></li>
+            <li><a href="#reservations">Table Booking</a></li>
+            <li><a href="#story">Brand Story & Heritage</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Direct Contact</h4>
+          <ul class="footer-links">
+            <li style="color: #d6d3d1;"><i data-lucide="phone" style="width: 14px; display: inline;"></i> +91 75829 85829</li>
+            <li style="color: #d6d3d1;"><i data-lucide="mail" style="width: 14px; display: inline;"></i> twinstarmd@gmail.com</li>
+            <li style="color: #d6d3d1;"><i data-lucide="clock" style="width: 14px; display: inline;"></i> 11:30 AM – 11:00 PM (Daily)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Tinnai Mess – Gramiya Manam. All Rights Reserved.
+        </div>
+        <div style="color: #78716c; font-size: 0.75rem;">
+          Modern High-Converting Concept Preview Designed by <strong>WebKartX</strong>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 10. Slide-Over Cart Drawer -->
+  <div class="cart-drawer-overlay" id="cartDrawerOverlay">
+    <div class="cart-drawer" id="cartDrawer">
+      <div class="cart-header">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <i data-lucide="shopping-bag" style="color: #22c55e;"></i>
+          <h3>Direct Kitchen Order</h3>
+        </div>
+        <button class="btn-close-cart" id="closeCartBtn" aria-label="Close Cart">&times;</button>
+      </div>
+
+      <div class="cart-items-body" id="cartItemsList">
+        <!-- Dynamically rendered -->
+      </div>
+
+      <div class="cart-footer">
+        <div class="cart-subtotal-row">
+          <span>Subtotal:</span>
+          <span id="cartSubtotal" style="color: #15803d;">₹0</span>
+        </div>
+
+        <label style="font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.35rem; display: block;">Select Pickup / Delivery Branch:</label>
+        <select class="cart-branch-select" id="cartBranchSelect">
+          <option value="RA Puram Branch, Chennai">RA Puram Branch (2nd Main Rd)</option>
+          <option value="Sholinganallur Branch, Chennai">Sholinganallur Branch (OMR)</option>
+        </select>
+
+        <a href="#" target="_blank" class="btn-checkout-whatsapp" id="btnCheckoutWhatsApp" style="display: none;">
+          <i data-lucide="message-circle"></i>
+          <span>Send Order on WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 11. Sticky Mobile Bottom Order Bar -->
+  <div class="mobile-action-bar">
+    <div class="left">
+      <i data-lucide="utensils" style="color: #f59e0b;"></i>
+      <span>Tinnai Mess Direct</span>
+    </div>
+    <div class="mobile-action-btns">
+      <a href="tel:+917582985829" class="mobile-btn-call">
+        <i data-lucide="phone" style="width: 14px;"></i> Call
+      </a>
+      <button class="mobile-btn-order" onclick="document.getElementById('openCartBtn').click();">
+        <i data-lucide="shopping-bag" style="width: 14px;"></i> Order
+      </button>
+    </div>
+  </div>
+
+  <!-- Lucide Script -->
+  <script>
+    lucide.createIcons();
+    // Default reservation date to tomorrow
+    const dTomorrow = new Date();
+    dTomorrow.setDate(dTomorrow.getDate() + 1);
+    const resDateInput = document.getElementById('resDate');
+    if (resDateInput) {
+      resDateInput.value = dTomorrow.toISOString().split('T')[0];
+      resDateInput.min = new Date().toISOString().split('T')[0];
+    }
+  </script>
+  <!-- Master Application Script -->
+  <script src="./script.js"></script>
+</body>
+</html>

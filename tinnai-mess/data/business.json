@@ -1,0 +1,42 @@
+{
+  "business_name": "Tinnai Mess – Gramiya Manam",
+  "canonical_name": "Tinnai Mess",
+  "short_name": "Tinnai Mess",
+  "tagline": "Authentic Tamil Village Food & Traditional Hospitality",
+  "editorial_subhead": "Where South Indian Tradition Comes Home — Traditional Vazhai Ilai Sappadu, Kootanchoru & Thookuchatti in Chennai",
+  "category": "Authentic South Indian & Chettinad Restaurant",
+  "industry_slug": "restaurant",
+  "city": "Chennai",
+  "state": "Tamil Nadu",
+  "country": "India",
+  "phone": "+91 75829 85829",
+  "whatsapp": "+91 75829 85829",
+  "whatsapp_number_digits": "917582985829",
+  "email": "twinstarmd@gmail.com",
+  "rating": 4.7,
+  "review_count": 2450,
+  "currency": "INR",
+  "currency_symbol": "₹",
+  "branches": [
+    {
+      "name": "RA Puram",
+      "address": "New No. 80, Old No. 29, First Floor, 2nd Main Rd, Raja Annamalaipuram, Chennai, Tamil Nadu 600028",
+      "phone": "+91 75829 85829",
+      "timings": "11:30 AM – 4:00 PM, 6:30 PM – 11:00 PM"
+    },
+    {
+      "name": "Sholinganallur (OMR)",
+      "address": "No: 65/26, Rajiv Gandhi Salai, Sholinganallur, Chennai, Tamil Nadu 600119",
+      "phone": "+91 75829 85829",
+      "timings": "11:30 AM – 4:00 PM, 6:30 PM – 11:00 PM"
+    }
+  ],
+  "features": [
+    "Traditional Vazhai Ilai Sappadu (Unlimited Banana Leaf Feast)",
+    "Signature Tableside Hot Gravy Trolley",
+    "Nostalgic Kootanchoru & Thookuchatti Choru",
+    "Village Nattu Kozhi, Mutton Chukka & Fresh Seafood",
+    "Direct WhatsApp Ordering (0% Commission to Food Delivery Apps)",
+    "Family & Group Table Reservation System"
+  ]
+}
