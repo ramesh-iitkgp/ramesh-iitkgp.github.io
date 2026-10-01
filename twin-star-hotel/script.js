@@ -169,7 +169,7 @@ window.guestFolios = {
     charges: [
       { date: '2026-09-28', cat: 'ROOM', sac: '996311', desc: 'Room Charge - Maple Suite (Night 1)', qty: 1, rate: 3200, gstRate: 12, tax: 384, total: 3584 },
       { date: '2026-09-29', cat: 'ROOM', sac: '996311', desc: 'Room Charge - Maple Suite (Night 2)', qty: 1, rate: 3200, gstRate: 12, tax: 384, total: 3584 },
-      { date: '2026-09-28', cat: 'DINING', sac: '996331', desc: 'Twin Star Bistro - Chettinad Dinner & Filter Coffee', qty: 1, rate: 1450, gstRate: 5, tax: 72.5, total: 1522.5 },
+      { date: '2026-09-28', cat: 'DINING', sac: '996331', desc: 'The Palm Bistro & Lounge - Chettinad Dinner & Filter Coffee', qty: 1, rate: 1450, gstRate: 5, tax: 72.5, total: 1522.5 },
       { date: '2026-09-28', cat: 'TRANSPORT', sac: '996412', desc: 'Chennai Airport (MAA) Sedan Chauffeur Pickup', qty: 1, rate: 850, gstRate: 0, tax: 0, total: 850 }
     ],
     payments: [
@@ -903,7 +903,7 @@ function renderFolio() {
 }
 
 function promptAddCharge() {
-  const desc = prompt('Enter charge description:', 'Twin Star Bistro - Executive Lunch Special');
+  const desc = prompt('Enter charge description:', 'The Palm Bistro & Lounge - Executive Lunch Special');
   if (!desc) return;
   const amountStr = prompt('Enter charge amount in ₹ (before 5% GST):', '850');
   if (!amountStr) return;
