@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title id="pageTitle">Twin Star Hotel & Suites | Official Luxury Hotel Website • Chennai</title>
+  <meta name="description" content="Experience refined accommodations at Twin Star Hotel & Suites, Abiramapuram, Chennai. Direct booking engine with 0% commission, complimentary breakfast, best rate guarantee, and instant WhatsApp booking.">
+  <meta name="keywords" content="Twin Star Hotel, hotel Chennai, Abiramapuram hotel, hotels near Madras ENT Hospital, boutique hotel Chennai, hotel booking engine, direct booking 0 commission">
+
+  <!-- OpenGraph Metadata for WhatsApp & Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" id="ogTitle" content="Twin Star Hotel & Suites • Official Hotel Preview">
+  <meta property="og:description" content="Direct booking engine, luxurious AC suites, Twin Star Bistro, and 0% OTA commission. Preview live room availability now.">
+  <meta property="og:image" content="./assets/images/hero.jpg">
+  <meta property="og:url" content="https://ramesh-iitkgp.github.io/twin-star-hotel/">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230284c7'><path d='M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z'/></svg>">
+
+  <!-- Google Fonts: Cormorant Garamond (luxury serif) + Plus Jakarta Sans (crisp UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- 1. VIP Prospect Interactive Concept Preview Notice -->
+  <div class="preview-banner" id="previewBanner">
+    <div class="left-tag">
+      <span class="pulse-dot"></span>
+      <span id="bannerText">Interactive Hotel Concept Preview — Specially Generated for <strong id="leadHotelName">Twin Star Hotel & Suites Management</strong></span>
+    </div>
+    <div class="right-action">
+      <a href="#booking-engine" class="cta-link">
+        <span>Test 0% Commission Direct Booking Engine</span>
+        <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- 2. Header & Main Navigation -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="#" class="brand-logo" id="brandLogoLink">
+        <div class="logo-mark">
+          <i data-lucide="sparkles" class="star-icon"></i>
+        </div>
+        <div class="logo-text">
+          <span class="hotel-title" id="hotelHeaderName">TWIN STAR</span>
+          <span class="hotel-subtitle" id="hotelHeaderSubtitle">HOTEL & SUITES • <span id="headerCity">CHENNAI</span></span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#rooms">Rooms & Suites</a>
+        <a href="#booking-engine">Direct Booking Engine</a>
+        <a href="#direct-benefits">Direct Perks</a>
+        <a href="#dining">Bistro & Dining</a>
+        <a href="#reviews">Guest Reviews</a>
+        <a href="#location">Location</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="tel:+919840460459" class="btn-phone-nav" id="headerPhoneBtn">
+          <i data-lucide="phone-call" style="width: 15px; height: 15px;"></i>
+          <span id="headerPhoneText">+91 98404 60459</span>
+        </a>
+        <a href="#booking-engine" class="btn-book-nav">
+          <i data-lucide="calendar-check" style="width: 15px; height: 15px;"></i>
+          <span>Book Direct</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3. Luxury Hero Section -->
+  <section class="hero-section">
+    <div class="hero-bg-container">
+      <img src="./assets/images/hero.jpg" alt="Twin Star Hotel Exterior & Luxury Suite" class="hero-img" id="heroImage">
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="container hero-content">
+      <div class="hero-badge">
+        <i data-lucide="shield-check" class="badge-icon"></i>
+        <span id="heroBadgeText">0% Commission Direct Booking Channel • Verified Hotel</span>
+      </div>
+
+      <h1 class="hero-title" id="heroMainTitle">
+        <span class="block-light">Experience Refined Hospitality in</span>
+        <span class="block-accent" id="heroCityAccent">South Chennai</span>
+      </h1>
+
+      <p class="hero-subtitle" id="heroSubtitleText">
+        Welcome to <strong id="heroHotelNameInline">Twin Star Hotel & Suites</strong>. Premium air-conditioned rooms, Twin Star Bistro dining, best rate guarantee, and effortless direct booking opposite Madras ENT Hospital.
+      </p>
+
+      <!-- Fast Direct Booking Quick-Bar -->
+      <div class="quick-bar-wrapper">
+        <div class="quick-bar">
+          <div class="quick-bar-item">
+            <label><i data-lucide="calendar"></i> Check-in</label>
+            <input type="date" id="heroCheckIn">
+          </div>
+          <div class="quick-divider"></div>
+          <div class="quick-bar-item">
+            <label><i data-lucide="calendar"></i> Check-out</label>
+            <input type="date" id="heroCheckOut">
+          </div>
+          <div class="quick-divider"></div>
+          <div class="quick-bar-item">
+            <label><i data-lucide="users"></i> Guests</label>
+            <select id="heroGuests">
+              <option value="1">1 Adult</option>
+              <option value="2" selected>2 Adults</option>
+              <option value="3">3 Guests</option>
+              <option value="4">4 Guests (Family)</option>
+            </select>
+          </div>
+          <button class="quick-bar-btn" id="heroCheckRatesBtn" onclick="document.getElementById('booking-engine').scrollIntoView({behavior:'smooth'})">
+            <span>Check Direct Rates</span>
+            <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+          </button>
+        </div>
+
+        <!-- OTA Comparison Pill -->
+        <div class="ota-comparison-pill">
+          <div class="ota-logos">
+            <span class="ota-name b-com">Booking.com: <del id="delBcom">₹3,400</del></span>
+            <span class="ota-sep">•</span>
+            <span class="ota-name mmt">MakeMyTrip: <del id="delMmt">₹3,250</del></span>
+            <span class="ota-sep">•</span>
+            <span class="ota-name agoda">Agoda: <del id="delAgoda">₹3,350</del></span>
+          </div>
+          <div class="direct-advantage">
+            <span class="direct-tag">Direct with us: <strong id="heroDirectRate">₹2,400/night</strong></span>
+            <span class="save-tag">✓ Save ₹600 - ₹1,000/night</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Direct Booking Perks (0% Commission Advantage) -->
+  <section class="benefits-section" id="direct-benefits">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="eyebrow">Direct Guest Exclusives</span>
+        <h2 class="section-title">Why Smart Guests Book Direct</h2>
+        <p class="section-desc">By skipping third-party aggregators, we pass 100% of the commission savings directly to you with complimentary VIP upgrades.</p>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon gold">
+            <i data-lucide="badge-percent"></i>
+          </div>
+          <h3>Best Rate Guarantee</h3>
+          <p>Always ₹400 to ₹750 lower than OTAs. Zero hidden service fees or surprise charges at checkout.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon blue">
+            <i data-lucide="clock"></i>
+          </div>
+          <h3>Priority 12:00 PM Check-In</h3>
+          <p>Direct bookers receive top priority room allocation and complimentary early check-in when available.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon emerald">
+            <i data-lucide="coffee"></i>
+          </div>
+          <h3>Welcome Beverage & Treats</h3>
+          <p>Enjoy our signature Chennai filter coffee or fresh tropical cooler upon arrival at our lobby reception.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon purple">
+            <i data-lucide="message-circle"></i>
+          </div>
+          <h3>Instant WhatsApp Confirmation</h3>
+          <p>Instant booking voucher, live hotel reception support, and direct room requests handled seamlessly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Rooms & Suites Showcase -->
+  <section class="rooms-section" id="rooms">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Accommodations</span>
+        <h2 class="section-title">Refined Accommodations</h2>
+        <p class="section-desc">Each room is soundproofed, fully air-conditioned, and appointed with plush bedding, fast fiber Wi-Fi, and spotless private bathrooms.</p>
+      </div>
+
+      <div class="rooms-grid">
+        <!-- Room 1: Oak Standard -->
+        <div class="room-card" data-room-id="oak-standard">
+          <div class="room-img-wrap">
+            <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80" alt="Oak Standard Room" class="room-img">
+            <span class="room-type-tag">Smart Business</span>
+          </div>
+          <div class="room-body">
+            <div class="room-top">
+              <h3 class="room-name">Oak (Standard AC Room)</h3>
+              <div class="room-price-box">
+                <span class="original-price">₹3,100</span>
+                <span class="direct-price">₹2,400<small>/night</small></span>
+              </div>
+            </div>
+            <p class="room-desc">Thoughtfully designed 180 sq.ft room with cozy queen bed, parquet flooring, 43" Smart TV, work desk, and 24/7 hot water en-suite bath.</p>
+            <div class="room-meta">
+              <span><i data-lucide="users"></i> 2 Adults</span>
+              <span><i data-lucide="maximize-2"></i> 180 sq.ft</span>
+              <span><i data-lucide="bed"></i> Queen Bed</span>
+              <span><i data-lucide="wifi"></i> 500Mbps Wi-Fi</span>
+            </div>
+            <div class="room-footer">
+              <button class="btn-select-room" onclick="selectRoomForBooking('oak-standard')">
+                <i data-lucide="check-circle-2"></i>
+                <span>Select for Booking</span>
+              </button>
+              <button class="btn-view-photos" onclick="openRoomPhotos('oak-standard')">
+                <i data-lucide="camera"></i>
+                <span>Photos</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Room 2: Maple Deluxe Suite (Featured) -->
+        <div class="room-card featured" data-room-id="maple-deluxe">
+          <div class="room-badge-featured">Most Popular</div>
+          <div class="room-img-wrap">
+            <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=80" alt="Maple Deluxe Suite" class="room-img">
+            <span class="room-type-tag">Deluxe Suite</span>
+          </div>
+          <div class="room-body">
+            <div class="room-top">
+              <h3 class="room-name">Maple (Deluxe Suite)</h3>
+              <div class="room-price-box">
+                <span class="original-price">₹4,000</span>
+                <span class="direct-price highlight">₹3,200<small>/night</small></span>
+              </div>
+            </div>
+            <p class="room-desc">Spacious 240 sq.ft suite with plush king bed, lounge armchair, neighborhood views, mini-fridge, digital safe, and complimentary gourmet breakfast.</p>
+            <div class="room-meta">
+              <span><i data-lucide="users"></i> Up to 3 Guests</span>
+              <span><i data-lucide="maximize-2"></i> 240 sq.ft</span>
+              <span><i data-lucide="bed"></i> King Bed</span>
+              <span><i data-lucide="utensils"></i> Breakfast Included</span>
+            </div>
+            <div class="room-footer">
+              <button class="btn-select-room active" onclick="selectRoomForBooking('maple-deluxe')">
+                <i data-lucide="check-circle-2"></i>
+                <span>Select for Booking</span>
+              </button>
+              <button class="btn-view-photos" onclick="openRoomPhotos('maple-deluxe')">
+                <i data-lucide="camera"></i>
+                <span>Photos</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Room 3: Mahogany Executive Suite -->
+        <div class="room-card" data-room-id="mahogany-executive">
+          <div class="room-img-wrap">
+            <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1200&q=80" alt="Mahogany Executive Suite" class="room-img">
+            <span class="room-type-tag">Executive Suite</span>
+          </div>
+          <div class="room-body">
+            <div class="room-top">
+              <h3 class="room-name">Mahogany (Executive Suite)</h3>
+              <div class="room-price-box">
+                <span class="original-price">₹5,800</span>
+                <span class="direct-price">₹4,500<small>/night</small></span>
+              </div>
+            </div>
+            <p class="room-desc">Expansive 360 sq.ft master suite with separate living room, private cityline balcony, double vanity bath, bathrobes, and priority front-desk check-in.</p>
+            <div class="room-meta">
+              <span><i data-lucide="users"></i> Up to 4 Guests</span>
+              <span><i data-lucide="maximize-2"></i> 360 sq.ft</span>
+              <span><i data-lucide="bed"></i> Grand King Bed</span>
+              <span><i data-lucide="sparkles"></i> Balcony & Lounge</span>
+            </div>
+            <div class="room-footer">
+              <button class="btn-select-room" onclick="selectRoomForBooking('mahogany-executive')">
+                <i data-lucide="check-circle-2"></i>
+                <span>Select for Booking</span>
+              </button>
+              <button class="btn-view-photos" onclick="openRoomPhotos('mahogany-executive')">
+                <i data-lucide="camera"></i>
+                <span>Photos</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Interactive Live Direct Booking Engine -->
+  <section class="engine-section" id="booking-engine">
+    <div class="container">
+      <div class="engine-wrapper">
+        <div class="engine-header">
+          <div class="engine-tag">
+            <i data-lucide="sparkles"></i>
+            <span>WebKartX 0% Commission Direct Booking Engine</span>
+          </div>
+          <h2>Live Room Quotation & Instant WhatsApp Checkout</h2>
+          <p>Customize dates, guest count, meal preferences, and add-ons. Instant calculation with zero OTA commission deduction.</p>
+        </div>
+
+        <div class="engine-grid">
+          <!-- Left Column: Booking Controls -->
+          <div class="engine-controls">
+            <!-- Stay Dates -->
+            <div class="control-group">
+              <label class="control-label"><i data-lucide="calendar-days"></i> Dates of Stay</label>
+              <div class="date-inputs-row">
+                <div class="date-box">
+                  <span class="date-tag">Check-in</span>
+                  <input type="date" id="calcCheckIn" onchange="recalculateTotal()">
+                </div>
+                <div class="date-arrow">→</div>
+                <div class="date-box">
+                  <span class="date-tag">Check-out</span>
+                  <input type="date" id="calcCheckOut" onchange="recalculateTotal()">
+                </div>
+              </div>
+              <div class="nights-display" id="nightsDisplay">3 Nights Selected</div>
+            </div>
+
+            <!-- Room Choice Selector -->
+            <div class="control-group">
+              <label class="control-label"><i data-lucide="bed-double"></i> Select Room Tier</label>
+              <div class="room-radios">
+                <label class="radio-option">
+                  <input type="radio" name="selectedRoom" value="oak-standard" onchange="recalculateTotal()">
+                  <div class="radio-content">
+                    <span class="r-title">Oak (Standard AC Room)</span>
+                    <span class="r-price">₹2,400/night</span>
+                  </div>
+                </label>
+                <label class="radio-option selected">
+                  <input type="radio" name="selectedRoom" value="maple-deluxe" checked onchange="recalculateTotal()">
+                  <div class="radio-content">
+                    <span class="r-title">Maple (Deluxe Suite) <span class="mini-badge">Popular</span></span>
+                    <span class="r-price">₹3,200/night</span>
+                  </div>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="selectedRoom" value="mahogany-executive" onchange="recalculateTotal()">
+                  <div class="radio-content">
+                    <span class="r-title">Mahogany (Executive Suite)</span>
+                    <span class="r-price">₹4,500/night</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Meal Plan Options -->
+            <div class="control-group">
+              <label class="control-label"><i data-lucide="utensils"></i> Dining & Meal Plan</label>
+              <div class="meal-options">
+                <label class="meal-option">
+                  <input type="radio" name="mealPlan" value="ep" onchange="recalculateTotal()">
+                  <div class="meal-box">
+                    <strong>EP (Room Only)</strong>
+                    <span>+₹0</span>
+                  </div>
+                </label>
+                <label class="meal-option selected">
+                  <input type="radio" name="mealPlan" value="cp" checked onchange="recalculateTotal()">
+                  <div class="meal-box">
+                    <strong>CP (Breakfast)</strong>
+                    <span>+₹250/day</span>
+                  </div>
+                </label>
+                <label class="meal-option">
+                  <input type="radio" name="mealPlan" value="map" onchange="recalculateTotal()">
+                  <div class="meal-box">
+                    <strong>MAP (Breakfast + Dinner)</strong>
+                    <span>+₹650/day</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Add-ons -->
+            <div class="control-group">
+              <label class="control-label"><i data-lucide="gift"></i> Recommended Add-ons</label>
+              <div class="addon-checkboxes">
+                <label class="addon-item">
+                  <input type="checkbox" id="addonTransfer" value="850" onchange="recalculateTotal()">
+                  <div class="addon-info">
+                    <strong>Chennai Airport (MAA) Sedan Transfer</strong>
+                    <span>Chauffeured AC pickup or drop terminal to lobby (+₹850)</span>
+                  </div>
+                </label>
+                <label class="addon-item">
+                  <input type="checkbox" id="addonLateCheckout" value="500" onchange="recalculateTotal()">
+                  <div class="addon-info">
+                    <strong>Guaranteed 2:00 PM Late Check-out</strong>
+                    <span>Relax longer before flight/train without rushing (+₹500)</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Live Price Card & Instant WhatsApp Booking -->
+          <div class="engine-summary">
+            <div class="summary-card">
+              <div class="summary-top">
+                <span class="summary-header-label">Instant Live Quote</span>
+                <span class="direct-booking-seal">0% Commission</span>
+              </div>
+
+              <div class="summary-hotel-info">
+                <h4 id="summaryHotelName">Twin Star Hotel & Suites</h4>
+                <p id="summaryRoomName">Maple (Deluxe Suite)</p>
+                <div class="summary-date-line" id="summaryDateLine">Oct 2, 2026 – Oct 5, 2026 (3 nights)</div>
+              </div>
+
+              <div class="summary-breakdown">
+                <div class="breakdown-row">
+                  <span id="labelRoomNights">Maple Room (3 nights × ₹3,200)</span>
+                  <span class="val" id="valRoomBase">₹9,600</span>
+                </div>
+                <div class="breakdown-row">
+                  <span id="labelMealPlan">CP Breakfast Buffet</span>
+                  <span class="val" id="valMealPlan">₹750</span>
+                </div>
+                <div class="breakdown-row" id="rowAddons" style="display: none;">
+                  <span>Selected Add-ons</span>
+                  <span class="val" id="valAddons">₹0</span>
+                </div>
+                <div class="breakdown-row">
+                  <span>Taxes & GST (12%)</span>
+                  <span class="val" id="valTaxes">₹1,242</span>
+                </div>
+                <div class="breakdown-total">
+                  <span>Direct Grand Total</span>
+                  <span class="total-amount" id="valGrandTotal">₹11,592</span>
+                </div>
+              </div>
+
+              <!-- Commission Savings Callout -->
+              <div class="commission-savings-box">
+                <div class="savings-icon"><i data-lucide="trending-down"></i></div>
+                <div class="savings-text">
+                  <strong>You Save <span id="valSavings">₹2,318</span> Today</strong>
+                  <p>Compared to 20% commission rates on Booking.com & MakeMyTrip.</p>
+                </div>
+              </div>
+
+              <!-- Direct Actions -->
+              <div class="summary-actions">
+                <a href="#" class="btn-whatsapp-book" id="btnWhatsappBook" target="_blank">
+                  <i data-lucide="message-circle" class="wa-icon"></i>
+                  <span>Book Direct on WhatsApp</span>
+                </a>
+                <button class="btn-sim-voucher" onclick="openSimulatedVoucher()">
+                  <i data-lucide="ticket"></i>
+                  <span>Generate Booking Voucher Demo</span>
+                </button>
+              </div>
+
+              <div class="safe-note">
+                <i data-lucide="lock" style="width: 12px; height: 12px;"></i>
+                <span>Direct reservation sent directly to hotel reception desk</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Dining: Twin Star Bistro -->
+  <section class="dining-section" id="dining">
+    <div class="container">
+      <div class="dining-grid">
+        <div class="dining-content">
+          <span class="eyebrow">Gastronomy & Café</span>
+          <h2 class="section-title">Twin Star Bistro & In-House Dining</h2>
+          <p class="section-desc">From piping hot South Indian breakfast with fresh Mylapore filter coffee to authentic Chettinad, tandoori grills, and continental favorites.</p>
+          
+          <div class="dining-features">
+            <div class="d-feat">
+              <i data-lucide="coffee"></i>
+              <div>
+                <strong>Morning Breakfast Buffet</strong>
+                <span>Steaming idlis, crispy dosas, poori bhaji & freshly brewed coffee daily.</span>
+              </div>
+            </div>
+            <div class="d-feat">
+              <i data-lucide="utensils-crossed"></i>
+              <div>
+                <strong>In-Room Dining (24/7)</strong>
+                <span>Prompt room service delivered hot to your suite at any hour.</span>
+              </div>
+            </div>
+            <div class="d-feat">
+              <i data-lucide="heart-handshake"></i>
+              <div>
+                <strong>Fresh Local Ingredients</strong>
+                <span>Pure country spices, cold-pressed oils, and hygienically prepared dishes.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="dining-image-wrap">
+          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=80" alt="Twin Star Bistro Dining Table" class="dining-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Real Verified Guest Reviews -->
+  <section class="reviews-section" id="reviews">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="eyebrow">Guest Impressions</span>
+        <h2 class="section-title">Loved by Travelers & Business Executives</h2>
+        <div class="rating-badge-overall">
+          <div class="stars">★★★★★</div>
+          <span><strong>4.8 / 5.0</strong> based on 246+ verified guest stays</span>
+        </div>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <h4 class="review-title">"Saved ₹600 booking direct & fantastic location"</h4>
+          <p class="review-text">"Booking direct through their website saved us ₹600 compared to Treebo & MakeMyTrip. Right opposite Madras ENT Hospital and 5 minutes to Mylapore Kapaleeshwarar Temple. Spotless rooms and polite front desk staff."</p>
+          <div class="reviewer-meta">
+            <div class="reviewer-avatar">RS</div>
+            <div>
+              <strong>Ramesh Sundaram</strong>
+              <span>Chennai • Family Stay</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <h4 class="review-title">"Delicious breakfast & high-speed Wi-Fi"</h4>
+          <p class="review-text">"The Maple Deluxe room was spacious with parquet flooring and great AC. Authentic filter coffee and hot dosas for breakfast. Direct booking gave us complimentary 12 PM check-in without hassle."</p>
+          <div class="reviewer-meta">
+            <div class="reviewer-avatar">PN</div>
+            <div>
+              <strong>Priya Narayanan</strong>
+              <span>Bangalore • Business Travel</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <h4 class="review-title">"Quiet neighborhood & effortless airport connectivity"</h4>
+          <p class="review-text">"Quiet residential neighborhood in Abiramapuram with easy access to RA Puram and the airport. The in-house restaurant served great food and room service was prompt."</p>
+          <div class="reviewer-meta">
+            <div class="reviewer-avatar">AK</div>
+            <div>
+              <strong>Anand Kumar</strong>
+              <span>Mumbai • Holiday Stay</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Location & Contact -->
+  <section class="location-section" id="location">
+    <div class="container">
+      <div class="location-grid">
+        <div class="location-info">
+          <span class="eyebrow">Neighborhood & Access</span>
+          <h2 class="section-title">Prime Connectivity in South Chennai</h2>
+          <p class="section-desc" id="locationDescText">Located in prestigious Abiramapuram opposite Madras ENT Hospital, offering quiet residential surroundings with effortless reach to key business and cultural destinations.</p>
+
+          <div class="landmarks-list">
+            <div class="landmark-item">
+              <i data-lucide="map-pin"></i>
+              <span><strong>Madras ENT Hospital:</strong> Directly opposite property (30 seconds walk)</span>
+            </div>
+            <div class="landmark-item">
+              <i data-lucide="compass"></i>
+              <span><strong>Mylapore Kapaleeshwarar Temple:</strong> 1.8 km (6 mins drive)</span>
+            </div>
+            <div class="landmark-item">
+              <i data-lucide="waves"></i>
+              <span><strong>Marina Beach & Santhome Basilica:</strong> 3.5 km (10 mins drive)</span>
+            </div>
+            <div class="landmark-item">
+              <i data-lucide="plane"></i>
+              <span><strong>Chennai International Airport (MAA):</strong> 13.5 km (35 mins)</span>
+            </div>
+          </div>
+
+          <div class="address-box">
+            <h4 id="hotelFullAddressName">Twin Star Hotel & Suites</h4>
+            <p id="hotelFullAddress">80/29, 2nd Main Rd, opposite Madras ENT Hospital, Abiramapuram, Chennai, Tamil Nadu 600018</p>
+            <div class="contact-links">
+              <a href="tel:+919840460459" id="footerPhone"><i data-lucide="phone"></i> +91 98404 60459</a>
+              <a href="mailto:stay@twinstarhotel.com" id="footerEmail"><i data-lucide="mail"></i> stay@twinstarhotel.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="location-visual">
+          <img src="./assets/images/exterior.jpg" alt="Twin Star Hotel Property Facade" class="facade-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <div class="brand-logo footer-logo">
+          <span class="hotel-title" id="footerHotelName">TWIN STAR</span>
+          <span class="hotel-subtitle">HOTEL & SUITES • 0% COMMISSION DIRECT ENGINE</span>
+        </div>
+        <p class="copyright">© 2026 <span id="copyHotelName">Twin Star Hotel & Suites</span>. All Rights Reserved. Powered by <a href="https://webkartx.in" target="_blank" rel="noopener">WebKartX Hospitality Engine</a>.</p>
+      </div>
+
+      <div class="footer-right">
+        <a href="#rooms">Rooms</a>
+        <a href="#booking-engine">Direct Booking</a>
+        <a href="#dining">Bistro</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#location">Location</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal: Simulated Booking Voucher -->
+  <div class="modal-backdrop" id="voucherModal" style="display: none;" onclick="if(event.target===this) closeVoucherModal()">
+    <div class="voucher-modal-card">
+      <button class="modal-close-btn" onclick="closeVoucherModal()">✕</button>
+      <div class="voucher-header">
+        <div class="voucher-tag">Direct Booking Confirmation Voucher</div>
+        <h3 id="voucherHotelTitle">Twin Star Hotel & Suites</h3>
+        <p>Booking ID: <strong id="voucherId">WKX-HTL-84920</strong> • Guaranteed 0% Commission</p>
+      </div>
+      <div class="voucher-body">
+        <div class="v-row">
+          <span>Guest Reservation</span>
+          <strong id="vGuestName">Direct VIP Guest</strong>
+        </div>
+        <div class="v-row">
+          <span>Room Category</span>
+          <strong id="vRoomCategory">Maple (Deluxe Suite)</strong>
+        </div>
+        <div class="v-row">
+          <span>Check-in Date</span>
+          <strong id="vCheckIn">12:00 PM • Selected Date</strong>
+        </div>
+        <div class="v-row">
+          <span>Check-out Date</span>
+          <strong id="vCheckOut">11:00 AM • Selected Date</strong>
+        </div>
+        <div class="v-row">
+          <span>Meal Plan</span>
+          <strong id="vMealPlan">CP (Gourmet Breakfast Included)</strong>
+        </div>
+        <div class="v-row total-row">
+          <span>Total Direct Amount</span>
+          <strong id="vTotalAmount" style="color: #0284c7; font-size: 1.25rem;">₹11,592</strong>
+        </div>
+      </div>
+      <div class="voucher-footer">
+        <p class="voucher-note">✓ This is a live demonstration of the WebKartX automated booking voucher sent instantly to guests upon reservation.</p>
+        <button class="btn-confirm-voucher" onclick="closeVoucherModal()">Done & Close Demo</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Room Photos Gallery -->
+  <div class="modal-backdrop" id="photoModal" style="display: none;" onclick="if(event.target===this) closePhotoModal()">
+    <div class="photo-modal-card">
+      <button class="modal-close-btn" onclick="closePhotoModal()">✕</button>
+      <h3 id="photoModalTitle" style="margin-bottom: 1rem; font-family: 'Cormorant Garamond', serif; font-size: 1.75rem;">Room Gallery</h3>
+      <div class="photo-gallery-grid" id="photoGalleryGrid"></div>
+    </div>
+  </div>
+
+  <!-- Master Interactive Script -->
+  <script src="./script.js"></script>
+</body>
+</html>
