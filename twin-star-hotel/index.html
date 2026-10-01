@@ -237,105 +237,126 @@
       </div>
 
       <div class="rooms-grid">
-        <!-- Room 1: Oak Standard -->
+        <!-- Room 1: Oak Premier Deluxe -->
         <div class="room-card" data-room-id="oak-standard">
-          <div class="room-img-wrap">
-            <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80" alt="Oak Standard Room" class="room-img">
+          <div class="room-img-wrap" onclick="openRoomDetailModal('oak-standard')" style="cursor: pointer;">
+            <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80" alt="Oak Premier Deluxe Room" class="room-img">
             <span class="room-type-tag">Smart Business</span>
+            <div class="room-photos-badge"><i data-lucide="camera" style="width: 13px; height: 13px;"></i> 9 Photos (Bed, Balcony, Bath)</div>
           </div>
           <div class="room-body">
             <div class="room-top">
-              <h3 class="room-name">Oak (Standard AC Room)</h3>
+              <h3 class="room-name" onclick="openRoomDetailModal('oak-standard')" style="cursor: pointer;">Oak (Premier Deluxe AC Room)</h3>
               <div class="room-price-box">
-                <span class="original-price">₹3,100</span>
+                <span class="original-price">OTA: ₹3,100</span>
                 <span class="direct-price">₹2,400<small>/night</small></span>
               </div>
             </div>
-            <p class="room-desc">Thoughtfully designed 180 sq.ft room with cozy queen bed, parquet flooring, 43" Smart TV, work desk, and 24/7 hot water en-suite bath.</p>
+            <p class="room-desc">Soundproofed luxury room with plush queen bed, private garden balcony, Italian rainfall shower, 43" 4K Smart TV, and ergonomic workstation.</p>
             <div class="room-meta">
               <span><i data-lucide="users"></i> 2 Adults</span>
-              <span><i data-lucide="maximize-2"></i> 180 sq.ft</span>
-              <span><i data-lucide="bed"></i> Queen Bed</span>
-              <span><i data-lucide="wifi"></i> 500Mbps Wi-Fi</span>
+              <span><i data-lucide="maximize-2"></i> 210 sq.ft</span>
+              <span><i data-lucide="sun"></i> Garden Balcony</span>
+              <span><i data-lucide="wifi"></i> 500Mbps Fiber</span>
             </div>
-            <div class="room-footer">
-              <button class="btn-select-room" onclick="selectRoomForBooking('oak-standard')">
-                <i data-lucide="check-circle-2"></i>
-                <span>Select for Booking</span>
+            <div class="room-footer-dual">
+              <button class="btn-card-gallery" onclick="openRoomDetailModal('oak-standard')">
+                <i data-lucide="images" style="width: 14px; height: 14px;"></i>
+                <span>Explore Suite Photos (Bedroom, Balcony, Bath)</span>
               </button>
-              <button class="btn-view-photos" onclick="openRoomPhotos('oak-standard')">
-                <i data-lucide="camera"></i>
-                <span>Photos</span>
-              </button>
+              <div class="room-btns-row">
+                <button class="btn-card-wa" onclick="openWhatsAppForRoom('oak-standard')">
+                  <i data-lucide="message-circle" style="width: 14px; height: 14px;"></i>
+                  <span>WhatsApp</span>
+                </button>
+                <button class="btn-card-engine" onclick="selectRoomForBooking('oak-standard')">
+                  <i data-lucide="calendar-check" style="width: 14px; height: 14px;"></i>
+                  <span>Book Direct</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Room 2: Maple Deluxe Suite (Featured) -->
+        <!-- Room 2: Maple Signature Panoramic Suite (Featured) -->
         <div class="room-card featured" data-room-id="maple-deluxe">
-          <div class="room-badge-featured">Most Popular</div>
-          <div class="room-img-wrap">
-            <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=80" alt="Maple Deluxe Suite" class="room-img">
+          <div class="room-badge-featured">Most Popular Suite</div>
+          <div class="room-img-wrap" onclick="openRoomDetailModal('maple-deluxe')" style="cursor: pointer;">
+            <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=80" alt="Maple Panoramic Suite" class="room-img">
             <span class="room-type-tag">Deluxe Suite</span>
+            <div class="room-photos-badge"><i data-lucide="camera" style="width: 13px; height: 13px;"></i> 11 Photos (Bed, Balcony, Bath)</div>
           </div>
           <div class="room-body">
             <div class="room-top">
-              <h3 class="room-name">Maple (Deluxe Suite)</h3>
+              <h3 class="room-name" onclick="openRoomDetailModal('maple-deluxe')" style="cursor: pointer;">Maple (Signature Panoramic Suite)</h3>
               <div class="room-price-box">
-                <span class="original-price">₹4,000</span>
+                <span class="original-price">OTA: ₹4,000</span>
                 <span class="direct-price highlight">₹3,200<small>/night</small></span>
               </div>
             </div>
-            <p class="room-desc">Spacious 240 sq.ft suite with plush king bed, lounge armchair, neighborhood views, mini-fridge, digital safe, and complimentary gourmet breakfast.</p>
+            <p class="room-desc">Expansive sunlit suite with grand king bed, teakwood sunset balcony, deep soaking marble tub, velvet lounge armchairs, and complimentary gourmet breakfast.</p>
             <div class="room-meta">
               <span><i data-lucide="users"></i> Up to 3 Guests</span>
-              <span><i data-lucide="maximize-2"></i> 240 sq.ft</span>
-              <span><i data-lucide="bed"></i> King Bed</span>
+              <span><i data-lucide="maximize-2"></i> 320 sq.ft</span>
+              <span><i data-lucide="bath"></i> Soaking Tub</span>
               <span><i data-lucide="utensils"></i> Breakfast Included</span>
             </div>
-            <div class="room-footer">
-              <button class="btn-select-room active" onclick="selectRoomForBooking('maple-deluxe')">
-                <i data-lucide="check-circle-2"></i>
-                <span>Select for Booking</span>
+            <div class="room-footer-dual">
+              <button class="btn-card-gallery" onclick="openRoomDetailModal('maple-deluxe')">
+                <i data-lucide="images" style="width: 14px; height: 14px;"></i>
+                <span>Explore Suite Photos (Bedroom, Balcony, Bath)</span>
               </button>
-              <button class="btn-view-photos" onclick="openRoomPhotos('maple-deluxe')">
-                <i data-lucide="camera"></i>
-                <span>Photos</span>
-              </button>
+              <div class="room-btns-row">
+                <button class="btn-card-wa" onclick="openWhatsAppForRoom('maple-deluxe')">
+                  <i data-lucide="message-circle" style="width: 14px; height: 14px;"></i>
+                  <span>WhatsApp</span>
+                </button>
+                <button class="btn-card-engine" onclick="selectRoomForBooking('maple-deluxe')">
+                  <i data-lucide="calendar-check" style="width: 14px; height: 14px;"></i>
+                  <span>Book Direct</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Room 3: Mahogany Executive Suite -->
+        <!-- Room 3: Mahogany Presidential Royal Suite -->
         <div class="room-card" data-room-id="mahogany-executive">
-          <div class="room-img-wrap">
-            <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1200&q=80" alt="Mahogany Executive Suite" class="room-img">
-            <span class="room-type-tag">Executive Suite</span>
+          <div class="room-img-wrap" onclick="openRoomDetailModal('mahogany-executive')" style="cursor: pointer;">
+            <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1200&q=80" alt="Mahogany Presidential Suite" class="room-img">
+            <span class="room-type-tag">Presidential Villa</span>
+            <div class="room-photos-badge"><i data-lucide="camera" style="width: 13px; height: 13px;"></i> 12 Photos (Bed, Balcony, Bath)</div>
           </div>
           <div class="room-body">
             <div class="room-top">
-              <h3 class="room-name">Mahogany (Executive Suite)</h3>
+              <h3 class="room-name" onclick="openRoomDetailModal('mahogany-executive')" style="cursor: pointer;">Mahogany (Presidential Royal Villa Suite)</h3>
               <div class="room-price-box">
-                <span class="original-price">₹5,800</span>
+                <span class="original-price">OTA: ₹5,800</span>
                 <span class="direct-price">₹4,500<small>/night</small></span>
               </div>
             </div>
-            <p class="room-desc">Expansive 360 sq.ft master suite with separate living room, private cityline balcony, double vanity bath, bathrobes, and priority front-desk check-in.</p>
+            <p class="room-desc">Palatial 520 sq.ft penthouse with independent living salon, wraparound rooftop terrace, private jacuzzi spa, personal butler, and complimentary airport pickup.</p>
             <div class="room-meta">
               <span><i data-lucide="users"></i> Up to 4 Guests</span>
-              <span><i data-lucide="maximize-2"></i> 360 sq.ft</span>
-              <span><i data-lucide="bed"></i> Grand King Bed</span>
-              <span><i data-lucide="sparkles"></i> Balcony & Lounge</span>
+              <span><i data-lucide="maximize-2"></i> 520 sq.ft</span>
+              <span><i data-lucide="sparkles"></i> Jacuzzi Spa</span>
+              <span><i data-lucide="car"></i> Chauffeur Pickup</span>
             </div>
-            <div class="room-footer">
-              <button class="btn-select-room" onclick="selectRoomForBooking('mahogany-executive')">
-                <i data-lucide="check-circle-2"></i>
-                <span>Select for Booking</span>
+            <div class="room-footer-dual">
+              <button class="btn-card-gallery" onclick="openRoomDetailModal('mahogany-executive')">
+                <i data-lucide="images" style="width: 14px; height: 14px;"></i>
+                <span>Explore Suite Photos (Bedroom, Balcony, Bath)</span>
               </button>
-              <button class="btn-view-photos" onclick="openRoomPhotos('mahogany-executive')">
-                <i data-lucide="camera"></i>
-                <span>Photos</span>
-              </button>
+              <div class="room-btns-row">
+                <button class="btn-card-wa" onclick="openWhatsAppForRoom('mahogany-executive')">
+                  <i data-lucide="message-circle" style="width: 14px; height: 14px;"></i>
+                  <span>WhatsApp</span>
+                </button>
+                <button class="btn-card-engine" onclick="selectRoomForBooking('mahogany-executive')">
+                  <i data-lucide="calendar-check" style="width: 14px; height: 14px;"></i>
+                  <span>Book Direct</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -1508,6 +1529,106 @@
   
 
   
+  
+  <!-- Modal: Categorized Room Gallery & Suite Inspection (Bedroom, Balcony, Bathroom, Living) -->
+  <div class="modal-backdrop" id="roomDetailModal" style="display: none;" onclick="if(event.target===this) closeRoomDetailModal()">
+    <div class="room-modal-card">
+      <button class="modal-close-btn" onclick="closeRoomDetailModal()">✕</button>
+      
+      <!-- Modal Header -->
+      <div class="room-modal-header">
+        <div class="room-modal-tag-row">
+          <span class="room-modal-badge" id="modalRoomBadge">Most Popular Suite</span>
+          <span class="room-modal-stars">★★★★★ Luxury Collection</span>
+        </div>
+        <div class="room-modal-title-row">
+          <div>
+            <h2 class="room-modal-title" id="modalRoomTitle">Maple (Signature Panoramic Suite)</h2>
+            <div class="room-modal-specs-line" id="modalRoomSpecs">
+              <span><i data-lucide="maximize-2" style="width: 13px; height: 13px;"></i> 320 sq.ft</span>
+              <span><i data-lucide="bed" style="width: 13px; height: 13px;"></i> King Bed</span>
+              <span><i data-lucide="users" style="width: 13px; height: 13px;"></i> Up to 3 Guests</span>
+              <span><i data-lucide="sun" style="width: 13px; height: 13px;"></i> Sunset City View</span>
+            </div>
+          </div>
+          <div class="room-modal-price-box">
+            <span class="modal-ota-rate">OTA Rate: <del id="modalRoomOriginal">₹4,000</del></span>
+            <div class="modal-direct-rate"><span id="modalRoomPrice">₹3,200</span><small>/night</small></div>
+            <span class="modal-save-pill">✓ 0% OTA Fee (Save ₹800/night)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category Filter Tabs: Bedroom, Balcony, Bathroom, Living -->
+      <div class="room-category-tabs" id="roomCategoryTabs">
+        <button class="cat-tab-btn active" data-cat="bedroom" onclick="selectRoomCategory('bedroom')">
+          <i data-lucide="bed" style="width: 14px; height: 14px;"></i>
+          <span>1. Bedroom (<span id="catCountBedroom">3</span>)</span>
+        </button>
+        <button class="cat-tab-btn" data-cat="balcony" onclick="selectRoomCategory('balcony')">
+          <i data-lucide="sun" style="width: 14px; height: 14px;"></i>
+          <span>2. Balcony & Views (<span id="catCountBalcony">2</span>)</span>
+        </button>
+        <button class="cat-tab-btn" data-cat="bathroom" onclick="selectRoomCategory('bathroom')">
+          <i data-lucide="bath" style="width: 14px; height: 14px;"></i>
+          <span>3. Bathroom & Spa (<span id="catCountBathroom">2</span>)</span>
+        </button>
+        <button class="cat-tab-btn" data-cat="living" onclick="selectRoomCategory('living')">
+          <i data-lucide="sofa" style="width: 14px; height: 14px;"></i>
+          <span>4. Living & Lounge (<span id="catCountLiving">2</span>)</span>
+        </button>
+      </div>
+
+      <!-- Featured Photo & Captions -->
+      <div class="room-featured-img-wrap">
+        <img id="modalFeaturedImage" src="" alt="Suite Room Photo" class="room-featured-img">
+        <div class="featured-caption-bar">
+          <span id="modalPhotoCaption">Plush King Bed with 400-thread count Egyptian cotton</span>
+          <span class="photo-counter" id="modalPhotoCounter">Photo 1 of 3</span>
+        </div>
+      </div>
+
+      <!-- Thumbnails Strip -->
+      <div class="room-thumbs-strip" id="modalThumbsStrip">
+        <!-- Injected dynamically by script.js -->
+      </div>
+
+      <!-- Suite Amenities & Inclusions -->
+      <div class="room-modal-amenities-box">
+        <h4>Included Suite Privileges & Amenities</h4>
+        <div class="room-amenities-tags" id="modalAmenitiesList">
+          <!-- Injected dynamically by script.js -->
+        </div>
+      </div>
+
+      <!-- Dual Booking Options -->
+      <div class="room-modal-booking-actions">
+        <div class="booking-option-card wa-opt">
+          <div class="opt-desc">
+            <strong>Option 1: Direct WhatsApp Reservation</strong>
+            <span>Instant booking via chat with 24/7 Front Desk concierge</span>
+          </div>
+          <button class="btn-wa-booking" onclick="bookCurrentModalRoomOnWhatsApp()">
+            <i data-lucide="message-circle" style="width: 16px; height: 16px;"></i>
+            <span>Book on WhatsApp</span>
+          </button>
+        </div>
+
+        <div class="booking-option-card engine-opt">
+          <div class="opt-desc">
+            <strong>Option 2: 0% Direct Booking Engine</strong>
+            <span>Live pricing & instant confirmation synced to Hotelier PMS</span>
+          </div>
+          <button class="btn-engine-booking" onclick="bookCurrentModalRoomInEngine()">
+            <i data-lucide="calendar-check" style="width: 16px; height: 16px;"></i>
+            <span>Use Booking Engine</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
   <!-- Modal: Official Indian GST Tax Invoice -->
   <div class="modal-backdrop" id="gstInvoiceModal" style="display: none;" onclick="if(event.target===this) closeGstInvoiceModal()">
     <div class="gst-invoice-modal-card">

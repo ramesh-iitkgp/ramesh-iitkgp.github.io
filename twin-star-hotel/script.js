@@ -14,15 +14,117 @@ window.currentHotel = {
   currency: "INR",
   symbol: "₹",
   rooms: {
-    "oak-standard": { name: "Oak (Standard AC Room)", price: 2400, original: 3100 },
-    "maple-deluxe": { name: "Maple (Deluxe Suite)", price: 3200, original: 4000 },
-    "mahogany-executive": { name: "Mahogany (Executive Suite)", price: 4500, original: 5800 }
+    "oak-standard": { name: "Oak (Premier Deluxe AC Room)", price: 2400, original: 3100 },
+    "maple-deluxe": { name: "Maple (Signature Panoramic Suite)", price: 3200, original: 4000 },
+    "mahogany-executive": { name: "Mahogany (Presidential Royal Villa Suite)", price: 4500, original: 5800 }
   }
 };
 
 // Current Active Platform Mode: 'website' | 'engine' | 'operations'
 window.currentPlatformMode = 'website';
 window.currentOpsSubtab = 'rooms';
+window.currentModalRoomId = 'maple-deluxe';
+window.currentModalCategory = 'bedroom';
+
+// Categorized Room Photography & Luxury Suite Data
+const ROOM_CATEGORIZED_DATA = {
+  'oak-standard': {
+    name: 'Oak (Premier Deluxe AC Room)',
+    shortTitle: 'Oak Premier Room',
+    badge: 'Smart Business & Solo Travelers',
+    price: 2400,
+    original: 3100,
+    size: '210 sq.ft',
+    bed: 'Queen Plush Bed',
+    guests: '2 Adults',
+    view: 'Courtyard & Tropical Garden View',
+    desc: 'Thoughtfully curated luxury room featuring soundproof double-glazed windows, premium pocket-spring queen mattress, dedicated ergonomic workstation, 43" 4K Smart TV, and an Italian-tiled rainfall shower en-suite.',
+    amenities: ['500Mbps Fiber Wi-Fi', 'Complimentary Breakfast Buffet', 'Italian Rainfall Shower', 'Work Desk & USB Ports', 'In-room Electronic Safe', '24/7 Room Dining'],
+    categories: {
+      bedroom: [
+        { url: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80', caption: 'Plush Queen Bed with 400-thread count Egyptian cotton' },
+        { url: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80', caption: 'Spacious bedroom layout with ambient bedside reading lamps' },
+        { url: 'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=1200&q=80', caption: 'Warm evening lighting with spacious wardrobe and digital safe' }
+      ],
+      balcony: [
+        { url: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80', caption: 'Private balcony facing peaceful tropical courtyard' },
+        { url: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=1200&q=80', caption: 'Outdoor morning coffee deck with garden vistas' }
+      ],
+      bathroom: [
+        { url: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80', caption: 'Spotless marble bathroom with high-pressure rainfall shower' },
+        { url: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=1200&q=80', caption: 'Modern vanity with backlit mirror and herbal toiletries' }
+      ],
+      living: [
+        { url: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1200&q=80', caption: 'Ergonomic business workstation and high-speed fiber connectivity' },
+        { url: 'https://images.unsplash.com/photo-1567496898669-ee935f5f647a?auto=format&fit=crop&w=1200&q=80', caption: 'Lounge seating with complimentary tea and coffee station' }
+      ]
+    }
+  },
+  'maple-deluxe': {
+    name: 'Maple (Signature Panoramic Suite)',
+    shortTitle: 'Maple Deluxe Suite',
+    badge: 'Most Popular Suite • Couples & VIPs',
+    price: 3200,
+    original: 4000,
+    size: '320 sq.ft',
+    bed: 'King Size Cloud Mattress',
+    guests: 'Up to 3 Guests',
+    view: 'Panoramic City & Sunset View',
+    desc: 'Spacious panoramic suite featuring a grand king bed, dedicated living lounge with velvet armchairs, private teakwood balcony, refrigerated minibar, Nespresso machine, and a spa-inspired bathroom with a deep soaking tub.',
+    amenities: ['Private Teakwood Balcony', 'Deep Soaking Bathtub', 'Gourmet Breakfast Buffet', 'Nespresso Coffee Machine', '55" 4K OLED Smart TV', 'Priority 12:00 PM Check-In'],
+    categories: {
+      bedroom: [
+        { url: 'https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=80', caption: 'Grand King Bed with custom upholstered headboard & mood lighting' },
+        { url: 'https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=1200&q=80', caption: 'Sunlit master suite with floor-to-ceiling soundproof glass' },
+        { url: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1200&q=80', caption: 'Artful interior detailing and plush hypoallergenic pillows' }
+      ],
+      balcony: [
+        { url: 'https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&q=80', caption: 'Panoramic balcony with teak outdoor loungers overlooking sunset' },
+        { url: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1200&q=80', caption: 'Lush greenery and fresh breeze from private terrace' }
+      ],
+      bathroom: [
+        { url: 'https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1200&q=80', caption: 'Spa bathroom with deep freestanding soaking tub and rain shower' },
+        { url: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80', caption: 'Double marble vanity and plush cotton waffle bathrobes' }
+      ],
+      living: [
+        { url: 'https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1200&q=80', caption: 'Elegantly appointed seating lounge with plush sofa and coffee table' },
+        { url: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1200&q=80', caption: 'Minibar, wine cooler, and gourmet coffee setup' }
+      ]
+    }
+  },
+  'mahogany-executive': {
+    name: 'Mahogany (Presidential Royal Villa Suite)',
+    shortTitle: 'Mahogany Royal Suite',
+    badge: 'Ultra-Luxury • Family & Executives',
+    price: 4500,
+    original: 5800,
+    size: '520 sq.ft',
+    bed: 'Master Emperor King Bed',
+    guests: 'Up to 4 Guests',
+    view: 'Wraparound Penthouse Skyline & Pool View',
+    desc: 'Our premier luxury offering: sprawling master residence with an independent living salon, dining room, private wraparound sun deck, jacuzzi bath, 24/7 dedicated personal butler service, and complimentary airport chauffeur transfer.',
+    amenities: ['Private Jacuzzi & Double Shower', 'Dedicated Butler Service', 'Airport Chauffeur Transfer', 'Wraparound Penthouse Sun Deck', 'Evening Cocktail Hour Access', 'Complimentary In-room Dining Breakfast'],
+    categories: {
+      bedroom: [
+        { url: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1200&q=80', caption: 'Palatial Master Emperor King Suite with custom wood millwork' },
+        { url: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1200&q=80', caption: 'Private sitting alcove and dressing area with walk-in wardrobe' },
+        { url: 'https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=80', caption: 'Luxury linen styling with automated blackout shades' }
+      ],
+      balcony: [
+        { url: 'https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=80', caption: 'Wraparound rooftop sun deck with daybeds and skyline panorama' },
+        { url: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80', caption: 'Private outdoor dining table for intimate starlit dinners' }
+      ],
+      bathroom: [
+        { url: 'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=1200&q=80', caption: 'Opulent Italian Carrara marble bathroom with dual rain showers' },
+        { url: 'https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1200&q=80', caption: 'Jacuzzi hydrotherapy spa tub with panoramic garden view' }
+      ],
+      living: [
+        { url: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80', caption: 'Grand executive salon with sectional sofa and dining for 4' },
+        { url: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80', caption: 'Full private bar, espresso bar, and state-of-the-art Bang & Olufsen sound' }
+      ]
+    }
+  }
+};
 
 // 18 Keys Front Desk PMS State (Pre-seeded Realistic Mock Data)
 window.pmsRooms = [
@@ -105,27 +207,6 @@ window.guestFolios = {
 };
 window.selectedFolioRoomId = '201';
 
-// Room Photos for Gallery
-const ROOM_PHOTOS = {
-  'oak-standard': [
-    'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=80',
-    'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80',
-    'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80'
-  ],
-  'maple-deluxe': [
-    'https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=80',
-    'https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=1200&q=80',
-    'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1200&q=80',
-    'https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1200&q=80'
-  ],
-  'mahogany-executive': [
-    'https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1200&q=80',
-    'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1200&q=80',
-    'https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=80',
-    'https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1200&q=80'
-  ]
-};
-
 // --------------------------------------------------------------------------
 // Initialization
 // --------------------------------------------------------------------------
@@ -202,6 +283,150 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Refresh icons
   if (window.lucide) window.lucide.createIcons();
 });
+
+// --------------------------------------------------------------------------
+// Categorized Room Gallery & Suite Inspection Modal
+// --------------------------------------------------------------------------
+function openRoomDetailModal(roomId) {
+  const room = ROOM_CATEGORIZED_DATA[roomId] || ROOM_CATEGORIZED_DATA['maple-deluxe'];
+  window.currentModalRoomId = roomId;
+
+  const m = document.getElementById('roomDetailModal');
+  const title = document.getElementById('modalRoomTitle');
+  const badge = document.getElementById('modalRoomBadge');
+  const origPrice = document.getElementById('modalRoomOriginal');
+  const directPrice = document.getElementById('modalRoomPrice');
+  const specs = document.getElementById('modalRoomSpecs');
+  const amenitiesList = document.getElementById('modalAmenitiesList');
+
+  // Update counts on tabs
+  const countBed = document.getElementById('catCountBedroom');
+  const countBalcony = document.getElementById('catCountBalcony');
+  const countBath = document.getElementById('catCountBathroom');
+  const countLiving = document.getElementById('catCountLiving');
+
+  if (title) title.textContent = room.name;
+  if (badge) badge.textContent = room.badge;
+  if (origPrice) origPrice.textContent = `₹${room.original.toLocaleString('en-IN')}`;
+  if (directPrice) directPrice.textContent = `₹${room.price.toLocaleString('en-IN')}`;
+
+  if (specs) {
+    specs.innerHTML = `
+      <span><i data-lucide="maximize-2" style="width: 13px; height: 13px;"></i> ${room.size}</span>
+      <span><i data-lucide="bed" style="width: 13px; height: 13px;"></i> ${room.bed}</span>
+      <span><i data-lucide="users" style="width: 13px; height: 13px;"></i> ${room.guests}</span>
+      <span><i data-lucide="eye" style="width: 13px; height: 13px;"></i> ${room.view}</span>
+    `;
+  }
+
+  if (countBed) countBed.textContent = room.categories.bedroom.length;
+  if (countBalcony) countBalcony.textContent = room.categories.balcony.length;
+  if (countBath) countBath.textContent = room.categories.bathroom.length;
+  if (countLiving) countLiving.textContent = room.categories.living.length;
+
+  if (amenitiesList) {
+    amenitiesList.innerHTML = room.amenities.map(a => `
+      <span class="room-amenity-pill">
+        <i data-lucide="check-circle-2" style="width: 13px; height: 13px; color: #10b981;"></i>
+        ${a}
+      </span>
+    `).join('');
+  }
+
+  // Default to bedroom category
+  selectRoomCategory('bedroom');
+
+  if (m) m.style.display = 'flex';
+  if (window.lucide) window.lucide.createIcons();
+}
+
+function closeRoomDetailModal() {
+  const m = document.getElementById('roomDetailModal');
+  if (m) m.style.display = 'none';
+}
+
+function selectRoomCategory(categoryKey) {
+  window.currentModalCategory = categoryKey;
+  const room = ROOM_CATEGORIZED_DATA[window.currentModalRoomId] || ROOM_CATEGORIZED_DATA['maple-deluxe'];
+  const photos = room.categories[categoryKey] || room.categories.bedroom;
+
+  // Toggle active tab buttons
+  const tabBtns = document.querySelectorAll('.cat-tab-btn');
+  tabBtns.forEach(btn => {
+    if (btn.getAttribute('data-cat') === categoryKey) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+
+  // Render thumbnails
+  const thumbsContainer = document.getElementById('modalThumbsStrip');
+  if (thumbsContainer) {
+    thumbsContainer.innerHTML = photos.map((p, idx) => `
+      <div class="room-thumb-item ${idx === 0 ? 'active' : ''}" onclick="selectFeaturedPhoto(${idx})">
+        <img src="${p.url}" alt="${p.caption}">
+      </div>
+    `).join('');
+  }
+
+  // Display first photo
+  selectFeaturedPhoto(0);
+}
+
+function selectFeaturedPhoto(photoIndex) {
+  const room = ROOM_CATEGORIZED_DATA[window.currentModalRoomId] || ROOM_CATEGORIZED_DATA['maple-deluxe'];
+  const photos = room.categories[window.currentModalCategory] || room.categories.bedroom;
+  const p = photos[photoIndex] || photos[0];
+
+  const featImg = document.getElementById('modalFeaturedImage');
+  const captionEl = document.getElementById('modalPhotoCaption');
+  const counterEl = document.getElementById('modalPhotoCounter');
+
+  if (featImg) featImg.src = p.url;
+  if (captionEl) captionEl.textContent = p.caption;
+  if (counterEl) counterEl.textContent = `Photo ${photoIndex + 1} of ${photos.length}`;
+
+  // Update active thumb
+  const thumbs = document.querySelectorAll('.room-thumb-item');
+  thumbs.forEach((t, i) => {
+    if (i === photoIndex) t.classList.add('active');
+    else t.classList.remove('active');
+  });
+}
+
+// --------------------------------------------------------------------------
+// Dual Booking Actions: 1) Direct WhatsApp, 2) Direct Booking Engine
+// --------------------------------------------------------------------------
+function openWhatsAppForRoom(roomId) {
+  const room = ROOM_CATEGORIZED_DATA[roomId] || ROOM_CATEGORIZED_DATA['maple-deluxe'];
+  const checkIn = document.getElementById('calcCheckIn')?.value || 'Upcoming Stay';
+  const checkOut = document.getElementById('calcCheckOut')?.value || 'Upcoming Stay';
+  const nights = document.getElementById('nightsDisplay')?.textContent || '3 Nights';
+
+  const message = `Hello ${window.currentHotel.name}! 🌟 I would like to book the *${room.name}* directly (0% OTA commission).
+
+📅 Check-in: ${checkIn}
+📅 Check-out: ${checkOut} (${nights})
+💰 Direct Rate: ₹${room.price.toLocaleString('en-IN')}/night
+
+Please confirm room availability and send payment QR code. Thank you!`;
+  const url = `https://wa.me/${window.currentHotel.phoneDigits}?text=${encodeURIComponent(message)}`;
+  window.open(url, '_blank');
+}
+
+function bookCurrentModalRoomOnWhatsApp() {
+  openWhatsAppForRoom(window.currentModalRoomId);
+}
+
+function bookCurrentModalRoomInEngine() {
+  closeRoomDetailModal();
+  selectRoomForBooking(window.currentModalRoomId);
+}
+
+function selectRoomForBooking(roomId) {
+  switchPlatformMode('engine', roomId);
+}
 
 // --------------------------------------------------------------------------
 // 3-in-1 Platform View Switcher
@@ -326,7 +551,6 @@ function filterRoomCards(type, val, btnEl) {
   if (type === 'floor') window.activeFloorFilter = val;
   if (type === 'status') window.activeStatusFilter = val;
 
-  // Toggle active class on siblings
   if (btnEl && btnEl.parentElement) {
     const siblings = btnEl.parentElement.querySelectorAll('.filter-pill');
     siblings.forEach(s => s.classList.remove('active'));
@@ -578,10 +802,6 @@ function updateOtaCalculator() {
   if (adrVal) adrVal.textContent = `₹${adr.toLocaleString('en-IN')} / night`;
   if (occVal) occVal.textContent = `${occ}% Occupancy`;
 
-  // Calculation:
-  // Total room nights in a year = rooms * 365 * (occ / 100)
-  // Assuming 40% OTA share without direct booking engine
-  // Average OTA commission = 18%
   const totalRoomNights = rooms * 365 * (occ / 100);
   const otaNights = totalRoomNights * 0.40;
   const otaRevenue = otaNights * adr;
@@ -770,19 +990,16 @@ function initStayDates() {
   const inStr = tomorrow.toISOString().split('T')[0];
   const outStr = checkOut.toISOString().split('T')[0];
 
-  // Set in hero bar
   const heroIn = document.getElementById('heroCheckIn');
   const heroOut = document.getElementById('heroCheckOut');
   if (heroIn) heroIn.value = inStr;
   if (heroOut) heroOut.value = outStr;
 
-  // Set in calc bar (website)
   const calcIn = document.getElementById('calcCheckIn');
   const calcOut = document.getElementById('calcCheckOut');
   if (calcIn) calcIn.value = inStr;
   if (calcOut) calcOut.value = outStr;
 
-  // Set in dedicated engine view
   const engIn = document.getElementById('engineViewCheckIn');
   const engOut = document.getElementById('engineViewCheckOut');
   if (engIn) engIn.value = inStr;
@@ -793,7 +1010,6 @@ function initStayDates() {
 }
 
 function syncAndRecalculate(source) {
-  // Sync dates between views
   if (source === 'engineViewCheckIn' || source === 'engineViewCheckOut') {
     const engIn = document.getElementById('engineViewCheckIn');
     const engOut = document.getElementById('engineViewCheckOut');
@@ -821,12 +1037,10 @@ function recalculateEngineView() {
   const nightsDisplay = document.getElementById('engineViewNights');
   if (nightsDisplay) nightsDisplay.textContent = `${nights} Night${nights > 1 ? 's' : ''} Selected`;
 
-  // Selected Room
   const selectedRoomEl = document.querySelector('input[name="engineRoom"]:checked');
   const roomKey = selectedRoomEl ? selectedRoomEl.value : 'maple-deluxe';
   const roomData = window.currentHotel.rooms[roomKey] || window.currentHotel.rooms['maple-deluxe'];
 
-  // Meal Plan
   const selectedMealEl = document.querySelector('input[name="engineMealPlan"]:checked');
   const mealKey = selectedMealEl ? selectedMealEl.value : 'cp';
   let mealRate = 0;
@@ -834,7 +1048,6 @@ function recalculateEngineView() {
   if (mealKey === 'cp') { mealRate = 250; mealTitle = 'CP Breakfast Buffet'; }
   if (mealKey === 'map') { mealRate = 650; mealTitle = 'MAP Half Board'; }
 
-  // Add-ons
   let addonsTotal = 0;
   const chkTransfer = document.getElementById('engineAddonTransfer');
   const chkLate = document.getElementById('engineAddonLateCheckout');
@@ -853,7 +1066,6 @@ function recalculateEngineView() {
   const otaEquivalent = (roomData.original * nights) + mealTotal + addonsTotal;
   const otaSavings = Math.max(0, otaEquivalent - grandTotal);
 
-  // Update DOM
   const sumHotel = document.getElementById('engineSummaryHotelName');
   const sumRoom = document.getElementById('engineSummaryRoomName');
   const sumDate = document.getElementById('engineSummaryDateLine');
@@ -946,38 +1158,87 @@ function recalculateTotal() {
   if (valGrand) valGrand.textContent = `₹${grandTotal.toLocaleString('en-IN')}`;
 }
 
+// --------------------------------------------------------------------------
+// Confirm Direct Booking & Send to CRM/PMS Backend
+// --------------------------------------------------------------------------
 function confirmDirectBooking() {
   const guestName = document.getElementById('engineGuestName')?.value || 'Ramesh Sundaram (VIP Guest)';
+  const phone = document.getElementById('engineGuestPhone')?.value || '+91 98404 60459';
+  const email = document.getElementById('engineGuestEmail')?.value || 'ramesh@example.com';
   
-  // Inject into PMS Rooms!
-  const cleanRoom = window.pmsRooms.find(r => r.status === 'CLEAN' || r.status === 'INSPECTED');
-  if (cleanRoom) {
-    cleanRoom.status = 'OCCUPIED';
-    cleanRoom.guest = guestName;
-    cleanRoom.dates = `${window.lastQuotation.inDate} - ${window.lastQuotation.outDate}`;
-    cleanRoom.channel = 'Direct Website (0% Fee)';
-    cleanRoom.isDirect = true;
-    cleanRoom.notes = 'Direct website booking confirmed';
+  // 1. Dispatch into PMS Rooms Store
+  const targetRoom = window.pmsRooms.find(r => r.status === 'CLEAN' || r.status === 'INSPECTED') || window.pmsRooms[0];
+  if (targetRoom) {
+    targetRoom.status = 'OCCUPIED';
+    targetRoom.guest = `${guestName} (Direct)`;
+    targetRoom.dates = `${window.lastQuotation.inDate} - ${window.lastQuotation.outDate}`;
+    targetRoom.channel = 'Direct Engine (0%)';
+    targetRoom.isDirect = true;
+    targetRoom.notes = `Online direct booking (${window.lastQuotation.nights} nights)`;
     renderRoomCards();
   }
 
+  // 2. Create Active Folio in PMS
+  const folioNum = `FOL-DIR-${Math.floor(1000 + Math.random() * 9000)}`;
+  window.guestFolios[targetRoom ? targetRoom.id : '201'] = {
+    guestName: guestName,
+    roomNumber: targetRoom ? targetRoom.id : '201',
+    roomType: window.lastQuotation.roomName,
+    folioNumber: folioNum,
+    checkIn: window.lastQuotation.inDate,
+    checkOut: window.lastQuotation.outDate,
+    charges: [
+      {
+        date: window.lastQuotation.inDate,
+        cat: 'ROOM',
+        sac: '996311',
+        desc: `Room Charge - ${window.lastQuotation.roomName} (${window.lastQuotation.nights} Nights)`,
+        qty: window.lastQuotation.nights,
+        rate: 3200,
+        gstRate: 12,
+        tax: 768,
+        total: 7168
+      },
+      {
+        date: window.lastQuotation.inDate,
+        cat: 'DINING',
+        sac: '996331',
+        desc: window.lastQuotation.mealPlan,
+        qty: window.lastQuotation.nights,
+        rate: 250,
+        gstRate: 5,
+        tax: 37.5,
+        total: 787.5
+      }
+    ],
+    payments: [
+      {
+        date: new Date().toISOString().split('T')[0],
+        method: 'Direct UPI Advance',
+        ref: `UPI-${Math.floor(100000000 + Math.random() * 900000000)}`,
+        status: 'SUCCEEDED',
+        amount: 5000
+      }
+    ]
+  };
+
+  // 3. Update Front Desk KPI Stats
+  const occVal = document.getElementById('kpiOccupancy');
+  if (occVal) occVal.textContent = '88.9%';
+  const revVal = document.getElementById('kpiTodayRev');
+  if (revVal) revVal.textContent = '₹85,792';
+
+  // 4. Open Voucher Modal with PMS Link
   openSimulatedVoucher();
 }
 
-function selectRoomForBooking(roomId) {
-  switchPlatformMode('engine', roomId);
-}
-
-// --------------------------------------------------------------------------
-// Modals
-// --------------------------------------------------------------------------
 function openSimulatedVoucher() {
   const quote = window.lastQuotation || {
     hotelName: window.currentHotel.name,
-    roomName: "Maple (Deluxe Suite)",
-    inDate: "Selected Date",
-    outDate: "Selected Date",
-    mealPlan: "CP (Breakfast Included)",
+    roomName: "Maple (Signature Panoramic Suite)",
+    inDate: "Tomorrow",
+    outDate: "In 4 Days",
+    mealPlan: "CP (Breakfast Buffet Included)",
     grandTotal: "₹11,592"
   };
 
@@ -1011,72 +1272,44 @@ function closeVoucherModal() {
   if (vModal) vModal.style.display = 'none';
 }
 
-function openRoomPhotos(roomId) {
-  const pModal = document.getElementById('photoModal');
-  const grid = document.getElementById('photoGalleryGrid');
-  const title = document.getElementById('photoModalTitle');
-
-  const photos = ROOM_PHOTOS[roomId] || ROOM_PHOTOS['maple-deluxe'];
-  if (title) title.textContent = roomId === 'oak-standard' ? 'Oak Standard Room Gallery' : (roomId === 'maple-deluxe' ? 'Maple Deluxe Suite Gallery' : 'Mahogany Executive Suite Gallery');
-
-  if (grid) {
-    grid.innerHTML = photos.map(url => `<img src="${url}" alt="Room photo" loading="lazy">`).join('');
-  }
-
-  if (pModal) pModal.style.display = 'flex';
-}
-
-function closePhotoModal() {
-  const pModal = document.getElementById('photoModal');
-  if (pModal) pModal.style.display = 'none';
-}
-
 // --------------------------------------------------------------------------
 // Dynamic Personalization Across Elements
 // --------------------------------------------------------------------------
 function applyHotelPersonalization() {
   const h = window.currentHotel;
 
-  // Platform title in mode bar
   const platTitle = document.getElementById('platformHotelTitle');
   if (platTitle) platTitle.textContent = `${h.name} • ${h.city}`;
 
-  // Operations Header
   const opsTitle = document.getElementById('opsHotelTitle');
   if (opsTitle) opsTitle.textContent = `${h.name} — Front Desk Operations`;
 
   const opsCity = document.getElementById('opsCityTag');
   if (opsCity) opsCity.textContent = `${h.area}, ${h.city}`;
 
-  // Page title
   const pageTitle = document.getElementById('pageTitle');
-  if (pageTitle) pageTitle.textContent = `${h.name} | Official Hotel Website & PMS Engine • ${h.city}`;
+  if (pageTitle) pageTitle.textContent = `${h.name} | Official Hotel & Resort Website • ${h.city}`;
 
-  // Banner text
   const leadHotelName = document.getElementById('leadHotelName');
   if (leadHotelName) leadHotelName.textContent = `${h.name} Management`;
 
-  // Brand Header
   const hotelHeaderName = document.getElementById('hotelHeaderName');
   if (hotelHeaderName) hotelHeaderName.textContent = h.shortName;
 
   const headerCity = document.getElementById('headerCity');
   if (headerCity) headerCity.textContent = h.city.toUpperCase();
 
-  // Phone buttons
   const headerPhoneText = document.getElementById('headerPhoneText');
   const headerPhoneBtn = document.getElementById('headerPhoneBtn');
   if (headerPhoneText) headerPhoneText.textContent = h.phone;
   if (headerPhoneBtn) headerPhoneBtn.href = `tel:${h.phoneDigits}`;
 
-  // Hero Section
   const heroMainTitle = document.getElementById('heroMainTitle');
   const heroCityAccent = document.getElementById('heroCityAccent');
   const heroHotelNameInline = document.getElementById('heroHotelNameInline');
   if (heroCityAccent) heroCityAccent.textContent = `${h.area}, ${h.city}`;
   if (heroHotelNameInline) heroHotelNameInline.textContent = h.name;
 
-  // Footer
   const footerHotelName = document.getElementById('footerHotelName');
   const copyHotelName = document.getElementById('copyHotelName');
   if (footerHotelName) footerHotelName.textContent = h.shortName;
