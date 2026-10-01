@@ -6,9 +6,9 @@
   
   <title id="pageTitle">Twin Star Hotel & Suites | Official Luxury Hotel Website • Chennai</title>
   <meta name="description" content="Experience refined accommodations at Twin Star Hotel & Suites, Abiramapuram, Chennai. Direct booking engine with 0% commission, complimentary breakfast, best rate guarantee, and instant WhatsApp booking.">
-  <meta name="keywords" content="Twin Star Hotel, hotel Chennai, Abiramapuram hotel, hotels near Madras ENT Hospital, boutique hotel Chennai, hotel booking engine, direct booking 0 commission">
+  <meta name="keywords" content="Twin Star Hotel, hotel Chennai, Abiramapuram hotel, boutique hotel Chennai, hotel booking engine, direct booking 0 commission, hotel PMS, property management system">
 
-  <!-- OpenGraph Metadata for WhatsApp & Social Sharing -->
+  <!-- OpenGraph Metadata -->
   <meta property="og:type" content="website">
   <meta property="og:title" id="ogTitle" content="Twin Star Hotel & Suites • Official Hotel Preview">
   <meta property="og:description" content="Direct booking engine, luxurious AC suites, Twin Star Bistro, and 0% OTA commission. Preview live room availability now.">
@@ -18,7 +18,7 @@
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230284c7'><path d='M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z'/></svg>">
 
-  <!-- Google Fonts: Cormorant Garamond (luxury serif) + Plus Jakarta Sans (crisp UI) -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -31,7 +31,41 @@
 </head>
 <body>
 
-  <!-- 1. VIP Prospect Interactive Concept Preview Notice -->
+  <!-- ==========================================================================
+       TOP UNIFIED 3-IN-1 HOSPITALITY PLATFORM SWITCHER BAR
+       ========================================================================== -->
+  <div class="platform-mode-bar">
+    <div class="platform-mode-brand">
+      <span class="live-pill"><span class="dot"></span> COMPLETE 3-IN-1 SUITE</span>
+      <span class="hotel-mode-title" id="platformHotelTitle">Twin Star Hotel & Suites • Chennai</span>
+    </div>
+
+    <div class="platform-tabs" role="tablist">
+      <button class="mode-tab active" id="tabModeWebsite" onclick="switchPlatformMode('website')">
+        <i data-lucide="globe" style="width: 15px; height: 15px;"></i>
+        <span>1. Guest Website</span>
+      </button>
+      <button class="mode-tab" id="tabModeEngine" onclick="switchPlatformMode('engine')">
+        <i data-lucide="calendar-check" style="width: 15px; height: 15px;"></i>
+        <span>2. Booking Engine (0% Fee)</span>
+      </button>
+      <button class="mode-tab tab-admin" id="tabModeOps" onclick="switchPlatformMode('operations')">
+        <i data-lucide="layout-dashboard" style="width: 15px; height: 15px;"></i>
+        <span>3. Hotelier PMS & CRM</span>
+        <span class="badge-accent">Admin</span>
+      </button>
+    </div>
+
+    <div class="platform-quick-actions">
+      <span class="mode-hint">💡 Switch views to test website, 0% booking engine & front desk PMS</span>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       VIEW 1: LUXURY GUEST WEBSITE
+       ========================================================================== -->
+  <div id="viewWebsite" class="platform-view active-view">
+    <!-- 1. VIP Prospect Interactive Concept Preview Notice -->
   <div class="preview-banner" id="previewBanner">
     <div class="left-tag">
       <span class="pulse-dot"></span>
@@ -649,6 +683,770 @@
       </div>
     </div>
   </footer>
+  </div>
+
+  
+  <!-- ==========================================================================
+       VIEW 2: DEDICATED DIRECT 0% COMMISSION BOOKING ENGINE
+       ========================================================================== -->
+  <div id="viewEngine" class="platform-view">
+    <div style="background: #0b1120; color: #fff; padding: 2.5rem 1.5rem 1.5rem 1.5rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1);">
+      <div class="container">
+        <span class="live-pill" style="margin-bottom: 0.75rem;"><span class="dot"></span> DIRECT GUEST RESERVATION PORTAL</span>
+        <h1 style="font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 700; margin: 0.5rem 0;">Book Direct • Guaranteed Best Rate & 0% OTA Fee</h1>
+        <p style="color: #94a3b8; max-width: 650px; margin: 0 auto; font-size: 0.95rem;">
+          Enjoy complimentary gourmet breakfast, early check-in priority, and zero hidden service fees when booking directly with our official front desk.
+        </p>
+      </div>
+    </div>
+
+    <section class="engine-section" style="padding-top: 2rem;">
+      <div class="container">
+        <div class="engine-wrapper">
+          <div class="engine-grid">
+            <!-- Left Column: Booking Controls -->
+            <div class="engine-controls">
+              <!-- Stay Dates -->
+              <div class="control-group">
+                <label class="control-label"><i data-lucide="calendar-days"></i> Dates of Stay</label>
+                <div class="date-inputs-row">
+                  <div class="date-box">
+                    <span class="date-tag">Check-in</span>
+                    <input type="date" id="engineViewCheckIn" onchange="syncAndRecalculate('engineViewCheckIn')">
+                  </div>
+                  <div class="date-arrow">→</div>
+                  <div class="date-box">
+                    <span class="date-tag">Check-out</span>
+                    <input type="date" id="engineViewCheckOut" onchange="syncAndRecalculate('engineViewCheckOut')">
+                  </div>
+                </div>
+                <div class="nights-display" id="engineViewNights">3 Nights Selected</div>
+              </div>
+
+              <!-- Room Choice Selector -->
+              <div class="control-group">
+                <label class="control-label"><i data-lucide="bed-double"></i> Select Room Tier</label>
+                <div class="room-radios">
+                  <label class="radio-option">
+                    <input type="radio" name="engineRoom" value="oak-standard" onchange="syncAndRecalculate('engineRoom')">
+                    <div class="radio-content">
+                      <span class="r-title">Oak (Standard AC Room)</span>
+                      <span class="r-price">₹2,400/night <del style="color:#94a3b8; font-size: 0.75rem;">₹3,100</del></span>
+                    </div>
+                  </label>
+                  <label class="radio-option selected">
+                    <input type="radio" name="engineRoom" value="maple-deluxe" checked onchange="syncAndRecalculate('engineRoom')">
+                    <div class="radio-content">
+                      <span class="r-title">Maple (Deluxe Suite) <span class="mini-badge">Popular</span></span>
+                      <span class="r-price">₹3,200/night <del style="color:#94a3b8; font-size: 0.75rem;">₹4,000</del></span>
+                    </div>
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="engineRoom" value="mahogany-executive" onchange="syncAndRecalculate('engineRoom')">
+                    <div class="radio-content">
+                      <span class="r-title">Mahogany (Executive Suite)</span>
+                      <span class="r-price">₹4,500/night <del style="color:#94a3b8; font-size: 0.75rem;">₹5,800</del></span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Meal Plan Options -->
+              <div class="control-group">
+                <label class="control-label"><i data-lucide="utensils"></i> Dining & Meal Plan</label>
+                <div class="meal-options">
+                  <label class="meal-option">
+                    <input type="radio" name="engineMealPlan" value="ep" onchange="syncAndRecalculate('engineMealPlan')">
+                    <div class="meal-box">
+                      <strong>EP (Room Only)</strong>
+                      <span>Included</span>
+                    </div>
+                  </label>
+                  <label class="meal-option selected">
+                    <input type="radio" name="engineMealPlan" value="cp" checked onchange="syncAndRecalculate('engineMealPlan')">
+                    <div class="meal-box">
+                      <strong>CP (Breakfast)</strong>
+                      <span>+₹250/day</span>
+                    </div>
+                  </label>
+                  <label class="meal-option">
+                    <input type="radio" name="engineMealPlan" value="map" onchange="syncAndRecalculate('engineMealPlan')">
+                    <div class="meal-box">
+                      <strong>MAP (Half Board)</strong>
+                      <span>+₹650/day</span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Recommended Add-ons -->
+              <div class="control-group">
+                <label class="control-label"><i data-lucide="gift"></i> Recommended Add-ons</label>
+                <div class="addon-checkboxes">
+                  <label class="addon-item">
+                    <input type="checkbox" id="engineAddonTransfer" value="850" onchange="syncAndRecalculate('engineAddons')">
+                    <div class="addon-info">
+                      <strong>Chennai Airport (MAA) Sedan Chauffeur Transfer</strong>
+                      <span>Comfortable AC pickup or drop terminal to lobby (+₹850)</span>
+                    </div>
+                  </label>
+                  <label class="addon-item">
+                    <input type="checkbox" id="engineAddonLateCheckout" value="500" onchange="syncAndRecalculate('engineAddons')">
+                    <div class="addon-info">
+                      <strong>Guaranteed 2:00 PM Late Check-out</strong>
+                      <span>Relax longer before your evening train/flight (+₹500)</span>
+                    </div>
+                  </label>
+                  <label class="addon-item">
+                    <input type="checkbox" id="engineAddonSpa" value="1200" onchange="syncAndRecalculate('engineAddons')">
+                    <div class="addon-info">
+                      <strong>Rejuvenating Ayurvedic Aromatherapy Spa</strong>
+                      <span>60-min herbal relaxing therapy for 1 guest (+₹1,200)</span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Guest Personal Information -->
+              <div class="control-group">
+                <label class="control-label"><i data-lucide="user-check"></i> Guest Contact Details</label>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 8px;">
+                  <div>
+                    <label style="font-size: 0.75rem; color: #64748b; font-weight: 600;">Full Name</label>
+                    <input type="text" id="engineGuestName" value="Ramesh Sundaram (VIP Guest)" style="width: 100%; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.85rem;">
+                  </div>
+                  <div>
+                    <label style="font-size: 0.75rem; color: #64748b; font-weight: 600;">Mobile / WhatsApp Number</label>
+                    <input type="tel" id="engineGuestPhone" value="+91 98404 60459" style="width: 100%; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.85rem;">
+                  </div>
+                </div>
+                <div style="margin-top: 8px;">
+                  <label style="font-size: 0.75rem; color: #64748b; font-weight: 600;">Email Address</label>
+                  <input type="email" id="engineGuestEmail" value="ramesh.sundaram@chennai.example.com" style="width: 100%; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.85rem;">
+                </div>
+                <div style="margin-top: 8px;">
+                  <label style="font-size: 0.75rem; color: #64748b; font-weight: 600;">Special Requests (Optional)</label>
+                  <input type="text" id="engineGuestRequests" placeholder="e.g. High floor room away from elevator, extra pillows" style="width: 100%; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.85rem;">
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Live Price Card & Instant Direct Reservation -->
+            <div class="engine-summary">
+              <div class="summary-card">
+                <div class="summary-top">
+                  <span class="summary-header-label">Authoritative Direct Rate</span>
+                  <span class="direct-booking-seal">0% OTA Markup</span>
+                </div>
+
+                <div class="summary-hotel-info">
+                  <h4 id="engineSummaryHotelName">Twin Star Hotel & Suites</h4>
+                  <p id="engineSummaryRoomName">Maple (Deluxe Suite)</p>
+                  <div class="summary-date-line" id="engineSummaryDateLine">Oct 2, 2026 – Oct 5, 2026 (3 nights)</div>
+                </div>
+
+                <div class="summary-breakdown">
+                  <div class="breakdown-row">
+                    <span id="engineLabelRoomNights">Maple Room (3 nights × ₹3,200)</span>
+                    <span class="val" id="engineValRoomBase">₹9,600</span>
+                  </div>
+                  <div class="breakdown-row">
+                    <span id="engineLabelMealPlan">CP Breakfast Buffet</span>
+                    <span class="val" id="engineValMealPlan">₹750</span>
+                  </div>
+                  <div class="breakdown-row" id="engineRowAddons" style="display: none;">
+                    <span>Selected Add-ons</span>
+                    <span class="val" id="engineValAddons">₹0</span>
+                  </div>
+                  <div class="breakdown-row">
+                    <span>Applicable GST (12% Accommodation)</span>
+                    <span class="val" id="engineValTaxes">₹1,242</span>
+                  </div>
+                  <div class="breakdown-row total-row">
+                    <span>Total Direct Price</span>
+                    <span class="val total-val" id="engineValGrandTotal">₹11,592</span>
+                  </div>
+                </div>
+
+                <!-- OTA Savings Guarantee Banner -->
+                <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 10px 14px; margin: 16px 0; font-size: 0.82rem; color: #065f46;">
+                  <strong>✓ Best Rate Guarantee:</strong> You save <strong id="engineOtaSavingsText">₹2,400</strong> compared to MakeMyTrip/Booking.com.
+                </div>
+
+                <!-- Confirm Reservation Button -->
+                <button class="btn-whatsapp-book" id="btnEngineConfirmBooking" onclick="confirmDirectBooking()" style="background: #0284c7; width: 100%;">
+                  <i data-lucide="check-circle-2"></i>
+                  <span>Confirm Direct Reservation (0% Fee)</span>
+                </button>
+
+                <p class="summary-secure-note">
+                  <i data-lucide="lock" style="width: 13px; height: 13px;"></i>
+                  <span>Zero booking commission deducted • Direct hotelier confirmation voucher</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+  
+  <!-- ==========================================================================
+       VIEW 3: HOTELIER FRONT DESK OPERATIONS PMS & CRM DASHBOARD
+       ========================================================================== -->
+  <div id="viewOperations" class="platform-view">
+    <div class="ops-root">
+      <div class="ops-container">
+        <!-- Operations Header -->
+        <div class="ops-header">
+          <div class="ops-header-left">
+            <div class="ops-property-tag">
+              <i data-lucide="building-2" style="width: 14px; height: 14px;"></i>
+              <span id="opsHeaderPropertyTag">HOTEL PROPERTY MANAGEMENT SYSTEM • 18 KEYS</span>
+            </div>
+            <h1 class="ops-title" id="opsHotelTitle">Twin Star Hotel & Suites — Front Desk Operations</h1>
+            <div class="ops-meta-row">
+              <span class="ops-meta-item">
+                <i data-lucide="calendar" style="width: 14px; height: 14px; color: #2563eb;"></i>
+                <span>Business Date: <strong>Today (Live)</strong></span>
+              </span>
+              <span class="ops-meta-item">
+                <i data-lucide="user" style="width: 14px; height: 14px; color: #10b981;"></i>
+                <span>Shift Lead: <strong>Lakshmi P (Front Desk Lead)</strong></span>
+              </span>
+              <span class="ops-meta-item">
+                <i data-lucide="map-pin" style="width: 14px; height: 14px; color: #f59e0b;"></i>
+                <span id="opsCityTag">Abiramapuram, Chennai</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="ops-header-right">
+            <button class="btn-ops-action btn-ops-primary" onclick="simulateNewWalkIn()">
+              <i data-lucide="user-plus" style="width: 15px; height: 15px;"></i>
+              <span>+ Quick Walk-In</span>
+            </button>
+            <button class="btn-ops-action" onclick="simulateHousekeepingTurndown()">
+              <i data-lucide="sparkles" style="width: 15px; height: 15px;"></i>
+              <span>🧹 Clean All Dirty Rooms</span>
+            </button>
+            <button class="btn-ops-action" onclick="openGstInvoiceModal('fol-201-1')">
+              <i data-lucide="file-text" style="width: 15px; height: 15px;"></i>
+              <span>📄 Room 201 GST Invoice</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Executive Operations KPI Ribbon -->
+        <div class="ops-kpi-ribbon">
+          <div class="ops-kpi-card kpi-purple">
+            <span class="ops-kpi-label">Current Occupancy</span>
+            <div class="ops-kpi-val" id="kpiOccupancy">83.3%</div>
+            <span class="ops-kpi-sub">
+              <strong>15 / 18</strong> rooms occupied
+            </span>
+          </div>
+
+          <div class="ops-kpi-card kpi-emerald">
+            <span class="ops-kpi-label">Today's Net Revenue</span>
+            <div class="ops-kpi-val" id="kpiTodayRev">₹74,200</div>
+            <span class="ops-kpi-sub">
+              <span class="highlight-green">₹51,400 direct</span> (0% commission)
+            </span>
+          </div>
+
+          <div class="ops-kpi-card kpi-blue">
+            <span class="ops-kpi-label">Direct Revenue Share</span>
+            <div class="ops-kpi-val" id="kpiDirectShare">69.1%</div>
+            <span class="ops-kpi-sub">
+              <strong>142</strong> direct vs 68 OTA bookings
+            </span>
+          </div>
+
+          <div class="ops-kpi-card kpi-gold">
+            <span class="ops-kpi-label">OTA Commissions Saved</span>
+            <div class="ops-kpi-val" id="kpiCommSaved" style="color: #d97706;">₹4,35,200</div>
+            <span class="ops-kpi-sub">
+              Preserved at 20% OTA commission
+            </span>
+          </div>
+
+          <div class="ops-kpi-card kpi-indigo">
+            <span class="ops-kpi-label">Average Daily Rate (ADR)</span>
+            <div class="ops-kpi-val" id="kpiAdr">₹3,420</div>
+            <span class="ops-kpi-sub">
+              Direct ADR +₹220 higher than OTAs
+            </span>
+          </div>
+        </div>
+
+        <!-- Operations Sub-Tabs Navigation -->
+        <div class="ops-subtabs-bar" role="tablist">
+          <button class="ops-subtab-btn active" id="subtabRooms" onclick="switchOpsSubtab('rooms')">
+            <i data-lucide="bed" style="width: 16px; height: 16px;"></i>
+            <span>Front Desk & Rooms Board (18 Keys)</span>
+          </button>
+          <button class="ops-subtab-btn" id="subtabCalendar" onclick="switchOpsSubtab('calendar')">
+            <i data-lucide="calendar-range" style="width: 16px; height: 16px;"></i>
+            <span>Reservation Gantt Calendar</span>
+          </button>
+          <button class="ops-subtab-btn" id="subtabAnalytics" onclick="switchOpsSubtab('analytics')">
+            <i data-lucide="trending-up" style="width: 16px; height: 16px;"></i>
+            <span>Direct Revenue & OTA Economics</span>
+          </button>
+          <button class="ops-subtab-btn" id="subtabFolio" onclick="switchOpsSubtab('folio')">
+            <i data-lucide="receipt" style="width: 16px; height: 16px;"></i>
+            <span>Live Guest Folios & GST Invoicing</span>
+          </button>
+          <button class="ops-subtab-btn" id="subtabCrm" onclick="switchOpsSubtab('crm')">
+            <i data-lucide="users" style="width: 16px; height: 16px;"></i>
+            <span>Guest CRM & WhatsApp Hub</span>
+          </button>
+        </div>
+
+        <!-- ====================================================================
+             SUB-PANEL 1: FRONT DESK & ROOM STATUS BOARD
+             ==================================================================== -->
+        <div id="panelRooms" class="ops-panel active-panel">
+          <!-- Room Filters Bar -->
+          <div class="room-filters-bar">
+            <div class="filter-pills-group">
+              <span style="font-size: 0.78rem; font-weight: 700; color: #64748b; align-self: center; margin-right: 4px;">FLOORS:</span>
+              <button class="filter-pill active" onclick="filterRoomCards('floor', 'ALL', this)">All (18)</button>
+              <button class="filter-pill" onclick="filterRoomCards('floor', '1', this)">Floor 1 (Oak)</button>
+              <button class="filter-pill" onclick="filterRoomCards('floor', '2', this)">Floor 2 (Maple)</button>
+              <button class="filter-pill" onclick="filterRoomCards('floor', '3', this)">Floor 3 (Mahogany)</button>
+            </div>
+
+            <div class="filter-pills-group">
+              <span style="font-size: 0.78rem; font-weight: 700; color: #64748b; align-self: center; margin-right: 4px;">STATUS:</span>
+              <button class="filter-pill active" onclick="filterRoomCards('status', 'ALL', this)">All</button>
+              <button class="filter-pill" onclick="filterRoomCards('status', 'OCCUPIED', this)">Occupied (15)</button>
+              <button class="filter-pill" onclick="filterRoomCards('status', 'CLEAN', this)">Clean (2)</button>
+              <button class="filter-pill" onclick="filterRoomCards('status', 'DIRTY', this)">Dirty (1)</button>
+            </div>
+          </div>
+
+          <!-- Room Cards Grid -->
+          <div class="ops-rooms-grid" id="opsRoomsContainer">
+            <!-- Will be dynamically populated with all 18 keys via JavaScript -->
+          </div>
+        </div>
+
+        <!-- ====================================================================
+             SUB-PANEL 2: MULTI-DAY RESERVATION GANTT CALENDAR
+             ==================================================================== -->
+        <div id="panelCalendar" class="ops-panel">
+          <div class="tape-calendar-container">
+            <div class="tape-toolbar">
+              <div>
+                <h3 style="font-size: 1.15rem; font-weight: 800; margin: 0;">Multi-Room Gantt Reservation Tape</h3>
+                <p style="font-size: 0.8rem; color: #64748b; margin-top: 2px;">
+                  Color-coded timeline showing direct vs. OTA channel distribution across keys.
+                </p>
+              </div>
+
+              <div class="tape-legend">
+                <span class="legend-chip"><span class="legend-color-dot dot-direct"></span> Direct Website (0% Fee)</span>
+                <span class="legend-chip"><span class="legend-color-dot dot-mmt"></span> MakeMyTrip (20% Cut)</span>
+                <span class="legend-chip"><span class="legend-color-dot dot-booking"></span> Booking.com (18% Cut)</span>
+                <span class="legend-chip"><span class="legend-color-dot dot-agoda"></span> Agoda</span>
+              </div>
+            </div>
+
+            <div class="tape-table-wrapper">
+              <table class="tape-table" id="tapeTable">
+                <thead>
+                  <tr>
+                    <th class="room-col-header">Room / Key</th>
+                    <th>Wed Sep 28</th>
+                    <th>Thu Sep 29</th>
+                    <th>Fri Sep 30</th>
+                    <th style="background: #e0f2fe; color: #0284c7;">Sat Oct 01 (Today)</th>
+                    <th>Sun Oct 02</th>
+                    <th>Mon Oct 03</th>
+                    <th>Tue Oct 04</th>
+                  </tr>
+                </thead>
+                <tbody id="tapeTableBody">
+                  <!-- Generated by script.js -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ====================================================================
+             SUB-PANEL 3: DIRECT REVENUE & OTA SAVINGS ANALYTICS
+             ==================================================================== -->
+        <div id="panelAnalytics" class="ops-panel">
+          <div class="analytics-grid">
+            <!-- Channel Economics Breakdown -->
+            <div class="analytics-card">
+              <h3 class="analytics-title">
+                <i data-lucide="pie-chart" style="width: 18px; height: 18px; color: #2563eb;"></i>
+                <span>Direct vs. OTA Channel Economics</span>
+              </h3>
+              <table class="channel-table">
+                <thead>
+                  <tr>
+                    <th>Channel Type</th>
+                    <th>Bookings</th>
+                    <th>Gross Revenue</th>
+                    <th>OTA Cut Lost</th>
+                    <th>Net Retained</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="background: #f0fdf4;">
+                    <td><strong style="color: #15803d;">💎 Direct Booking Engine</strong></td>
+                    <td>142 (67.6%)</td>
+                    <td>₹48,56,000</td>
+                    <td><strong style="color: #15803d;">₹0 (0%)</strong></td>
+                    <td><strong style="color: #15803d;">₹48,56,000 (100%)</strong></td>
+                  </tr>
+                  <tr>
+                    <td>MakeMyTrip (MMT)</td>
+                    <td>36 (17.1%)</td>
+                    <td>₹11,52,000</td>
+                    <td><span style="color: #dc2626;">-₹2,30,400 (20%)</span></td>
+                    <td>₹9,21,600</td>
+                  </tr>
+                  <tr>
+                    <td>Booking.com</td>
+                    <td>22 (10.5%)</td>
+                    <td>₹7,04,000</td>
+                    <td><span style="color: #dc2626;">-₹1,40,800 (20%)</span></td>
+                    <td>₹5,63,200</td>
+                  </tr>
+                  <tr>
+                    <td>Agoda</td>
+                    <td>10 (4.8%)</td>
+                    <td>₹3,20,000</td>
+                    <td><span style="color: #dc2626;">-₹64,000 (20%)</span></td>
+                    <td>₹2,56,000</td>
+                  </tr>
+                  <tr style="font-weight: 800; border-top: 2px solid #0f172a;">
+                    <td>Total Portfolio</td>
+                    <td>210 Bookings</td>
+                    <td>₹70,32,000</td>
+                    <td><span style="color: #dc2626;">-₹4,35,200 Lost</span></td>
+                    <td>₹65,96,800</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div style="margin-top: 1.5rem; padding: 1rem; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 0.85rem; color: #475569;">
+                <strong>💡 Hoteliers Note:</strong> By shifting bookings from OTAs to your direct engine, you retain an extra <strong>₹4,35,200 every single month</strong> on an 18-key property.
+              </div>
+            </div>
+
+            <!-- Interactive OTA Commission Calculator for Prospects -->
+            <div class="analytics-card">
+              <h3 class="analytics-title">
+                <i data-lucide="calculator" style="width: 18px; height: 18px; color: #10b981;"></i>
+                <span>Annual OTA Commission Loss Calculator</span>
+              </h3>
+              <p style="font-size: 0.82rem; color: #64748b; margin-bottom: 1rem;">
+                Adjust property parameters below to see exactly how much money is lost to OTA commissions annually:
+              </p>
+
+              <div class="calc-box">
+                <div class="calc-control">
+                  <div class="calc-label-row">
+                    <span>Number of Keys / Rooms:</span>
+                    <strong id="calcRoomsVal">18 Rooms</strong>
+                  </div>
+                  <input type="range" min="5" max="100" value="18" class="calc-slider" id="calcRoomsSlider" oninput="updateOtaCalculator()">
+                </div>
+
+                <div class="calc-control">
+                  <div class="calc-label-row">
+                    <span>Average Daily Rate (ADR):</span>
+                    <strong id="calcAdrVal">₹3,200 / night</strong>
+                  </div>
+                  <input type="range" min="1500" max="15000" step="100" value="3200" class="calc-slider" id="calcAdrSlider" oninput="updateOtaCalculator()">
+                </div>
+
+                <div class="calc-control">
+                  <div class="calc-label-row">
+                    <span>Average Occupancy Rate:</span>
+                    <strong id="calcOccVal">75% Occupancy</strong>
+                  </div>
+                  <input type="range" min="40" max="95" value="75" class="calc-slider" id="calcOccSlider" oninput="updateOtaCalculator()">
+                </div>
+
+                <div class="calc-result-box">
+                  <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: #cbd5e1;">Your Annual OTA Commission Drain</div>
+                  <div class="calc-result-number" id="calcResultDrain">₹11,35,680</div>
+                  <div class="calc-result-caption">
+                    Based on 40% OTA dependency at 18% commission. With WebKartX, this entire sum stays in your bank account.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ====================================================================
+             SUB-PANEL 4: LIVE GUEST FOLIOS & GST INVOICING
+             ==================================================================== -->
+        <div id="panelFolio" class="ops-panel">
+          <div class="folio-layout">
+            <!-- Folio Left: Selector -->
+            <div class="folio-selector-card">
+              <h4 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 0.75rem;">Active Guest Folios</h4>
+              
+              <div class="folio-list-item active" id="folioItem201" onclick="selectFolio('201')">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <strong style="color: #0f172a;">Room 201 • Maple</strong>
+                  <span class="status-pill status-occupied" style="font-size: 0.65rem;">Direct VIP</span>
+                </div>
+                <div style="font-size: 0.8rem; color: #475569; margin-top: 4px;">Ramesh Sundaram</div>
+                <div style="font-size: 0.72rem; color: #dc2626; margin-top: 2px; font-weight: 700;">Balance Due: ₹4,540.50</div>
+              </div>
+
+              <div class="folio-list-item" id="folioItem102" onclick="selectFolio('102')">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <strong style="color: #0f172a;">Room 102 • Oak</strong>
+                  <span class="status-pill status-clean" style="font-size: 0.65rem;">Settled</span>
+                </div>
+                <div style="font-size: 0.8rem; color: #475569; margin-top: 4px;">Priya Narayanan</div>
+                <div style="font-size: 0.72rem; color: #059669; margin-top: 2px; font-weight: 700;">Paid in Full (Card)</div>
+              </div>
+
+              <div class="folio-list-item" id="folioItem301" onclick="selectFolio('301')">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <strong style="color: #0f172a;">Room 301 • Mahogany</strong>
+                  <span class="status-pill status-occupied" style="font-size: 0.65rem;">VIP Suite</span>
+                </div>
+                <div style="font-size: 0.8rem; color: #475569; margin-top: 4px;">Vikram Malhotra</div>
+                <div style="font-size: 0.72rem; color: #059669; margin-top: 2px; font-weight: 700;">Pre-paid (Direct)</div>
+              </div>
+            </div>
+
+            <!-- Folio Right: Active Folio Ledger -->
+            <div class="folio-main-card">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; border-bottom: 1px solid #e2e8f0; padding-bottom: 1rem;">
+                <div>
+                  <span style="font-size: 0.72rem; font-weight: 700; color: #2563eb; text-transform: uppercase;">Official Guest Folio</span>
+                  <h3 style="font-size: 1.3rem; font-weight: 800; margin: 2px 0;" id="folioGuestTitle">Ramesh Sundaram (Room 201 - Maple Deluxe Suite)</h3>
+                  <div style="font-size: 0.82rem; color: #64748b;">
+                    Folio #: <strong id="folioNumber">FOL-TT-8492-CH-01</strong> • Check-in: Sep 28 • Check-out: Oct 04 (6 Nights)
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 8px;">
+                  <button class="btn-ops-action" onclick="promptAddCharge()">
+                    <i data-lucide="plus" style="width: 14px; height: 14px;"></i>
+                    <span>+ Add Bistro / Spa Charge</span>
+                  </button>
+                  <button class="btn-ops-action btn-ops-primary" onclick="openGstInvoiceModal('fol-201-1')">
+                    <i data-lucide="printer" style="width: 14px; height: 14px;"></i>
+                    <span>Generate GST Tax Invoice</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Charges Table -->
+              <table class="folio-charges-table" id="folioChargesTable">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Category</th>
+                    <th>SAC Code</th>
+                    <th>Description</th>
+                    <th>Qty</th>
+                    <th>Rate</th>
+                    <th>GST %</th>
+                    <th style="text-align: right;">Amount (₹)</th>
+                  </tr>
+                </thead>
+                <tbody id="folioChargesBody">
+                  <!-- Populated by script.js -->
+                </tbody>
+              </table>
+
+              <!-- Payments Table -->
+              <h4 style="font-size: 0.9rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.5rem; color: #334155;">Recorded Payments & Settlements</h4>
+              <table class="folio-charges-table" id="folioPaymentsTable" style="margin-top: 0.5rem;">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Payment Method</th>
+                    <th>Reference / Auth</th>
+                    <th>Status</th>
+                    <th style="text-align: right;">Amount Paid (₹)</th>
+                  </tr>
+                </thead>
+                <tbody id="folioPaymentsBody">
+                  <tr>
+                    <td>2026-09-28</td>
+                    <td><strong>UPI (Direct Booking Advance)</strong></td>
+                    <td>UPI-984210992</td>
+                    <td><span class="status-pill status-clean" style="font-size: 0.65rem;">SUCCEEDED</span></td>
+                    <td style="text-align: right; font-weight: 700; color: #059669;">₹5,000.00</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <!-- Totals Box -->
+              <div class="folio-totals-box">
+                <div class="folio-total-item">
+                  <div class="lbl">Gross Charges</div>
+                  <div class="val" id="folioGrossVal">₹8,700.00</div>
+                </div>
+                <div class="folio-total-item">
+                  <div class="lbl">Taxes (GST)</div>
+                  <div class="val" id="folioTaxVal">₹840.50</div>
+                </div>
+                <div class="folio-total-item">
+                  <div class="lbl">Total Net Charges</div>
+                  <div class="val" id="folioNetVal">₹9,540.50</div>
+                </div>
+                <div class="folio-total-item">
+                  <div class="lbl">Total Paid</div>
+                  <div class="val" id="folioPaidVal" style="color: #059669;">₹5,000.00</div>
+                </div>
+                <div class="folio-total-item due">
+                  <div class="lbl">Outstanding Balance</div>
+                  <div class="val" id="folioBalanceVal">₹4,540.50</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ====================================================================
+             SUB-PANEL 5: GUEST CRM & WHATSAPP HUB
+             ==================================================================== -->
+        <div id="panelCrm" class="ops-panel">
+          <div class="crm-table-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 10px;">
+              <div>
+                <h3 style="font-size: 1.15rem; font-weight: 800; margin: 0;">Guest Directory & Direct Marketing Automation</h3>
+                <p style="font-size: 0.8rem; color: #64748b; margin-top: 2px;">
+                  Personalized guest profiles with VIP tagging, stay histories, and 1-click WhatsApp customer retention.
+                </p>
+              </div>
+
+              <div style="display: flex; gap: 8px;">
+                <input type="text" placeholder="Search guests..." class="ops-select" style="font-size: 0.85rem; width: 200px;">
+              </div>
+            </div>
+
+            <table class="crm-table">
+              <thead>
+                <tr>
+                  <th>Guest Profile</th>
+                  <th>VIP Tier</th>
+                  <th>Contact Info</th>
+                  <th>Stays</th>
+                  <th>Lifetime Spend</th>
+                  <th>Preferred Room</th>
+                  <th>Guest Notes</th>
+                  <th>1-Click WhatsApp Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <strong>Ramesh Sundaram</strong><br>
+                    <small style="color: #64748b;">Chennai, TN</small>
+                  </td>
+                  <td><span class="vip-tag">⭐ VIP Platinum</span></td>
+                  <td>
+                    <span>+91 98404 60459</span><br>
+                    <small style="color: #64748b;">ramesh@example.com</small>
+                  </td>
+                  <td><strong>4 Stays</strong> (14 Nights)</td>
+                  <td><strong style="color: #059669;">₹42,600</strong></td>
+                  <td>Maple Deluxe (201)</td>
+                  <td><small style="color: #475569;">Prefers high floor, filter coffee every morning, quiet room.</small></td>
+                  <td>
+                    <button class="btn-whatsapp-action" onclick="openWhatsAppModal('Ramesh Sundaram', 'welcome')">
+                      <i data-lucide="message-square" style="width: 13px; height: 13px;"></i>
+                      <span>Send Wi-Fi Passcode</span>
+                    </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <strong>Sneha Iyer</strong><br>
+                    <small style="color: #64748b;">Bangalore, KA</small>
+                  </td>
+                  <td><span class="vip-tag" style="background: #e0e7ff; color: #3730a3;">💼 Corporate Exec</span></td>
+                  <td>
+                    <span>+91 98840 99881</span><br>
+                    <small style="color: #64748b;">sneha.iyer@hcl.com</small>
+                  </td>
+                  <td><strong>6 Stays</strong> (22 Nights)</td>
+                  <td><strong style="color: #059669;">₹58,400</strong></td>
+                  <td>Maple Deluxe (208)</td>
+                  <td><small style="color: #475569;">HCL corporate preferred rate. Direct GST billing invoice needed.</small></td>
+                  <td>
+                    <button class="btn-whatsapp-action" onclick="openWhatsAppModal('Sneha Iyer', 'promo')">
+                      <i data-lucide="gift" style="width: 13px; height: 13px;"></i>
+                      <span>Send 15% Promo</span>
+                    </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <strong>Vikram Malhotra</strong><br>
+                    <small style="color: #64748b;">Mumbai, MH</small>
+                  </td>
+                  <td><span class="vip-tag">⭐ VIP Platinum</span></td>
+                  <td>
+                    <span>+91 98111 22334</span><br>
+                    <small style="color: #64748b;">vikram@venture.in</small>
+                  </td>
+                  <td><strong>3 Stays</strong> (18 Nights)</td>
+                  <td><strong style="color: #059669;">₹40,500</strong></td>
+                  <td>Mahogany Suite (301)</td>
+                  <td><small style="color: #475569;">Always books Suite. Requests airport sedan transfer and extra towels.</small></td>
+                  <td>
+                    <button class="btn-whatsapp-action" onclick="openWhatsAppModal('Vikram Malhotra', 'review')">
+                      <i data-lucide="star" style="width: 13px; height: 13px;"></i>
+                      <span>Request Google Review</span>
+                    </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <strong>Priya Narayanan</strong><br>
+                    <small style="color: #64748b;">Madurai, TN</small>
+                  </td>
+                  <td><span class="vip-tag" style="background: #f1f5f9; color: #475569;">Family Guest</span></td>
+                  <td>
+                    <span>+91 98410 44211</span><br>
+                    <small style="color: #64748b;">priya.n@gmail.com</small>
+                  </td>
+                  <td><strong>2 Stays</strong> (6 Nights)</td>
+                  <td><strong style="color: #059669;">₹19,800</strong></td>
+                  <td>Oak Standard (102)</td>
+                  <td><small style="color: #475569;">Visiting Madras ENT Hospital. Early morning check-in preference.</small></td>
+                  <td>
+                    <button class="btn-whatsapp-action" onclick="openWhatsAppModal('Priya Narayanan', 'welcome')">
+                      <i data-lucide="message-square" style="width: 13px; height: 13px;"></i>
+                      <span>Send Digital Key</span>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
 
   <!-- Modal: Simulated Booking Voucher -->
   <div class="modal-backdrop" id="voucherModal" style="display: none;" onclick="if(event.target===this) closeVoucherModal()">
@@ -687,7 +1485,13 @@
       </div>
       <div class="voucher-footer">
         <p class="voucher-note">✓ This is a live demonstration of the WebKartX automated booking voucher sent instantly to guests upon reservation.</p>
-        <button class="btn-confirm-voucher" onclick="closeVoucherModal()">Done & Close Demo</button>
+        <div style="display: flex; gap: 10px; margin-top: 10px;">
+        <button class="btn-confirm-voucher" style="flex: 1;" onclick="closeVoucherModal()">Done</button>
+        <button class="btn-confirm-voucher" style="flex: 1.5; background: #8b5cf6;" onclick="closeVoucherModal(); switchPlatformMode('operations');">
+          <i data-lucide="layout-dashboard" style="width: 14px; height: 14px; vertical-align: middle; margin-right: 4px;"></i>
+          View in Hotelier PMS
+        </button>
+      </div>
       </div>
     </div>
   </div>
@@ -700,6 +1504,152 @@
       <div class="photo-gallery-grid" id="photoGalleryGrid"></div>
     </div>
   </div>
+
+  
+
+  
+  <!-- Modal: Official Indian GST Tax Invoice -->
+  <div class="modal-backdrop" id="gstInvoiceModal" style="display: none;" onclick="if(event.target===this) closeGstInvoiceModal()">
+    <div class="gst-invoice-modal-card">
+      <button class="modal-close-btn" onclick="closeGstInvoiceModal()">✕</button>
+      
+      <div class="gst-invoice-header">
+        <div>
+          <div class="gst-tax-badge">TAX INVOICE</div>
+          <h2 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; margin: 4px 0;" id="gstHotelName">Twin Star Hotel & Suites</h2>
+          <div style="font-size: 0.8rem; color: #475569; line-height: 1.4;">
+            80/29, 2nd Main Rd, Abiramapuram, South Chennai, Tamil Nadu 600018<br>
+            <strong>GSTIN:</strong> 33AAACT9842F1Z8 • <strong>State Code:</strong> 33 (Tamil Nadu)<br>
+            Phone: +91 98404 60459 • Email: reservations@twinstarhotel.com
+          </div>
+        </div>
+
+        <div style="text-align: right;">
+          <button class="gst-print-btn" onclick="window.print()">
+            <i data-lucide="printer" style="width: 14px; height: 14px;"></i>
+            <span>Print / PDF</span>
+          </button>
+          <div style="margin-top: 10px; font-size: 0.82rem;">
+            <strong>Invoice #:</strong> <span id="gstInvoiceNum">INV-2026-TT-8492</span><br>
+            <strong>Date:</strong> Today<br>
+            <strong>Place of Supply:</strong> 33-Tamil Nadu
+          </div>
+        </div>
+      </div>
+
+      <!-- Bill To -->
+      <div style="background: #f8fafc; padding: 12px; border-radius: 6px; margin-bottom: 1.5rem; font-size: 0.85rem; border: 1px solid #e2e8f0;">
+        <strong style="color: #0f172a;">Billed To (Guest Details):</strong><br>
+        <span id="gstGuestName">Ramesh Sundaram (VIP Direct Guest)</span> • Phone: +91 98404 60459<br>
+        Stay Dates: <strong>Sep 28, 2026 to Oct 04, 2026</strong> • Room: <strong>201 (Maple Deluxe Suite)</strong>
+      </div>
+
+      <!-- Itemized Table -->
+      <table style="width: 100%; border-collapse: collapse; font-size: 0.82rem; margin-bottom: 1.5rem;">
+        <thead>
+          <tr style="background: #0f172a; color: #ffffff; text-align: left;">
+            <th style="padding: 8px;">SAC</th>
+            <th style="padding: 8px;">Description of Service</th>
+            <th style="padding: 8px; text-align: center;">Qty</th>
+            <th style="padding: 8px; text-align: right;">Taxable Value</th>
+            <th style="padding: 8px; text-align: center;">CGST</th>
+            <th style="padding: 8px; text-align: center;">SGST</th>
+            <th style="padding: 8px; text-align: right;">Total Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid #e2e8f0;">
+            <td style="padding: 8px;">996311</td>
+            <td style="padding: 8px;">Room Accommodation - Maple Suite (Night 1)</td>
+            <td style="padding: 8px; text-align: center;">1</td>
+            <td style="padding: 8px; text-align: right;">₹3,200.00</td>
+            <td style="padding: 8px; text-align: center;">6% (₹192)</td>
+            <td style="padding: 8px; text-align: center;">6% (₹192)</td>
+            <td style="padding: 8px; text-align: right; font-weight: 700;">₹3,584.00</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e2e8f0;">
+            <td style="padding: 8px;">996311</td>
+            <td style="padding: 8px;">Room Accommodation - Maple Suite (Night 2)</td>
+            <td style="padding: 8px; text-align: center;">1</td>
+            <td style="padding: 8px; text-align: right;">₹3,200.00</td>
+            <td style="padding: 8px; text-align: center;">6% (₹192)</td>
+            <td style="padding: 8px; text-align: center;">6% (₹192)</td>
+            <td style="padding: 8px; text-align: right; font-weight: 700;">₹3,584.00</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #e2e8f0;">
+            <td style="padding: 8px;">996331</td>
+            <td style="padding: 8px;">Twin Star Bistro - Chettinad Dinner & Filter Coffee</td>
+            <td style="padding: 8px; text-align: center;">1</td>
+            <td style="padding: 8px; text-align: right;">₹1,450.00</td>
+            <td style="padding: 8px; text-align: center;">2.5% (₹36.25)</td>
+            <td style="padding: 8px; text-align: center;">2.5% (₹36.25)</td>
+            <td style="padding: 8px; text-align: right; font-weight: 700;">₹1,522.50</td>
+          </tr>
+          <tr style="border-bottom: 2px solid #0f172a;">
+            <td style="padding: 8px;">996412</td>
+            <td style="padding: 8px;">Chennai Airport (MAA) Sedan Chauffeur Transfer</td>
+            <td style="padding: 8px; text-align: center;">1</td>
+            <td style="padding: 8px; text-align: right;">₹850.00</td>
+            <td style="padding: 8px; text-align: center;">-</td>
+            <td style="padding: 8px; text-align: center;">-</td>
+            <td style="padding: 8px; text-align: right; font-weight: 700;">₹850.00</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Totals & Signatory -->
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; font-size: 0.85rem;">
+        <div>
+          <div style="color: #64748b; font-size: 0.75rem;">Payment Terms: Immediate / Pre-paid</div>
+          <div style="color: #059669; font-weight: 700; margin-top: 4px;">Advance UPI Received: ₹5,000.00</div>
+          <div style="color: #dc2626; font-weight: 800; margin-top: 2px;">Balance Payable at Checkout: ₹4,540.50</div>
+        </div>
+
+        <div style="text-align: right;">
+          <div style="font-size: 1.25rem; font-weight: 800; color: #0f172a;">Total Invoice Value: ₹9,540.50</div>
+          <div style="font-size: 0.75rem; color: #64748b; margin-top: 20px;">For Twin Star Hotel & Suites</div>
+          <div style="font-weight: 700; margin-top: 4px;">Authorized Signatory</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: WhatsApp Message Preview Modal -->
+  <div class="modal-backdrop" id="whatsappModal" style="display: none;" onclick="if(event.target===this) closeWhatsAppModal()">
+    <div class="whatsapp-modal-card">
+      <button class="modal-close-btn" onclick="closeWhatsAppModal()">✕</button>
+      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1rem;">
+        <div style="width: 36px; height: 36px; background: #25d366; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff;">
+          <i data-lucide="message-circle" style="width: 20px; height: 20px;"></i>
+        </div>
+        <div>
+          <h4 style="margin: 0; font-size: 1rem; color: #111b21;" id="waGuestHeader">WhatsApp Automation Preview</h4>
+          <span style="font-size: 0.75rem; color: #667781;">Twin Star Hotel Reception</span>
+        </div>
+      </div>
+
+      <div class="whatsapp-chat-bubble" id="whatsappMessageContent">
+        <!-- Filled dynamically -->
+      </div>
+
+      <div style="margin-top: 1.25rem; display: flex; gap: 8px;">
+        <button style="flex: 1; padding: 10px; background: #25d366; color: #fff; border: none; border-radius: 6px; font-weight: 700; cursor: pointer;" onclick="closeWhatsAppModal()">
+          ✓ Simulate Sent
+        </button>
+        <button style="padding: 10px 16px; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; font-weight: 600; cursor: pointer;" onclick="closeWhatsAppModal()">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Quick-Switch Pill -->
+  <button class="floating-pms-pill" id="floatingPmsPill" onclick="toggleFloatingView()">
+    <i data-lucide="layout-dashboard" style="width: 16px; height: 16px;"></i>
+    <span id="floatingPmsText">Switch to Hotelier PMS</span>
+    <span class="pill-badge" id="floatingPmsBadge">Admin</span>
+  </button>
+
 
   <!-- Master Interactive Script -->
   <script src="./script.js"></script>
