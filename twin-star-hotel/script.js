@@ -240,6 +240,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   const qName = urlParams.get('name') || urlParams.get('hotel') || urlParams.get('business_name');
   const qCity = urlParams.get('city');
   const qPhone = urlParams.get('phone') || urlParams.get('whatsapp');
+  const qImage = urlParams.get('image') || urlParams.get('hero') || urlParams.get('hero_image') || urlParams.get('bg');
   const qMode = urlParams.get('view') || urlParams.get('tab') || urlParams.get('mode');
 
   if (qName) {
@@ -252,6 +253,9 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (qPhone) {
     window.currentHotel.phone = qPhone.trim();
     window.currentHotel.phoneDigits = qPhone.replace(/\D/g, '');
+  }
+  if (qImage) {
+    window.currentHotel.heroImage = qImage.trim();
   }
 
   // Set default dates
@@ -1307,8 +1311,10 @@ function applyHotelPersonalization() {
   const heroMainTitle = document.getElementById('heroMainTitle');
   const heroCityAccent = document.getElementById('heroCityAccent');
   const heroHotelNameInline = document.getElementById('heroHotelNameInline');
-  if (heroCityAccent) heroCityAccent.textContent = `${h.area}, ${h.city}`;
+  const heroImg = document.getElementById('heroImage');
+  if (heroCityAccent) heroCityAccent.textContent = `${h.area ? h.area + ', ' : ''}${h.city}`;
   if (heroHotelNameInline) heroHotelNameInline.textContent = h.name;
+  if (heroImg && h.heroImage) heroImg.src = h.heroImage;
 
   const footerHotelName = document.getElementById('footerHotelName');
   const copyHotelName = document.getElementById('copyHotelName');
