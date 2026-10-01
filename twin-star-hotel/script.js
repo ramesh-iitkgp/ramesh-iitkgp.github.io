@@ -5,8 +5,8 @@
 
 // Global Hotel State & Configuration
 window.currentHotel = {
-  name: "Twin Star Hotel & Suites",
-  shortName: "TWIN STAR",
+  name: "Grand Star Resort & Luxury Suites",
+  shortName: "GRAND STAR",
   city: "Chennai",
   area: "Abiramapuram",
   phone: "+91 98404 60459",
