@@ -1,0 +1,43 @@
+{
+  "business_name": "Ponnus Homestay",
+  "canonical_name": "Ponnus Homestay & Ladies Residency",
+  "short_name": "Ponnus Homestay",
+  "tagline": "Come as a Guest, Leave as Family",
+  "editorial_subhead": "Safe, Peaceful & Homely Stay Just 200 Meters from Sabine Hospital, Muvattupuzha",
+  "category": "Homestay & Patient Care Accommodation",
+  "industry_slug": "homestay",
+  "city": "Muvattupuzha",
+  "district": "Ernakulam",
+  "state": "Kerala",
+  "country": "India",
+  "address": "Hospital Road, Pezhakkappilly, Muvattupuzha, Ernakulam, Kerala 686673 (Opposite / Near Sabine Hospital)",
+  "short_location": "Near Sabine Hospital, Muvattupuzha, Kerala",
+  "phone": "+91 96056 16938",
+  "secondary_phone": "+91 96058 22293",
+  "whatsapp": "+91 96056 16938",
+  "whatsapp_number_digits": "919605616938",
+  "email": "info@ponnushomestay.com",
+  "rating": 4.9,
+  "review_count": 128,
+  "currency": "INR",
+  "currency_symbol": "₹",
+  "check_in_time": "12:00 PM",
+  "check_out_time": "11:00 AM",
+  "starting_rate": 899,
+  "features": [
+    "Just 200m / 2 Minutes Walking Distance to Sabine Hospital & Research Centre",
+    "Specialized Care & Homely Atmosphere for IVF & Fertility Patients",
+    "Safe, Secure Environment with 24/7 CCTV & Dedicated Women Support",
+    "Fresh, Nutritious Traditional Home-Cooked Kerala Food (Custom Dietary Care)",
+    "Fully Furnished AC & Non-AC Rooms with Clean Attached Bathrooms",
+    "High-Speed Wi-Fi & Dedicated In-House Laundry / Clothes Washing & Drying",
+    "Local Cab Assistance & Cochin International Airport (COK) Pickup & Drop",
+    "Direct 1-Tap Instant WhatsApp Reservation with Zero Booking Fees"
+  ],
+  "stats": [
+    { "label": "Distance to Sabine Hospital", "value": "200 m", "sub": "2 Mins Easy Walk" },
+    { "label": "Guest Satisfaction", "value": "4.9 ★", "sub": "120+ Verified Patient & Family Reviews" },
+    { "label": "Homely Meals", "value": "3x Daily", "sub": "Fresh Home-Cooked Kerala Diet" },
+    { "label": "Airport Distance (COK)", "value": "45 Mins", "sub": "Cochin International Airport Pickup" }
+  ]
+}
