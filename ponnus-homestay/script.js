@@ -1,6 +1,6 @@
 /**
- * PONNUS HOMESTAY — MUVATTUPUZHA, KERALA
- * Interactive Application & WhatsApp Direct Booking Engine
+ * PONNUS HOMESTAY — CHINNAKANAL, MUNNAR
+ * Interactive Application & Direct WhatsApp Mountain Booking Engine
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -11,42 +11,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 2. Room Configuration Data
   const ROOMS = {
-    'deluxe-ac': {
-      id: 'deluxe-ac',
-      name: 'Deluxe AC Patient & Couple Sanctuary',
-      rate: 1399,
-      image: './assets/images/deluxe-ac-bedroom-1.jpg',
-      category: 'Air-Conditioned',
-      specs: '1 King Bed • 2 Guests • Attached Bath • Split AC • Wi-Fi • Balcony'
+    'deluxe-valley': {
+      id: 'deluxe-valley',
+      name: 'Deluxe Tea Valley View Room',
+      rate: 1699,
+      image: './assets/images/deluxe-valley-room.jpg',
+      category: 'Valley View',
+      specs: '1 King Bed • 2 Guests • Attached Bath • 24/7 Hot Water • Balcony Sit-Out • Free Wi-Fi'
     },
-    'executive-suite': {
-      id: 'executive-suite',
-      name: 'Executive Long-Stay Care Suite',
-      rate: 1799,
-      image: './assets/images/executive-patient-suite.jpg',
-      category: 'Premium Suite',
-      specs: '1 King + Recliner • 2-3 Guests • Orthopedic Bed • Hot Kettle • Dining'
+    'panoramic-suite': {
+      id: 'panoramic-suite',
+      name: 'Panoramic Mountain Mist Suite',
+      rate: 2299,
+      image: './assets/images/tea-view-suite.jpg',
+      category: 'Mountain Suite',
+      specs: '1 King Bed + Lounge • 2-3 Guests • 180° Mist Views • Hot Kettle • Luxury Bath'
     },
-    'comfort-non-ac': {
-      id: 'comfort-non-ac',
-      name: 'Comfort Non-AC Standard Room',
-      rate: 899,
-      image: './assets/images/comfort-double-bedroom.jpg',
-      category: 'Economy Non-AC',
-      specs: 'Queen / Double Bed • 2 Guests • Attached Bath • Ceiling Fan • Wi-Fi'
+    'cozy-cottage': {
+      id: 'cozy-cottage',
+      name: 'Cozy Hillside Cottage Room',
+      rate: 1499,
+      image: './assets/images/cozy-cottage-bedroom.jpg',
+      category: 'Cottage Classic',
+      specs: '1 Queen Bed • 2 Guests • Attached Bath • Mountain Air • Wi-Fi • Garden View'
     },
-    'family-multi-bed': {
-      id: 'family-multi-bed',
-      name: 'Spacious Family & Attendant Suite',
-      rate: 2199,
-      image: './assets/images/spacious-family-room.jpg',
+    'family-plantation': {
+      id: 'family-plantation',
+      name: 'Spacious Family Plantation Suite',
+      rate: 2999,
+      image: './assets/images/family-mountain-suite.jpg',
       category: 'Family Suite',
-      specs: '2 Double Beds • Up to 4 Guests • Attached Bath • AC • Balcony'
+      specs: '2 King Beds • Up to 5 Guests • Private Mountain Balcony • Spacious Lounge • Hot Water'
     }
   };
 
-  const WHATSAPP_PHONE = '919605616938';
-  const PHONE_DISPLAY = '+91 96056 16938';
+  const WHATSAPP_PHONE = '919447962994';
+  const PHONE_DISPLAY = '+91 94479 62994';
 
   // 3. Header Scroll Effect
   const siteHeader = document.querySelector('.site-header');
@@ -115,18 +115,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnCloseModal = document.getElementById('closeBookingModal');
   const modalRoomSelect = document.getElementById('modalRoomSelect');
   const modalGuests = document.getElementById('modalGuests');
-  const modalPurpose = document.getElementById('modalPurpose');
+  const modalTripType = document.getElementById('modalTripType');
+  const modalCampfire = document.getElementById('modalCampfire');
+  const modalSafari = document.getElementById('modalSafari');
   const modalMeals = document.getElementById('modalMeals');
-  const modalPickup = document.getElementById('modalPickup');
   const modalName = document.getElementById('modalName');
 
   const calcRoomLabel = document.getElementById('calcRoomLabel');
   const calcNightsLabel = document.getElementById('calcNightsLabel');
   const calcBaseTotal = document.getElementById('calcBaseTotal');
+  const calcCampfireRow = document.getElementById('calcCampfireRow');
+  const calcCampfireTotal = document.getElementById('calcCampfireTotal');
+  const calcSafariRow = document.getElementById('calcSafariRow');
+  const calcSafariTotal = document.getElementById('calcSafariTotal');
   const calcMealsRow = document.getElementById('calcMealsRow');
   const calcMealsTotal = document.getElementById('calcMealsTotal');
-  const calcPickupRow = document.getElementById('calcPickupRow');
-  const calcPickupTotal = document.getElementById('calcPickupTotal');
   const calcGrandTotal = document.getElementById('calcGrandTotal');
   const waPreviewText = document.getElementById('waPreviewText');
   const btnSendWhatsApp = document.getElementById('btnSendWhatsApp');
@@ -169,27 +172,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Strip Form submit handler -> opens modal with strip values
+  // Strip Form submit handler
   const stripBookingForm = document.getElementById('stripBookingForm');
   if (stripBookingForm) {
     stripBookingForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const selectedRoom = document.getElementById('stripRoom').value;
       const selectedGuests = document.getElementById('stripGuests').value;
-      const selectedPurpose = document.getElementById('stripPurpose').value;
 
       if (modalRoomSelect) modalRoomSelect.value = selectedRoom;
       if (modalGuests) modalGuests.value = selectedGuests;
-      if (modalPurpose) modalPurpose.value = selectedPurpose;
 
       openBookingModal();
     });
   }
 
-  // Calculate pricing and generate WhatsApp message
+  // Calculate pricing and compile WhatsApp message
   function calculateModalSummary() {
-    const rKey = modalRoomSelect ? modalRoomSelect.value : 'deluxe-ac';
-    const room = ROOMS[rKey] || ROOMS['deluxe-ac'];
+    const rKey = modalRoomSelect ? modalRoomSelect.value : 'deluxe-valley';
+    const room = ROOMS[rKey] || ROOMS['deluxe-valley'];
 
     const cinDate = new Date(modalCheckIn.value || today);
     const coutDate = new Date(modalCheckOut.value || tomorrow);
@@ -201,25 +202,47 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const guests = modalGuests ? modalGuests.value : '2 Guests';
-    const purpose = modalPurpose ? modalPurpose.value : 'Visiting Sabine Hospital (IVF / Treatment)';
+    const tripType = modalTripType ? modalTripType.value : 'Couple / Honeymoon Getaway';
     const name = modalName && modalName.value.trim() ? modalName.value.trim() : 'Guest';
 
     // Base Room Price
     const baseTotal = room.rate * nights;
 
     // Addons
+    const hasCampfire = modalCampfire ? modalCampfire.checked : false;
+    const campfireTotal = hasCampfire ? 500 : 0;
+
+    const hasSafari = modalSafari ? modalSafari.checked : false;
+    const safariTotal = hasSafari ? 2200 : 0;
+
     const hasMeals = modalMeals ? modalMeals.checked : false;
-    const mealsTotal = hasMeals ? (350 * nights * (parseInt(guests) || 2)) : 0;
+    const numGuests = parseInt(guests) || 2;
+    const mealsTotal = hasMeals ? (400 * nights * numGuests) : 0;
 
-    const hasPickup = modalPickup ? modalPickup.checked : false;
-    const pickupTotal = hasPickup ? 1200 : 0;
-
-    const grandTotal = baseTotal + mealsTotal + pickupTotal;
+    const grandTotal = baseTotal + campfireTotal + safariTotal + mealsTotal;
 
     // Update UI elements
     if (calcRoomLabel) calcRoomLabel.textContent = `${room.name}`;
     if (calcNightsLabel) calcNightsLabel.textContent = `${nights} Night${nights > 1 ? 's' : ''} • ₹${room.rate.toLocaleString('en-IN')}/night`;
     if (calcBaseTotal) calcBaseTotal.textContent = `₹${baseTotal.toLocaleString('en-IN')}`;
+
+    if (calcCampfireRow) {
+      if (hasCampfire) {
+        calcCampfireRow.style.display = 'flex';
+        calcCampfireTotal.textContent = `₹${campfireTotal.toLocaleString('en-IN')}`;
+      } else {
+        calcCampfireRow.style.display = 'none';
+      }
+    }
+
+    if (calcSafariRow) {
+      if (hasSafari) {
+        calcSafariRow.style.display = 'flex';
+        calcSafariTotal.textContent = `₹${safariTotal.toLocaleString('en-IN')}`;
+      } else {
+        calcSafariRow.style.display = 'none';
+      }
+    }
 
     if (calcMealsRow) {
       if (hasMeals) {
@@ -230,33 +253,25 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    if (calcPickupRow) {
-      if (hasPickup) {
-        calcPickupRow.style.display = 'flex';
-        calcPickupTotal.textContent = `₹${pickupTotal.toLocaleString('en-IN')}`;
-      } else {
-        calcPickupRow.style.display = 'none';
-      }
-    }
-
     if (calcGrandTotal) calcGrandTotal.textContent = `₹${grandTotal.toLocaleString('en-IN')}`;
 
     // WhatsApp Formatted Text
     const waText = 
-`*New Direct Booking Inquiry — Ponnus Homestay* 🌿
-_Near Sabine Hospital, Muvattupuzha, Kerala_
+`*New Booking Inquiry — Ponnus Homestay, Chinnakanal* ⛰️
+_Near Balu Stores, Chinnakanal, Munnar (Kerala)_
 ━━━━━━━━━━━━━━━━━━━━━
 👤 *Guest Name:* ${name}
 🛏️ *Room Type:* ${room.name}
 📅 *Check-In:* ${modalCheckIn.value}
 📅 *Check-Out:* ${modalCheckOut.value} (${nights} Night${nights > 1 ? 's' : ''})
 👥 *Guests:* ${guests}
-🏥 *Purpose:* ${purpose}
-🍲 *Homely Kerala Meals:* ${hasMeals ? 'Yes (Requested)' : 'No'}
-🚕 *Cochin Airport Pickup:* ${hasPickup ? 'Yes (Requested)' : 'No'}
-💰 *Estimated Total:* ₹${grandTotal.toLocaleString('en-IN')} (Direct WhatsApp Discounted Rate)
+🌄 *Trip Type:* ${tripType}
+🔥 *Campfire & BBQ:* ${hasCampfire ? 'Yes (Requested)' : 'No'}
+🚙 *Kolukkumalai Sunrise 4x4 Safari:* ${hasSafari ? 'Yes (Requested)' : 'No'}
+🍲 *Kerala Homely Meals:* ${hasMeals ? 'Yes (Requested)' : 'No'}
+💰 *Estimated Total:* ₹${grandTotal.toLocaleString('en-IN')} (Direct WhatsApp Best Rate)
 ━━━━━━━━━━━━━━━━━━━━━
-Hello! I would like to check room availability and confirm my stay directly. Please let me know the booking confirmation.`;
+Hello! We would like to confirm room availability and book our Munnar stay directly. Kindly share the confirmation details.`;
 
     if (waPreviewText) waPreviewText.textContent = waText;
 
@@ -267,7 +282,7 @@ Hello! I would like to check room availability and confirm my stay directly. Ple
   }
 
   // Attach change listeners to modal inputs
-  [modalRoomSelect, modalCheckIn, modalCheckOut, modalGuests, modalPurpose, modalMeals, modalPickup, modalName].forEach(input => {
+  [modalRoomSelect, modalCheckIn, modalCheckOut, modalGuests, modalTripType, modalCampfire, modalSafari, modalMeals, modalName].forEach(input => {
     if (input) {
       input.addEventListener('change', calculateModalSummary);
       input.addEventListener('input', calculateModalSummary);
