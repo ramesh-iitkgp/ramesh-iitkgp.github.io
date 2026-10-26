@@ -1,0 +1,66 @@
+{
+    "business_name": "Le Grace Residency",
+    "hero_brand_name": "Le Grace",
+    "source_business_name": "Le Grace Residency",
+    "tagline": "Experience Refined Hospitality in South Chennai",
+    "category": "Hotel",
+    "phone": "919842929440",
+    "whatsapp": "919842929440",
+    "email": "",
+    "website_url": "",
+    "address": "\n4/32, 80 Feet Rd, opposite to Apollo Hospitals, Deputy Collector Colony, Managiri, KK Nagar, Madurai, Tamil Nadu 625020",
+    "city": "Madurai",
+    "state": "",
+    "country": "India",
+    "currency_symbol": "₹",
+    "currency_code": "INR",
+    "opening_hours": "",
+    "rating": "1",
+    "review_count": "",
+    "google_maps_url": "https://www.google.com/maps/place/Le+Grace+Residency/data=!4m10!3m9!1s0x3b00c5dd77b28101:0x14a44500fba0af4a!5m2!4m1!1i2!8m2!3d9.9300485!4d78.1486164!16s%2Fg%2F11q84ms7d_!19sChIJAYGyd93FADsRSq-g-wBFpBQ?authuser=0&hl=en&g_ep=EgoyMDI2MTAyMC4wIJJjKgBIAVAD&rclk=1",
+    "logo_url": "",
+    "hero_image": "",
+    "service_areas": [
+        "Madurai"
+    ],
+    "social": {
+        "instagram": "",
+        "facebook": "",
+        "tiktok": ""
+    },
+    "before_after_pairs": [],
+    "services": [
+        {
+            "name": "Luxury Rooms & Oceanfront Villas",
+            "description": "Bespoke suites and private villa living with panoramic ocean views and private plunge pools.",
+            "image": ""
+        },
+        {
+            "name": "Direct Online Booking Guarantee",
+            "description": "Best rate guaranteed with instant confirmation, early check-in, and zero third-party commissions.",
+            "image": ""
+        },
+        {
+            "name": "Beachfront Dining & Sunset Lounges",
+            "description": "World-class restaurants serving fresh coastal fare, chef's tasting menus, and artisan cocktails.",
+            "image": ""
+        },
+        {
+            "name": "Holistic Spa & Wellness Therapies",
+            "description": "Signature massages, organic treatments, sea rituals, and rejuvenating wellness journeys.",
+            "image": ""
+        },
+        {
+            "name": "Private VIP Airport Transfers",
+            "description": "Seamless point-to-point luxury transfers from the terminal straight to your villa suite.",
+            "image": ""
+        },
+        {
+            "name": "Curated Coastal & Island Experiences",
+            "description": "Private yacht charters, marine wildlife safaris, sunset cruises, and tailored island tours.",
+            "image": ""
+        }
+    ],
+    "business_images": [],
+    "reviews": []
+}

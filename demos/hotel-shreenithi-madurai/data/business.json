@@ -1,0 +1,66 @@
+{
+    "business_name": "Hotel Shreenithi",
+    "hero_brand_name": "Hotel Shreenithi",
+    "source_business_name": "Hotel Shreenithi",
+    "tagline": "Experience Refined Hospitality in South Chennai",
+    "category": "Hotel",
+    "phone": "919655859963",
+    "whatsapp": "919655859963",
+    "email": "",
+    "website_url": "",
+    "address": "\nMATTUTHAVANI, mattuthavani, BUSTAND 7, Melur Main Rd, Mattuthavani, Madurai, Tamil Nadu 625007",
+    "city": "Madurai",
+    "state": "",
+    "country": "India",
+    "currency_symbol": "₹",
+    "currency_code": "INR",
+    "opening_hours": "",
+    "rating": "2",
+    "review_count": "",
+    "google_maps_url": "https://www.google.com/maps/place/Hotel+Shreenithi/data=!4m10!3m9!1s0x3b00c5abc7339ecb:0x2721cee6cc4b7312!5m2!4m1!1i2!8m2!3d9.9433751!4d78.1520671!16s%2Fg%2F11k4twqdz7!19sChIJy54zx6vFADsREnNLzObOISc?authuser=0&hl=en&g_ep=EgoyMDI2MTAyMC4wIJJjKgBIAVAD&rclk=1",
+    "logo_url": "",
+    "hero_image": "",
+    "service_areas": [
+        "Madurai"
+    ],
+    "social": {
+        "instagram": "",
+        "facebook": "",
+        "tiktok": ""
+    },
+    "before_after_pairs": [],
+    "services": [
+        {
+            "name": "Luxury Rooms & Oceanfront Villas",
+            "description": "Bespoke suites and private villa living with panoramic ocean views and private plunge pools.",
+            "image": ""
+        },
+        {
+            "name": "Direct Online Booking Guarantee",
+            "description": "Best rate guaranteed with instant confirmation, early check-in, and zero third-party commissions.",
+            "image": ""
+        },
+        {
+            "name": "Beachfront Dining & Sunset Lounges",
+            "description": "World-class restaurants serving fresh coastal fare, chef's tasting menus, and artisan cocktails.",
+            "image": ""
+        },
+        {
+            "name": "Holistic Spa & Wellness Therapies",
+            "description": "Signature massages, organic treatments, sea rituals, and rejuvenating wellness journeys.",
+            "image": ""
+        },
+        {
+            "name": "Private VIP Airport Transfers",
+            "description": "Seamless point-to-point luxury transfers from the terminal straight to your villa suite.",
+            "image": ""
+        },
+        {
+            "name": "Curated Coastal & Island Experiences",
+            "description": "Private yacht charters, marine wildlife safaris, sunset cruises, and tailored island tours.",
+            "image": ""
+        }
+    ],
+    "business_images": [],
+    "reviews": []
+}
