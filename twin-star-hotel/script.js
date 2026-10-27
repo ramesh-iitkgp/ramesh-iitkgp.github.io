@@ -1,5 +1,5 @@
 /**
- * Twin Star Hotel & Suites — Complete 3-in-1 Hospitality Operating System
+ * Luxury Hotel & Suites — Complete 3-in-1 Hospitality Operating System
  * WebKartX Demo Preview: Luxury Website + 0% Booking Engine + Front Desk PMS & CRM
  */
 
@@ -939,8 +939,23 @@ function promptAddCharge() {
 // --------------------------------------------------------------------------
 function openGstInvoiceModal(folioId) {
   const m = document.getElementById('gstInvoiceModal');
+  const h = window.currentHotel;
   const hotelNameEl = document.getElementById('gstHotelName');
-  if (hotelNameEl) hotelNameEl.textContent = window.currentHotel.name;
+  if (hotelNameEl) hotelNameEl.textContent = h.name;
+
+  const gstAddr = document.getElementById('gstAddressLine');
+  if (gstAddr) {
+    gstAddr.innerHTML = `${h.address || ('Central Road, ' + h.city + ', Tamil Nadu')}<br><strong>GSTIN:</strong> 33AAACT9842F1Z8 • <strong>State Code:</strong> 33 (Tamil Nadu)<br>Phone: ${h.phone} • Email: ${h.email || ('reservations@' + (h.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')) + '.com')}`;
+  }
+
+  const gstSign = document.getElementById('gstSignatoryHotel');
+  if (gstSign) gstSign.textContent = `For ${h.name}`;
+
+  const gstDining = document.getElementById('gstDiningItem');
+  if (gstDining) gstDining.textContent = `${h.shortName || h.name} In-House Dining - Dinner & Breakfast Service`;
+
+  const gstTransfer = document.getElementById('gstTransferItem');
+  if (gstTransfer) gstTransfer.textContent = `${h.city} Station / Airport Chauffeur Transfer`;
 
   if (m) m.style.display = 'flex';
   if (window.lucide) window.lucide.createIcons();
@@ -958,16 +973,23 @@ function openWhatsAppModal(guestName, type) {
   const m = document.getElementById('whatsappModal');
   const header = document.getElementById('waGuestHeader');
   const content = document.getElementById('whatsappMessageContent');
+  const waRec = document.getElementById('waReceptionTag');
+
+  const hName = window.currentHotel.name;
+  const hShort = window.currentHotel.shortName || hName.split(' ')[0].toUpperCase();
+  const hCity = window.currentHotel.city;
+  const hSlug = hName.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
   if (header) header.textContent = `WhatsApp message to: ${guestName}`;
+  if (waRec) waRec.textContent = `${hName} Reception Desk`;
 
   let msg = '';
   if (type === 'welcome') {
-    msg = `Dear <strong>${guestName}</strong>, welcome to <strong>${window.currentHotel.name}</strong>! 🌟 Your AC room key is ready. High-speed Wi-Fi network: <em>TwinStar_Guest</em> (Passcode: <em>Star2026</em>). For in-room dining, dial 9. Have a wonderful stay!`;
+    msg = `Dear <strong>${guestName}</strong>, welcome to <strong>${hName}</strong>, ${hCity}! 🌟 Your AC room key is ready. High-speed Wi-Fi network: <em>${hShort}_Guest</em> (Passcode: <em>Welcome2026</em>). For in-room dining, dial 9. Have a wonderful stay!`;
   } else if (type === 'promo') {
-    msg = `Hello <strong>${guestName}</strong>! As a valued guest of <strong>${window.currentHotel.name}</strong>, enjoy an exclusive <strong>15% Direct Discount</strong> on your next visit with code <strong>DIRECTVIP15</strong> on our official booking engine: https://ramesh-iitkgp.github.io/twin-star-hotel/`;
+    msg = `Hello <strong>${guestName}</strong>! As a valued guest of <strong>${hName}</strong>, enjoy an exclusive <strong>15% Direct Discount</strong> on your next visit to ${hCity} with code <strong>DIRECTVIP15</strong> on our official booking engine: https://ramesh-iitkgp.github.io/twin-star-hotel/?name=${encodeURIComponent(hName)}&city=${encodeURIComponent(hCity)}`;
   } else if (type === 'review') {
-    msg = `Dear <strong>${guestName}</strong>, thank you for staying at <strong>${window.currentHotel.name}</strong>! We hope you enjoyed your time with us. Could you take 30 seconds to share your experience on Google? It means the world to our team: https://g.page/r/twinstar-review/`;
+    msg = `Dear <strong>${guestName}</strong>, thank you for staying at <strong>${hName}</strong>, ${hCity}! We hope you enjoyed your time with us. Could you take 30 seconds to share your experience on Google? It means the world to our team: https://g.page/r/${hSlug}-review/`;
   }
 
   if (content) content.innerHTML = msg;
@@ -1160,6 +1182,9 @@ function recalculateTotal() {
   if (valMeal) valMeal.textContent = `₹${mealTotal.toLocaleString('en-IN')}`;
   if (valTaxes) valTaxes.textContent = `₹${taxes.toLocaleString('en-IN')}`;
   if (valGrand) valGrand.textContent = `₹${grandTotal.toLocaleString('en-IN')}`;
+
+  const sumHotel = document.getElementById('summaryHotelName');
+  if (sumHotel) sumHotel.textContent = window.currentHotel.name;
 }
 
 // --------------------------------------------------------------------------
@@ -1281,43 +1306,281 @@ function closeVoucherModal() {
 // --------------------------------------------------------------------------
 function applyHotelPersonalization() {
   const h = window.currentHotel;
+  const name = h.name || 'Grand Star Luxury Resort & Suites';
+  const city = h.city || 'Chennai';
+  const phone = h.phone || '+91 98404 60459';
+  const phoneDigits = h.phoneDigits || phone.replace(/\D/g, '');
+  const shortName = h.shortName || name.split(' ')[0].toUpperCase();
+  const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+  const email = h.email || `reservations@${slug}.com`;
+  const address = h.address || `Central Road, ${city}`;
 
+  // 1. Top bar & Unified Mode Switcher
   const platTitle = document.getElementById('platformHotelTitle');
-  if (platTitle) platTitle.textContent = `${h.name} • ${h.city}`;
+  if (platTitle) platTitle.textContent = `${name} • ${city}`;
 
   const opsTitle = document.getElementById('opsHotelTitle');
-  if (opsTitle) opsTitle.textContent = `${h.name} — Front Desk Operations`;
+  if (opsTitle) opsTitle.textContent = `${name} — Front Desk Operations`;
 
   const opsCity = document.getElementById('opsCityTag');
-  if (opsCity) opsCity.textContent = `${h.area}, ${h.city}`;
+  if (opsCity) opsCity.textContent = city;
+
+  const opsHeaderTag = document.getElementById('opsHeaderPropertyTag');
+  if (opsHeaderTag) opsHeaderTag.textContent = `HOTEL PROPERTY MANAGEMENT SYSTEM • ${city.toUpperCase()}`;
 
   const pageTitle = document.getElementById('pageTitle');
-  if (pageTitle) pageTitle.textContent = `${h.name} | Official Hotel & Resort Website • ${h.city}`;
+  if (pageTitle) pageTitle.textContent = `${name} | Official Hotel & Resort Website • ${city}`;
 
   const leadHotelName = document.getElementById('leadHotelName');
-  if (leadHotelName) leadHotelName.textContent = `${h.name} Management`;
+  if (leadHotelName) leadHotelName.textContent = `${name} Management`;
 
+  // 2. Header & Branding
   const hotelHeaderName = document.getElementById('hotelHeaderName');
-  if (hotelHeaderName) hotelHeaderName.textContent = h.shortName;
+  if (hotelHeaderName) hotelHeaderName.textContent = shortName;
 
   const headerCity = document.getElementById('headerCity');
-  if (headerCity) headerCity.textContent = h.city.toUpperCase();
+  if (headerCity) headerCity.textContent = city.toUpperCase();
+
+  const hotelHeaderSubtitle = document.getElementById('hotelHeaderSubtitle');
+  if (hotelHeaderSubtitle) hotelHeaderSubtitle.innerHTML = `RESORT &amp; LUXURY SUITES • <span>${city.toUpperCase()}</span>`;
 
   const headerPhoneText = document.getElementById('headerPhoneText');
   const headerPhoneBtn = document.getElementById('headerPhoneBtn');
-  if (headerPhoneText) headerPhoneText.textContent = h.phone;
-  if (headerPhoneBtn) headerPhoneBtn.href = `tel:${h.phoneDigits}`;
+  if (headerPhoneText) headerPhoneText.textContent = phone;
+  if (headerPhoneBtn) headerPhoneBtn.href = `tel:${phoneDigits}`;
 
+  // 3. Hero Section
   const heroMainTitle = document.getElementById('heroMainTitle');
+  if (heroMainTitle) {
+    heroMainTitle.innerHTML = `<span class="block-light">Experience 5-Star Luxury in ${city} at</span><span class="block-accent" id="heroCityAccent">${name}</span>`;
+  }
   const heroCityAccent = document.getElementById('heroCityAccent');
+  if (heroCityAccent) heroCityAccent.textContent = name;
+
   const heroHotelNameInline = document.getElementById('heroHotelNameInline');
+  if (heroHotelNameInline) heroHotelNameInline.textContent = name;
+
+  const heroSubtitleText = document.getElementById('heroSubtitleText');
+  if (heroSubtitleText) {
+    heroSubtitleText.innerHTML = `Welcome to <strong>${name}</strong>, ${city}. Signature hospitality, luxury AC suites, gourmet dining, best direct rate guarantee, and instant WhatsApp booking.`;
+  }
+
+  const heroBadgeText = document.getElementById('heroBadgeText');
+  if (heroBadgeText) heroBadgeText.textContent = `0% Commission Direct Booking Channel • ${city} Verified Hotel`;
+
   const heroImg = document.getElementById('heroImage');
-  if (heroCityAccent) heroCityAccent.textContent = `${h.area ? h.area + ', ' : ''}${h.city}`;
-  if (heroHotelNameInline) heroHotelNameInline.textContent = h.name;
   if (heroImg && h.heroImage) heroImg.src = h.heroImage;
 
+  // 4. Booking Quote Summaries (Modal & 0% Engine)
+  const summaryHotelName = document.getElementById('summaryHotelName');
+  if (summaryHotelName) summaryHotelName.textContent = name;
+
+  const engineSummaryHotelName = document.getElementById('engineSummaryHotelName');
+  if (engineSummaryHotelName) engineSummaryHotelName.textContent = name;
+
+  // 5. Dining Section
+  const diningSection = document.getElementById('dining');
+  if (diningSection) {
+    const diningTitle = diningSection.querySelector('.section-title');
+    if (diningTitle) diningTitle.textContent = `${name} Dining & In-House Café`;
+
+    const diningDesc = diningSection.querySelector('.section-desc');
+    if (diningDesc) diningDesc.textContent = `From piping hot breakfast buffets to chef's signature multi-cuisine dinners and 24/7 in-room dining at ${name}, ${city}.`;
+
+    const diningImg = diningSection.querySelector('img');
+    if (diningImg) diningImg.alt = `Dining at ${name}`;
+  }
+
+  // 6. Location & Contact Section
+  const locSection = document.getElementById('location');
+  if (locSection) {
+    const locTitle = locSection.querySelector('.section-title');
+    if (locTitle) locTitle.textContent = `Prime Connectivity in ${city}`;
+
+    const locDesc = document.getElementById('locationDescText');
+    if (locDesc) locDesc.textContent = `Centrally located in ${city}, offering peaceful surroundings with effortless reach to key business, transit, and cultural destinations.`;
+
+    const landmarks = locSection.querySelectorAll('.landmark-item span');
+    if (landmarks.length >= 4) {
+      landmarks[0].innerHTML = `<strong>${city} City Center &amp; Shopping:</strong> 5 mins drive`;
+      landmarks[1].innerHTML = `<strong>Local Cultural &amp; Heritage Sites:</strong> 10 mins drive`;
+      landmarks[2].innerHTML = `<strong>${city} Main Railway Junction:</strong> 15 mins drive`;
+      landmarks[3].innerHTML = `<strong>${city} Airport &amp; Transit Hub:</strong> 25 mins drive`;
+    }
+  }
+
+  const hotelFullAddressName = document.getElementById('hotelFullAddressName');
+  if (hotelFullAddressName) hotelFullAddressName.textContent = name;
+
+  const hotelFullAddress = document.getElementById('hotelFullAddress');
+  if (hotelFullAddress) hotelFullAddress.textContent = address;
+
+  const footerPhone = document.getElementById('footerPhone');
+  if (footerPhone) {
+    footerPhone.href = `tel:${phoneDigits}`;
+    footerPhone.innerHTML = `<i data-lucide="phone"></i> ${phone}`;
+  }
+
+  const footerEmail = document.getElementById('footerEmail');
+  if (footerEmail) {
+    footerEmail.href = `mailto:${email}`;
+    footerEmail.innerHTML = `<i data-lucide="mail"></i> ${email}`;
+  }
+
+  // 7. Footer
   const footerHotelName = document.getElementById('footerHotelName');
+  if (footerHotelName) footerHotelName.textContent = shortName;
+
   const copyHotelName = document.getElementById('copyHotelName');
-  if (footerHotelName) footerHotelName.textContent = h.shortName;
-  if (copyHotelName) copyHotelName.textContent = h.name;
+  if (copyHotelName) copyHotelName.textContent = name;
+
+  const footerSubtitle = document.querySelector('.footer-logo .hotel-subtitle');
+  if (footerSubtitle) footerSubtitle.textContent = `HOTEL & SUITES • 0% COMMISSION DIRECT ENGINE • ${city.toUpperCase()}`;
+
+  // 8. Booking Voucher Modal
+  const voucherHotelTitle = document.getElementById('voucherHotelTitle');
+  if (voucherHotelTitle) voucherHotelTitle.textContent = name;
+
+  // 9. GST Tax Invoice Modal Defaults
+  const gstHotelName = document.getElementById('gstHotelName');
+  if (gstHotelName) gstHotelName.textContent = name;
+
+  const gstAddr = document.getElementById('gstAddressLine');
+  if (gstAddr) {
+    gstAddr.innerHTML = `${address}<br><strong>GSTIN:</strong> 33AAACT9842F1Z8 • <strong>State Code:</strong> 33 (Tamil Nadu)<br>Phone: ${phone} • Email: ${email}`;
+  }
+
+  const gstSign = document.getElementById('gstSignatoryHotel');
+  if (gstSign) gstSign.textContent = `For ${name}`;
+
+  const gstDining = document.getElementById('gstDiningItem');
+  if (gstDining) gstDining.textContent = `${shortName} In-House Dining - Dinner & Breakfast Service`;
+
+  const gstTransfer = document.getElementById('gstTransferItem');
+  if (gstTransfer) gstTransfer.textContent = `${city} Station / Airport Chauffeur Transfer`;
+
+  const waRec = document.getElementById('waReceptionTag');
+  if (waRec) waRec.textContent = `${name} Reception Desk`;
+
+  // 10. Reviews section location tags & text
+  const reviewCityTags = document.querySelectorAll('.reviewer-meta span');
+  reviewCityTags.forEach((tag, idx) => {
+    if (idx === 0) tag.textContent = `${city} • Family Stay`;
+    if (idx === 1) tag.textContent = `${city} • Business Travel`;
+    if (idx === 2) tag.textContent = `${city} • Holiday Stay`;
+  });
+
+  const reviewTexts = document.querySelectorAll('.review-card .review-text');
+  if (reviewTexts.length >= 3) {
+    reviewTexts[0].textContent = `Booking direct through their official website saved us ₹600 compared to Treebo & MakeMyTrip. Centrally located in ${city} with easy access to main transit and key sights. Spotless rooms and polite front desk staff.`;
+    reviewTexts[1].textContent = `The Maple Deluxe room was spacious with parquet flooring and great AC. Authentic ${city} filter coffee and hot breakfast buffet. Direct booking gave us complimentary 12 PM check-in without hassle.`;
+    reviewTexts[2].textContent = `Quiet residential surroundings in ${city} with effortless access to business centers and the airport. The in-house ${shortName} dining served great food and room service was prompt.`;
+  }
+
+  // 11. Personalize mock guest folios in memory
+  if (window.guestFolios) {
+    Object.values(window.guestFolios).forEach(folio => {
+      if (folio.charges) {
+        folio.charges.forEach(c => {
+          if (c.desc) {
+            c.desc = c.desc.replace(/Chennai Airport/gi, `${city} Airport`);
+            c.desc = c.desc.replace(/The Palm Bistro & Lounge/gi, `${shortName} Bistro & Lounge`);
+            c.desc = c.desc.replace(/The Palm Bistro/gi, `${shortName} Bistro`);
+          }
+        });
+      }
+    });
+  }
+
+  // 12. Run universal text-node replacement sweep
+  deepReplaceHotelPlaceholders(name, city, shortName, phone, email, address);
+
+  // Re-generate Lucide icons if any were replaced
+  if (window.lucide) window.lucide.createIcons();
+}
+
+/**
+ * Universal text-node walker to replace any residual placeholders
+ * across the DOM tree and HTML attributes.
+ */
+function deepReplaceHotelPlaceholders(name, city, shortName, phone, email, address) {
+  if (!name && !city) return;
+
+  const walkTextNodes = (node) => {
+    if (node.nodeType === Node.TEXT_NODE) {
+      let txt = node.nodeValue;
+      if (!txt || !txt.trim()) return;
+
+      // Replace Hotel Name variants
+      if (name) {
+        txt = txt.replace(/Twin\s*Star\s*Hotel\s*(&|and)?\s*Suites/gi, name);
+        txt = txt.replace(/Twin\s*Star\s*Hotel/gi, name);
+        txt = txt.replace(/Twin\s*Star\s*Bistro/gi, `${name} Dining`);
+        txt = txt.replace(/Twin\s*Star/gi, name);
+        txt = txt.replace(/Grand\s*Star\s*Resort\s*(&|and)?\s*(Luxury\s*)?Suites/gi, name);
+        txt = txt.replace(/Grand\s*Star\s*Resort/gi, name);
+        txt = txt.replace(/Grand\s*Star/gi, name);
+        txt = txt.replace(/TWIN\s*STAR/g, (shortName || name).toUpperCase());
+        txt = txt.replace(/GRAND\s*STAR/g, (shortName || name).toUpperCase());
+      }
+
+      // Replace City variants (if city is provided and not Chennai)
+      if (city) {
+        txt = txt.replace(/South\s*Chennai/gi, city);
+        txt = txt.replace(/Abiramapuram,\s*Chennai/gi, city);
+        txt = txt.replace(/Abiramapuram/gi, city);
+        txt = txt.replace(/Madras\s*ENT\s*Hospital/gi, `${city} Central Landmark`);
+        txt = txt.replace(/Mylapore\s*Kapaleeshwarar\s*Temple/gi, `${city} Cultural Sites`);
+        txt = txt.replace(/RA\s*Puram/gi, `${city} Central`);
+        txt = txt.replace(/Chennai\s*International\s*Airport\s*\([^)]*\)/gi, `${city} Airport & Transit`);
+        txt = txt.replace(/Chennai\s*Airport\s*\([^)]*\)/gi, `${city} Airport`);
+        txt = txt.replace(/Chennai\s*Airport/gi, `${city} Airport`);
+        txt = txt.replace(/Chennai\s*filter\s*coffee/gi, 'freshly brewed local filter coffee');
+        txt = txt.replace(/Chennai\s*•\s*Family\s*Stay/gi, `${city} • Verified Guest Stay`);
+        if (city.toLowerCase() !== 'chennai') {
+          txt = txt.replace(/\bChennai\b/g, city);
+          txt = txt.replace(/\bCHENNAI\b/g, city.toUpperCase());
+        }
+      }
+
+      if (node.nodeValue !== txt) {
+        node.nodeValue = txt;
+      }
+    } else if (node.nodeType === Node.ELEMENT_NODE) {
+      if (node.tagName === 'SCRIPT' || node.tagName === 'STYLE') return;
+
+      // Check placeholder and title attributes
+      ['placeholder', 'title', 'alt'].forEach(attr => {
+        if (node.hasAttribute(attr)) {
+          let val = node.getAttribute(attr);
+          if (name) {
+            val = val.replace(/Twin\s*Star\s*Hotel\s*(&|and)?\s*Suites/gi, name);
+            val = val.replace(/Twin\s*Star/gi, name);
+            val = val.replace(/Grand\s*Star/gi, name);
+          }
+          if (city && city.toLowerCase() !== 'chennai') {
+            val = val.replace(/Chennai/gi, city);
+          }
+          node.setAttribute(attr, val);
+        }
+      });
+
+      for (let child of node.childNodes) {
+        walkTextNodes(child);
+      }
+    }
+  };
+
+  // Run on head (meta tags)
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc) {
+    metaDesc.content = `Experience refined accommodations at ${name}, ${city}. Direct booking engine with 0% commission, complimentary breakfast, best rate guarantee, and instant WhatsApp booking.`;
+  }
+  const ogTitle = document.getElementById('ogTitle');
+  if (ogTitle) ogTitle.content = `${name} • Official Hotel Preview`;
+  const ogDesc = document.querySelector('meta[property="og:description"]');
+  if (ogDesc) ogDesc.content = `Direct booking engine, luxurious AC suites, in-house dining, and 0% OTA commission for ${name}, ${city}.`;
+
+  // Run on body
+  walkTextNodes(document.body);
 }
