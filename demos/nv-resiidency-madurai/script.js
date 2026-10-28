@@ -462,20 +462,40 @@ function updateHeroCardPrice() {
   const val = sel.value;
   const rateEl = document.getElementById('heroDirectRate');
   const otaEl = document.getElementById('heroOtaRate');
+  const miniImg = document.getElementById('heroMiniRoomImg');
+  const miniTitle = document.getElementById('heroMiniRoomTitle');
+  const miniSpecs = document.getElementById('heroMiniRoomSpecs');
+  const miniSave = document.getElementById('heroMiniRoomSave');
 
   let directPrice = 2400;
   let otaPrice = 3200;
+  let imgSrc = 'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=600&q=80';
+  let title = 'Oak (Standard AC Room)';
+  let specs = 'Queen Bed • 180 sq.ft • Chilled AC • Attached Bath';
+  let saveText = '✓ Save ₹800 Booking Direct';
 
   if (val === 'maple-deluxe') {
     directPrice = 3200;
     otaPrice = 4000;
+    imgSrc = 'https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=600&q=80';
+    title = 'Maple (Deluxe Suite)';
+    specs = 'King Bed • 240 sq.ft • City View • Armchair Lounge';
+    saveText = '✓ Save ₹800 Booking Direct';
   } else if (val === 'mahogany-executive') {
     directPrice = 4500;
     otaPrice = 5800;
+    imgSrc = 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=600&q=80';
+    title = 'Mahogany (Executive Suite)';
+    specs = 'Grand King • 360 sq.ft • Balcony • Living Area';
+    saveText = '✓ Save ₹1,300 Booking Direct';
   }
 
   if (rateEl) rateEl.textContent = `₹${directPrice.toLocaleString('en-IN')}`;
   if (otaEl) otaEl.textContent = `₹${otaPrice.toLocaleString('en-IN')}`;
+  if (miniImg) miniImg.src = imgSrc;
+  if (miniTitle) miniTitle.textContent = title;
+  if (miniSpecs) miniSpecs.textContent = specs;
+  if (miniSave) miniSave.textContent = saveText;
 }
 
 function proceedToBookingFromHero() {
