@@ -433,6 +433,81 @@ function selectRoomForBooking(roomId) {
 }
 
 // --------------------------------------------------------------------------
+// Fresh Hero Section Helpers (3-Star & Budget/Boutique Optimization)
+// --------------------------------------------------------------------------
+function openWhatsAppInquiry() {
+  const h = window.currentHotel;
+  const inDate = document.getElementById('heroCheckIn')?.value || 'Upcoming Stay';
+  const outDate = document.getElementById('heroCheckOut')?.value || 'Upcoming Stay';
+  const guests = document.getElementById('heroGuests')?.value || '2 Guests';
+  const roomSelect = document.getElementById('heroRoomSelect');
+  const roomName = roomSelect ? roomSelect.options[roomSelect.selectedIndex].text : 'AC Room';
+
+  const msg = `Hello ${h.name}! 🌟 I am checking availability for direct booking:
+• City: ${h.city}
+• Room: ${roomName}
+• Check-in: ${inDate}
+• Check-out: ${outDate}
+• Guests: ${guests}
+
+Please confirm best available direct room rates and availability. Thank you!`;
+
+  const url = `https://wa.me/${h.phoneDigits}?text=${encodeURIComponent(msg)}`;
+  window.open(url, '_blank');
+}
+
+function updateHeroCardPrice() {
+  const sel = document.getElementById('heroRoomSelect');
+  if (!sel) return;
+  const val = sel.value;
+  const rateEl = document.getElementById('heroDirectRate');
+  const otaEl = document.getElementById('heroOtaRate');
+
+  let directPrice = 2400;
+  let otaPrice = 3200;
+
+  if (val === 'maple-deluxe') {
+    directPrice = 3200;
+    otaPrice = 4000;
+  } else if (val === 'mahogany-executive') {
+    directPrice = 4500;
+    otaPrice = 5800;
+  }
+
+  if (rateEl) rateEl.textContent = `₹${directPrice.toLocaleString('en-IN')}`;
+  if (otaEl) otaEl.textContent = `₹${otaPrice.toLocaleString('en-IN')}`;
+}
+
+function proceedToBookingFromHero() {
+  const sel = document.getElementById('heroRoomSelect')?.value || 'oak-standard';
+  const inDate = document.getElementById('heroCheckIn')?.value;
+  const outDate = document.getElementById('heroCheckOut')?.value;
+
+  const engIn = document.getElementById('engineViewCheckIn');
+  const engOut = document.getElementById('engineViewCheckOut');
+  if (engIn && inDate) engIn.value = inDate;
+  if (engOut && outDate) engOut.value = outDate;
+
+  switchPlatformMode('engine', sel);
+}
+
+function syncHeroDateToEngine() {
+  const hIn = document.getElementById('heroCheckIn');
+  const hOut = document.getElementById('heroCheckOut');
+  const eIn = document.getElementById('engineViewCheckIn');
+  const eOut = document.getElementById('engineViewCheckOut');
+  const cIn = document.getElementById('calcCheckIn');
+  const cOut = document.getElementById('calcCheckOut');
+
+  if (hIn && eIn) eIn.value = hIn.value;
+  if (hOut && eOut) eOut.value = hOut.value;
+  if (hIn && cIn) cIn.value = hIn.value;
+  if (hOut && cOut) cOut.value = hOut.value;
+
+  if (typeof recalculateEngineView === 'function') recalculateEngineView();
+}
+
+// --------------------------------------------------------------------------
 // 3-in-1 Platform View Switcher
 // --------------------------------------------------------------------------
 function switchPlatformMode(mode, preselectRoomId) {
@@ -1349,10 +1424,10 @@ function applyHotelPersonalization() {
   if (headerPhoneText) headerPhoneText.textContent = phone;
   if (headerPhoneBtn) headerPhoneBtn.href = `tel:${phoneDigits}`;
 
-  // 3. Hero Section
+  // 3. Hero Section (Fresh Modern 3-Star & Budget/Boutique Design)
   const heroMainTitle = document.getElementById('heroMainTitle');
   if (heroMainTitle) {
-    heroMainTitle.innerHTML = `<span class="block-light">Experience 5-Star Luxury in ${city} at</span><span class="block-accent" id="heroCityAccent">${name}</span>`;
+    heroMainTitle.innerHTML = `<span class="block-light">Fresh, Clean &amp; Comfortable Stays in ${city} at</span><span class="block-accent" id="heroCityAccent">${name}</span>`;
   }
   const heroCityAccent = document.getElementById('heroCityAccent');
   if (heroCityAccent) heroCityAccent.textContent = name;
@@ -1362,14 +1437,18 @@ function applyHotelPersonalization() {
 
   const heroSubtitleText = document.getElementById('heroSubtitleText');
   if (heroSubtitleText) {
-    heroSubtitleText.innerHTML = `Welcome to <strong>${name}</strong>, ${city}. Signature hospitality, luxury AC suites, gourmet dining, best direct rate guarantee, and instant WhatsApp booking.`;
+    heroSubtitleText.innerHTML = `Welcome to <strong>${name}</strong>, ${city}. Spotless air-conditioned rooms, free high-speed Wi-Fi, 24/7 hot water, central transit connectivity, and guaranteed best direct rates with zero OTA middleman commission.`;
   }
 
   const heroBadgeText = document.getElementById('heroBadgeText');
-  if (heroBadgeText) heroBadgeText.textContent = `0% Commission Direct Booking Channel • ${city} Verified Hotel`;
+  if (heroBadgeText) heroBadgeText.textContent = `Official Direct Booking Portal • Verified Hotel in ${city}`;
 
   const heroImg = document.getElementById('heroImage');
-  if (heroImg && h.heroImage) heroImg.src = h.heroImage;
+  if (heroImg && h.heroImage) {
+    heroImg.src = h.heroImage;
+  } else if (heroImg) {
+    heroImg.src = 'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1800&q=85';
+  }
 
   // 4. Booking Quote Summaries (Modal & 0% Engine)
   const summaryHotelName = document.getElementById('summaryHotelName');

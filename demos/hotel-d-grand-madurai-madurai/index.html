@@ -117,68 +117,164 @@
     </div>
   </header>
 
-  <!-- 3. Luxury Hero Section -->
-  <section class="hero-section">
+  <!-- 3. Fresh Modern Hero Section (Optimized for 3-Star & Budget/Boutique Stays) -->
+  <section class="hero-section fresh-hero">
     <div class="hero-bg-container">
-      <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=2000&q=85" alt="Grand Luxury Resort & Suites Exterior" class="hero-img" id="heroImage">
-      <div class="hero-overlay"></div>
+      <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1800&q=85" alt="Clean Modern AC Hotel Room" class="hero-img" id="heroImage">
+      <div class="hero-overlay fresh-overlay"></div>
     </div>
 
-    <div class="container hero-content">
-      <div class="hero-badge">
-        <i data-lucide="shield-check" class="badge-icon"></i>
-        <span id="heroBadgeText">0% Commission Direct Booking Channel • Verified Hotel</span>
-      </div>
+    <div class="container hero-container-grid">
+      <!-- Left Column: Value Proposition & Direct Actions -->
+      <div class="hero-content-col">
+        <div class="hero-badge fresh-badge">
+          <span class="live-dot"></span>
+          <span id="heroBadgeText">Official Direct Booking Portal • Verified Hotel</span>
+        </div>
 
-      <h1 class="hero-title" id="heroMainTitle">
-        <span class="block-light">Experience 5-Star Tropical Luxury at</span>
-        <span class="block-accent" id="heroCityAccent">Grand Star Resort</span>
-      </h1>
+        <h1 class="hero-title fresh-title" id="heroMainTitle">
+          <span class="block-light">Fresh, Clean &amp; Comfortable Stays in Chennai at</span>
+          <span class="block-accent" id="heroCityAccent">Grand Star Resort</span>
+        </h1>
 
-      <p class="hero-subtitle" id="heroSubtitleText">
-        Welcome to <strong id="heroHotelNameInline">Grand Star Resort & Luxury Suites</strong>. Signature infinity pool, tropical garden suites, gourmet dining, best direct rate guarantee, and instant WhatsApp booking.
-      </p>
+        <p class="hero-subtitle fresh-subtitle" id="heroSubtitleText">
+          Welcome to <strong id="heroHotelNameInline">Grand Star Resort & Luxury Suites</strong>. Spotless air-conditioned rooms, free high-speed Wi-Fi, 24/7 hot water, central transit connectivity, and guaranteed best direct rates with zero OTA middleman commission.
+        </p>
 
-      <!-- Fast Direct Booking Quick-Bar -->
-      <div class="quick-bar-wrapper">
-        <div class="quick-bar">
-          <div class="quick-bar-item">
-            <label><i data-lucide="calendar"></i> Check-in</label>
-            <input type="date" id="heroCheckIn">
-          </div>
-          <div class="quick-divider"></div>
-          <div class="quick-bar-item">
-            <label><i data-lucide="calendar"></i> Check-out</label>
-            <input type="date" id="heroCheckOut">
-          </div>
-          <div class="quick-divider"></div>
-          <div class="quick-bar-item">
-            <label><i data-lucide="users"></i> Guests</label>
-            <select id="heroGuests">
-              <option value="1">1 Adult</option>
-              <option value="2" selected>2 Adults</option>
-              <option value="3">3 Guests</option>
-              <option value="4">4 Guests (Family)</option>
-            </select>
-          </div>
-          <button class="quick-bar-btn" id="heroCheckRatesBtn" onclick="document.getElementById('booking-engine').scrollIntoView({behavior:'smooth'})">
-            <span>Check Direct Rates</span>
-            <i data-lucide="arrow-right" style="width: 16px; height: 16px;"></i>
+        <!-- Fresh Trust Chips -->
+        <div class="hero-trust-chips">
+          <div class="trust-chip"><i data-lucide="wind"></i> <span>100% Chilled AC Rooms</span></div>
+          <div class="trust-chip"><i data-lucide="wifi"></i> <span>Free High-Speed Wi-Fi</span></div>
+          <div class="trust-chip"><i data-lucide="badge-percent"></i> <span>0% Commission • Save ₹600</span></div>
+          <div class="trust-chip"><i data-lucide="shield-check"></i> <span>Pay at Hotel Available</span></div>
+        </div>
+
+        <!-- Dual Direct Action Buttons -->
+        <div class="hero-actions-row">
+          <button class="btn-hero-wa" onclick="openWhatsAppInquiry()">
+            <i data-lucide="message-circle"></i>
+            <span>Book on WhatsApp</span>
+            <small class="wa-reply-tag">Instant Reply</small>
+          </button>
+          <button class="btn-hero-engine" onclick="document.getElementById('booking-engine').scrollIntoView({behavior:'smooth'})">
+            <i data-lucide="calendar-check"></i>
+            <span>Check 0% Direct Rates</span>
           </button>
         </div>
 
-        <!-- OTA Comparison Pill -->
-        <div class="ota-comparison-pill">
-          <div class="ota-logos">
-            <span class="ota-name b-com">Booking.com: <del id="delBcom">₹3,400</del></span>
-            <span class="ota-sep">•</span>
-            <span class="ota-name mmt">MakeMyTrip: <del id="delMmt">₹3,250</del></span>
-            <span class="ota-sep">•</span>
-            <span class="ota-name agoda">Agoda: <del id="delAgoda">₹3,350</del></span>
+        <!-- Verified Guest Rating Strip -->
+        <div class="hero-social-proof">
+          <div class="proof-stars">★★★★★</div>
+          <div class="proof-text">
+            <strong>4.8 / 5.0</strong> (240+ Verified Guest Stays) • <span>Best Price Guarantee for Direct Bookers</span>
           </div>
-          <div class="direct-advantage">
-            <span class="direct-tag">Direct with us: <strong id="heroDirectRate">₹2,400/night</strong></span>
-            <span class="save-tag">✓ Save ₹600 - ₹1,000/night</span>
+        </div>
+      </div>
+
+      <!-- Right Column: Interactive Direct Booking & OTA Comparison Card -->
+      <div class="hero-booking-card-col">
+        <div class="hero-booking-card">
+          <div class="booking-card-header">
+            <div>
+              <span class="booking-card-tag">⚡ DIRECT BOOKING ADVANTAGE</span>
+              <h3 class="booking-card-title">Check Availability &amp; Instant Rate</h3>
+            </div>
+            <span class="save-badge-pill">Save ₹600/night</span>
+          </div>
+
+          <!-- Quick Date & Room Controls -->
+          <div class="booking-card-form">
+            <div class="form-dates-row">
+              <div class="date-field">
+                <label><i data-lucide="calendar"></i> Check-in</label>
+                <input type="date" id="heroCheckIn" onchange="syncHeroDateToEngine()">
+              </div>
+              <div class="date-field">
+                <label><i data-lucide="calendar"></i> Check-out</label>
+                <input type="date" id="heroCheckOut" onchange="syncHeroDateToEngine()">
+              </div>
+            </div>
+
+            <div class="form-selects-row">
+              <div class="select-field">
+                <label><i data-lucide="bed-double"></i> Room Tier</label>
+                <select id="heroRoomSelect" onchange="updateHeroCardPrice()">
+                  <option value="oak-standard" selected>Oak (Standard AC Room)</option>
+                  <option value="maple-deluxe">Maple (Deluxe Suite)</option>
+                  <option value="mahogany-executive">Mahogany (Executive Suite)</option>
+                </select>
+              </div>
+              <div class="select-field select-guests">
+                <label><i data-lucide="users"></i> Guests</label>
+                <select id="heroGuests">
+                  <option value="1">1 Guest</option>
+                  <option value="2" selected>2 Guests</option>
+                  <option value="3">3 Guests</option>
+                  <option value="4">4 Guests (Family)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Transparent Price Comparison Box -->
+            <div class="card-price-comparison">
+              <div class="price-side-direct">
+                <span class="price-sub-label">Direct Reception Rate</span>
+                <div class="direct-price-num"><span id="heroDirectRate">₹2,400</span><small>/night</small></div>
+                <span class="direct-perk-text">✓ 0% Middleman Commission</span>
+              </div>
+              <div class="price-side-ota">
+                <span class="price-sub-label">MakeMyTrip / Agoda</span>
+                <div class="ota-price-num"><del id="heroOtaRate">₹3,200</del></div>
+                <span class="ota-markup-tag">Save ₹800 Booking Direct</span>
+              </div>
+            </div>
+
+            <!-- Quick Action Button -->
+            <button class="btn-card-reserve" id="heroCheckRatesBtn" onclick="proceedToBookingFromHero()">
+              <span>Confirm Direct Rate (0% Fee)</span>
+              <i data-lucide="arrow-right"></i>
+            </button>
+
+            <!-- Card Bottom Trust Note -->
+            <div class="card-guarantee-strip">
+              <span><i data-lucide="check"></i> Pay at Hotel</span>
+              <span><i data-lucide="check"></i> Free Cancellation</span>
+              <span><i data-lucide="check"></i> Instant Key</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fresh Value Strip / Trust Ribbon Directly Under Hero -->
+    <div class="hero-trust-ribbon">
+      <div class="container trust-ribbon-grid">
+        <div class="ribbon-item">
+          <div class="ribbon-icon"><i data-lucide="sparkles"></i></div>
+          <div class="ribbon-text">
+            <strong>Spotless &amp; Sanitized</strong>
+            <span>Fresh linens &amp; daily housekeeping</span>
+          </div>
+        </div>
+        <div class="ribbon-item">
+          <div class="ribbon-icon"><i data-lucide="zap"></i></div>
+          <div class="ribbon-text">
+            <strong>24/7 Power &amp; Hot Water</strong>
+            <span>Generator backup &amp; chilled AC</span>
+          </div>
+        </div>
+        <div class="ribbon-item">
+          <div class="ribbon-icon"><i data-lucide="map-pin"></i></div>
+          <div class="ribbon-text">
+            <strong>Central City Connectivity</strong>
+            <span>Close to Station &amp; Bus Terminus</span>
+          </div>
+        </div>
+        <div class="ribbon-item">
+          <div class="ribbon-icon"><i data-lucide="message-square"></i></div>
+          <div class="ribbon-text">
+            <strong>Direct Front Desk Support</strong>
+            <span>Chat directly with local hotelier</span>
           </div>
         </div>
       </div>
