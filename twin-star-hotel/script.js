@@ -284,12 +284,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
-  // Hero Concept Selection (?concept=1 or ?concept=2)
+  // Hero Concept Selection (?concept=1, 2, or 3/ginger)
   const qConcept = urlParams.get('concept') || urlParams.get('hero') || urlParams.get('c');
-  if (qConcept === '2' || qConcept === 'c2') {
+  if (qConcept === '1' || qConcept === 'c1') {
+    switchHeroConcept('1');
+  } else if (qConcept === '2' || qConcept === 'c2') {
     switchHeroConcept('2');
   } else {
-    switchHeroConcept('1');
+    // Default to Ginger Lean Luxe template (Concept 3)
+    switchHeroConcept('3');
   }
 
   // Refresh icons
@@ -1134,6 +1137,11 @@ function initStayDates() {
   if (engIn) engIn.value = inStr;
   if (engOut) engOut.value = outStr;
 
+  const c3In = document.getElementById('c3CheckIn');
+  const c3Out = document.getElementById('c3CheckOut');
+  if (c3In) c3In.value = inStr;
+  if (c3Out) c3Out.value = outStr;
+
   recalculateTotal();
   recalculateEngineView();
 }
@@ -1488,6 +1496,26 @@ function applyHotelPersonalization() {
   const c2HotelNameInline = document.getElementById('c2HotelNameInline');
   if (c2HotelNameInline) c2HotelNameInline.textContent = name;
 
+  // Concept 3 (Ginger Lean Luxe) Hero Personalization
+  const c3CityTitle = document.getElementById('c3CityTitle');
+  if (c3CityTitle) c3CityTitle.textContent = city;
+
+  const c3HotelTitle = document.getElementById('c3HotelTitle');
+  if (c3HotelTitle) c3HotelTitle.textContent = name;
+
+  const c3BarDestination = document.getElementById('c3BarDestination');
+  if (c3BarDestination) c3BarDestination.textContent = `${city} • ${name}`;
+
+  const c3HeroTagline = document.getElementById('c3HeroTagline');
+  if (c3HeroTagline) {
+    c3HeroTagline.textContent = `Experience modern hospitality designed for smart travelers at ${name}, ${city}. Spotless AC suites, complimentary high-speed Wi-Fi, 24/7 hot water, delicious in-house dining, and guaranteed 0% commission direct rates.`;
+  }
+
+  const c3HeroImg = document.getElementById('c3HeroImg');
+  if (c3HeroImg && h.heroImage) {
+    c3HeroImg.src = h.heroImage;
+  }
+
   // 4. Booking Quote Summaries (Modal & 0% Engine)
   const summaryHotelName = document.getElementById('summaryHotelName');
   if (summaryHotelName) summaryHotelName.textContent = name;
@@ -1703,24 +1731,38 @@ function deepReplaceHotelPlaceholders(name, city, shortName, phone, email, addre
 }
 
 // ==========================================================================
-// Hero Concept Switcher (Concept 1: Split Hero vs Concept 2: Room Showcase)
+// Hero Concept Switcher (Concept 1: Split Hero vs Concept 2: Room Showcase vs Concept 3: Ginger Lean Luxe)
 // ==========================================================================
 window.switchHeroConcept = function(conceptId) {
   const c1 = document.getElementById('heroConcept1');
   const c2 = document.getElementById('heroConcept2');
+  const c3 = document.getElementById('heroConcept3');
   const btn1 = document.getElementById('btnConcept1');
   const btn2 = document.getElementById('btnConcept2');
+  const btn3 = document.getElementById('btnConcept3');
 
-  if (conceptId === '2') {
-    if (c1) c1.style.display = 'none';
-    if (c2) c2.style.display = 'block';
-    if (btn1) btn1.classList.remove('active');
-    if (btn2) btn2.classList.add('active');
-  } else {
+  if (conceptId === '1' || conceptId === 'c1') {
     if (c1) c1.style.display = 'block';
     if (c2) c2.style.display = 'none';
+    if (c3) c3.style.display = 'none';
     if (btn1) btn1.classList.add('active');
     if (btn2) btn2.classList.remove('active');
+    if (btn3) btn3.classList.remove('active');
+  } else if (conceptId === '2' || conceptId === 'c2') {
+    if (c1) c1.style.display = 'none';
+    if (c2) c2.style.display = 'block';
+    if (c3) c3.style.display = 'none';
+    if (btn1) btn1.classList.remove('active');
+    if (btn2) btn2.classList.add('active');
+    if (btn3) btn3.classList.remove('active');
+  } else {
+    // Concept 3 (Ginger Lean Luxe)
+    if (c1) c1.style.display = 'none';
+    if (c2) c2.style.display = 'none';
+    if (c3) c3.style.display = 'block';
+    if (btn1) btn1.classList.remove('active');
+    if (btn2) btn2.classList.remove('active');
+    if (btn3) btn3.classList.add('active');
   }
 
   // Update URL without reload for easy bookmarking and sharing
@@ -1731,6 +1773,16 @@ window.switchHeroConcept = function(conceptId) {
   } catch (e) {}
 
   if (window.lucide) window.lucide.createIcons();
+};
+
+window.syncC3DatesToEngine = function() {
+  const cin = document.getElementById('c3CheckIn');
+  const cout = document.getElementById('c3CheckOut');
+  const engCin = document.getElementById('engineViewCheckIn');
+  const engCout = document.getElementById('engineViewCheckOut');
+  if (cin && engCin && cin.value) engCin.value = cin.value;
+  if (cout && engCout && cout.value) engCout.value = cout.value;
+  if (typeof calculateEngineStay === 'function') calculateEngineStay();
 };
 
 // Concept 2 Room Interactive Switcher

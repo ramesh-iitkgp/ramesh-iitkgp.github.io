@@ -76,9 +76,10 @@
     </div>
     <div class="right-action" style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
       <div class="concept-switcher-pills">
-        <span class="switcher-label">Preview Hero Concept:</span>
-        <button class="btn-concept-pill active" id="btnConcept1" onclick="switchHeroConcept('1')">Concept 1 (Split Hero)</button>
+        <span class="switcher-label">Select Hero Design:</span>
+        <button class="btn-concept-pill" id="btnConcept1" onclick="switchHeroConcept('1')">Concept 1 (Split Hero)</button>
         <button class="btn-concept-pill" id="btnConcept2" onclick="switchHeroConcept('2')">Concept 2 (Room &amp; Meter)</button>
+        <button class="btn-concept-pill active" id="btnConcept3" onclick="switchHeroConcept('3')">Concept 3 (Ginger Lean Luxe) 🍊</button>
       </div>
       <a href="#booking-engine" class="cta-link">
         <span>0% Engine</span>
@@ -125,7 +126,7 @@
     <!-- ======================================================================
          CONCEPT 1: MODERN SPLIT HERO WITH FROSTED GLASS BOOKING CARD
          ====================================================================== -->
-    <div id="heroConcept1" class="hero-concept-container">
+    <div id="heroConcept1" class="hero-concept-container" style="display: block;">
       <section class="hero-section fresh-hero">
         <div class="hero-bg-container">
       <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1800&q=85" alt="Clean Modern AC Hotel Room" class="hero-img" id="heroImage">
@@ -460,6 +461,147 @@
               <div class="ribbon-text">
                 <strong>Direct Front Desk Support</strong>
                 <span>Chat directly with local hotelier</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ======================================================================
+         CONCEPT 3: GINGER HOTELS "LEAN LUXE" TEMPLATE REDESIGN
+         ====================================================================== -->
+    <div id="heroConcept3" class="hero-concept-container" style="display: none;">
+      <section class="c3-ginger-hero">
+        <div class="c3-ginger-bg">
+          <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1920&q=85" alt="Lean Luxe Hotel Room" class="c3-hero-img" id="c3HeroImg">
+          <div class="c3-hero-gradient"></div>
+        </div>
+
+        <div class="container c3-hero-inner">
+          <!-- Top Floating Eyebrow & Brand Mark -->
+          <div class="c3-brand-eyebrow">
+            <span class="c3-orange-dot"></span>
+            <span id="c3EyebrowText">LEAN LUXE HOSPITALITY • OFFICIAL DIRECT STAY</span>
+          </div>
+
+          <!-- Bold Ginger Style Title & Value Statement -->
+          <h1 class="c3-hero-title">
+            Stay Smart. Stay Fresh in <span id="c3CityTitle" class="c3-city-highlight">Madurai</span> at <span id="c3HotelTitle">Avea Accommodation</span>.
+          </h1>
+
+          <p class="c3-hero-tagline" id="c3HeroTagline">
+            Experience modern hospitality designed for smart travelers. Spotless AC suites, complimentary high-speed Wi-Fi, 24/7 hot water, delicious in-house dining, and guaranteed 0% commission direct rates.
+          </p>
+
+          <!-- The Signature Ginger Horizontal Booking Bar -->
+          <div class="c3-booking-bar-wrapper">
+            <div class="c3-booking-bar">
+              <!-- Col 1: Destination & Hotel -->
+              <div class="c3-bar-col c3-col-destination">
+                <div class="c3-col-icon"><i data-lucide="map-pin"></i></div>
+                <div class="c3-col-meta">
+                  <span class="c3-col-label">DESTINATION &amp; HOTEL</span>
+                  <div class="c3-col-val" id="c3BarDestination">Madurai • Avea Accommodation</div>
+                </div>
+              </div>
+
+              <!-- Col 2: Stay Dates -->
+              <div class="c3-bar-col c3-col-dates">
+                <div class="c3-col-icon"><i data-lucide="calendar"></i></div>
+                <div class="c3-col-meta">
+                  <span class="c3-col-label">CHECK-IN &amp; CHECK-OUT</span>
+                  <div class="c3-dates-inputs">
+                    <input type="date" id="c3CheckIn" onchange="syncC3DatesToEngine()">
+                    <span class="c3-date-separator">→</span>
+                    <input type="date" id="c3CheckOut" onchange="syncC3DatesToEngine()">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Col 3: Guests & Rooms -->
+              <div class="c3-bar-col c3-col-guests">
+                <div class="c3-col-icon"><i data-lucide="users"></i></div>
+                <div class="c3-col-meta">
+                  <span class="c3-col-label">ROOMS &amp; GUESTS</span>
+                  <select id="c3GuestSelect" class="c3-select-compact">
+                    <option value="1">1 Room, 1 Guest</option>
+                    <option value="2" selected>1 Room, 2 Guests</option>
+                    <option value="3">1 Room, 3 Guests</option>
+                    <option value="4">2 Rooms, 4 Guests</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Col 4: Special Code / Direct Advantage -->
+              <div class="c3-bar-col c3-col-offer">
+                <div class="c3-col-icon"><i data-lucide="badge-percent"></i></div>
+                <div class="c3-col-meta">
+                  <span class="c3-col-label">DIRECT PERK</span>
+                  <div class="c3-direct-tag">
+                    <span>✓ 0% Fee • Save ₹800</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Col 5: The Signature Ginger Orange CTA Button -->
+              <div class="c3-bar-action">
+                <button class="btn-c3-search" onclick="proceedToBookingFromHero()">
+                  <span>CHECK AVAILABILITY</span>
+                  <i data-lucide="arrow-right"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Instant WhatsApp Concierge Strip under Booking Bar -->
+            <div class="c3-bar-footer-strip">
+              <div class="c3-strip-item">
+                <i data-lucide="check-circle-2"></i>
+                <span>Direct Reception Guarantee: Best Price Found Anywhere</span>
+              </div>
+              <div class="c3-strip-item">
+                <i data-lucide="credit-card"></i>
+                <span>Pay at Hotel Available • Zero Advance Penalty</span>
+              </div>
+              <a href="javascript:void(0)" onclick="openWhatsAppInquiry()" class="c3-strip-wa">
+                <i data-lucide="message-circle"></i>
+                <span>Instant Front Desk WhatsApp Key</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- The Signature Ginger "Lean Luxe Stays" 4-Column Feature Ribbon -->
+        <div class="c3-lean-luxe-ribbon">
+          <div class="container">
+            <div class="c3-luxe-header">
+              <h3 class="c3-luxe-title">The Lean Luxe Experience</h3>
+              <p class="c3-luxe-sub">Smart, vibrant, and hassle-free essentials designed for contemporary business &amp; leisure stays.</p>
+            </div>
+
+            <div class="c3-luxe-grid">
+              <div class="c3-luxe-card">
+                <div class="c3-luxe-icon"><i data-lucide="bed-double"></i></div>
+                <h4>Sleep Smart AC Rooms</h4>
+                <p>300-thread count sanitized linens, posture-support plush mattress, 100% chilled AC &amp; sound insulation.</p>
+              </div>
+
+              <div class="c3-luxe-card">
+                <div class="c3-luxe-icon"><i data-lucide="wifi"></i></div>
+                <h4>High-Speed Fiber Wi-Fi</h4>
+                <p>Complimentary seamless high-speed connectivity across the hotel with ergonomic work spaces.</p>
+              </div>
+
+              <div class="c3-luxe-card">
+                <div class="c3-luxe-icon"><i data-lucide="utensils"></i></div>
+                <h4>Fresh In-House Dining</h4>
+                <p>Piping hot South Indian and multi-cuisine breakfast buffet, all-day diner, and 24/7 in-room dining.</p>
+              </div>
+
+              <div class="c3-luxe-card">
+                <div class="c3-luxe-icon"><i data-lucide="message-square"></i></div>
+                <h4>Direct WhatsApp Check-In</h4>
+                <p>Skip front desk queues with fast mobile arrival key, local city guides, and 1-tap reception chat.</p>
               </div>
             </div>
           </div>

@@ -4042,3 +4042,415 @@ body {
   }
 }
 
+/* ==========================================================================
+   CONCEPT 3: GINGER HOTELS "LEAN LUXE" TEMPLATE STYLING
+   ========================================================================== */
+.c3-ginger-hero {
+  position: relative;
+  min-height: 680px;
+  padding: 60px 0 0;
+  background: #0b111e;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.c3-ginger-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.c3-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.52;
+  filter: contrast(1.08) brightness(0.92);
+}
+
+.c3-hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(11, 17, 30, 0.88) 0%, rgba(11, 17, 30, 0.6) 40%, rgba(11, 17, 30, 0.96) 100%);
+}
+
+.c3-hero-inner {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+
+.c3-brand-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(234, 88, 12, 0.15);
+  border: 1px solid rgba(249, 115, 22, 0.4);
+  color: #fb923c;
+  padding: 6px 18px;
+  border-radius: 9999px;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+.c3-orange-dot {
+  width: 8px;
+  height: 8px;
+  background: #ea580c;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ea580c;
+}
+
+.c3-hero-title {
+  font-size: 2.85rem;
+  font-weight: 800;
+  line-height: 1.18;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+  font-family: var(--font-sans);
+}
+
+.c3-city-highlight {
+  color: #fb923c;
+}
+
+.c3-hero-tagline {
+  color: #cbd5e1;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 760px;
+  margin: 0 auto 34px;
+}
+
+/* Ginger Horizontal Floating Booking Bar */
+.c3-booking-bar-wrapper {
+  margin-top: 15px;
+}
+
+.c3-booking-bar {
+  display: grid;
+  grid-template-columns: 1.2fr 1.35fr 1.05fr 1.05fr 1.25fr;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 10px 14px;
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  align-items: center;
+  gap: 8px;
+  color: #0f172a;
+}
+
+.c3-bar-col {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-right: 1px solid #e2e8f0;
+  text-align: left;
+}
+
+.c3-col-icon {
+  color: #ea580c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.c3-col-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.c3-col-meta {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+}
+
+.c3-col-label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #64748b;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+
+.c3-col-val {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #0f172a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.c3-dates-inputs {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.c3-dates-inputs input {
+  border: none;
+  background: transparent;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #0f172a;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  width: 105px;
+  font-family: inherit;
+}
+
+.c3-date-separator {
+  color: #94a3b8;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.c3-select-compact {
+  border: none;
+  background: transparent;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #0f172a;
+  outline: none;
+  cursor: pointer;
+  width: 100%;
+  font-family: inherit;
+}
+
+.c3-direct-tag {
+  background: #ecfdf5;
+  color: #059669;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 6px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.c3-bar-action {
+  padding-left: 4px;
+}
+
+.btn-c3-search {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+  color: #ffffff;
+  border: none;
+  padding: 13px 18px;
+  border-radius: 12px;
+  font-size: 0.86rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(234, 88, 12, 0.4);
+  white-space: nowrap;
+  font-family: inherit;
+}
+
+.btn-c3-search:hover {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(234, 88, 12, 0.5);
+}
+
+.btn-c3-search svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* Strip under Booking Bar */
+.c3-bar-footer-strip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+  padding: 0 10px;
+  font-size: 0.78rem;
+  color: #cbd5e1;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.c3-strip-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.c3-strip-item svg {
+  width: 14px;
+  height: 14px;
+  color: #10b981;
+}
+
+.c3-strip-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #25d366;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 4px 12px;
+  background: rgba(37, 211, 102, 0.12);
+  border-radius: 9999px;
+  border: 1px solid rgba(37, 211, 102, 0.3);
+  transition: all 0.2s ease;
+}
+
+.c3-strip-wa:hover {
+  background: rgba(37, 211, 102, 0.22);
+  transform: translateY(-1px);
+}
+
+.c3-strip-wa svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Lean Luxe 4-Column Feature Ribbon */
+.c3-lean-luxe-ribbon {
+  background: #ffffff;
+  padding: 50px 0 45px;
+  color: #0f172a;
+  position: relative;
+  z-index: 2;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.c3-luxe-header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 34px;
+}
+
+.c3-luxe-title {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 6px;
+  font-family: var(--font-sans);
+}
+
+.c3-luxe-sub {
+  font-size: 0.92rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.c3-luxe-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.c3-luxe-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 22px 18px;
+  text-align: left;
+  transition: all 0.25s ease;
+}
+
+.c3-luxe-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px -6px rgba(0, 0, 0, 0.08);
+  border-color: #cbd5e1;
+  background: #ffffff;
+}
+
+.c3-luxe-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(234, 88, 12, 0.1);
+  border: 1px solid rgba(234, 88, 12, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ea580c;
+  margin-bottom: 14px;
+}
+
+.c3-luxe-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.c3-luxe-card h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 6px;
+  font-family: var(--font-sans);
+}
+
+.c3-luxe-card p {
+  font-size: 0.8rem;
+  color: #64748b;
+  line-height: 1.45;
+}
+
+/* Responsive adjustments for Ginger concept */
+@media (max-width: 1080px) {
+  .c3-booking-bar {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 16px;
+  }
+  .c3-bar-col {
+    border-right: none;
+    border-bottom: 1px solid #f1f5f9;
+    padding: 10px 0;
+  }
+  .c3-bar-action {
+    grid-column: span 2;
+  }
+  .c3-luxe-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .c3-hero-title {
+    font-size: 2.1rem;
+  }
+  .c3-booking-bar {
+    grid-template-columns: 1fr;
+  }
+  .c3-bar-action {
+    grid-column: span 1;
+  }
+  .c3-luxe-grid {
+    grid-template-columns: 1fr;
+  }
+  .c3-bar-footer-strip {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
