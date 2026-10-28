@@ -74,9 +74,14 @@
       <span class="pulse-dot"></span>
       <span id="bannerText">Interactive Hotel Concept Preview — Specially Generated for <strong id="leadHotelName">Grand Star Resort & Suites Management</strong></span>
     </div>
-    <div class="right-action">
+    <div class="right-action" style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+      <div class="concept-switcher-pills">
+        <span class="switcher-label">Preview Hero Concept:</span>
+        <button class="btn-concept-pill active" id="btnConcept1" onclick="switchHeroConcept('1')">Concept 1 (Split Hero)</button>
+        <button class="btn-concept-pill" id="btnConcept2" onclick="switchHeroConcept('2')">Concept 2 (Room &amp; Meter)</button>
+      </div>
       <a href="#booking-engine" class="cta-link">
-        <span>Test 0% Commission Direct Booking Engine</span>
+        <span>0% Engine</span>
         <i data-lucide="arrow-right" style="width: 14px; height: 14px;"></i>
       </a>
     </div>
@@ -117,9 +122,12 @@
     </div>
   </header>
 
-  <!-- 3. Fresh Modern Hero Section (Optimized for 3-Star & Budget/Boutique Stays) -->
-  <section class="hero-section fresh-hero">
-    <div class="hero-bg-container">
+    <!-- ======================================================================
+         CONCEPT 1: MODERN SPLIT HERO WITH FROSTED GLASS BOOKING CARD
+         ====================================================================== -->
+    <div id="heroConcept1" class="hero-concept-container">
+      <section class="hero-section fresh-hero">
+        <div class="hero-bg-container">
       <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1800&q=85" alt="Clean Modern AC Hotel Room" class="hero-img" id="heroImage">
       <div class="hero-overlay fresh-overlay"></div>
     </div>
@@ -290,6 +298,174 @@
       </div>
     </div>
   </section>
+</div>
+
+    <!-- ======================================================================
+         CONCEPT 2: INTERACTIVE ROOM SHOWCASE & DIRECT SAVINGS METER
+         ====================================================================== -->
+    <div id="heroConcept2" class="hero-concept-container" style="display: none;">
+      <section class="c2-hero-section">
+        <div class="container">
+          <!-- Top Centered Header -->
+          <div class="c2-header-block">
+            <div class="c2-eyebrow">
+              <span class="live-dot"></span>
+              <span>⭐ Verified Direct Stay • <span id="c2CityTag">Chennai</span></span>
+            </div>
+            <h1 class="c2-hero-title">
+              Independent Charm. Fresh &amp; Clean Stays in <span id="c2CityTitle">Chennai</span>.
+            </h1>
+            <p class="c2-hero-subtitle">
+              Welcome to <strong id="c2HotelNameInline">Grand Star Resort & Luxury Suites</strong>. Comfortable AC rooms, free Wi-Fi, 24/7 hot water, and instant WhatsApp booking key. Skip OTA middleman fees and save up to ₹800/night.
+            </p>
+          </div>
+
+          <!-- 2-Column Showcase Grid: Left = Big Room Card, Right = Savings Meter -->
+          <div class="c2-showcase-grid">
+            <!-- Left: Interactive Room Showcase Card -->
+            <div class="c2-room-card">
+              <div class="c2-room-img-container">
+                <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1000&q=80" alt="Room preview" id="c2RoomImg" class="c2-room-img">
+                <div class="c2-room-pills">
+                  <button class="c2-pill-btn active" id="c2BtnOak" onclick="selectC2Room('oak-standard')">Oak Standard AC</button>
+                  <button class="c2-pill-btn" id="c2BtnMaple" onclick="selectC2Room('maple-deluxe')">Maple Deluxe Suite</button>
+                  <button class="c2-pill-btn" id="c2BtnMahogany" onclick="selectC2Room('mahogany-executive')">Mahogany Executive</button>
+                </div>
+              </div>
+              <div class="c2-room-details">
+                <div>
+                  <h3 class="c2-room-title" id="c2RoomTitle">Oak (Standard AC Room)</h3>
+                  <p class="c2-room-desc" id="c2RoomDesc">Spotless sanitization, crisp white linens, high-speed fiber Wi-Fi, chilled AC, and 24/7 power backup.</p>
+                  
+                  <div class="c2-amenities-row">
+                    <div class="c2-amenity-item">
+                      <i data-lucide="wind"></i>
+                      <span>Chilled AC</span>
+                    </div>
+                    <div class="c2-amenity-item">
+                      <i data-lucide="wifi"></i>
+                      <span>Free Wi-Fi</span>
+                    </div>
+                    <div class="c2-amenity-item">
+                      <i data-lucide="tv"></i>
+                      <span>Smart TV</span>
+                    </div>
+                    <div class="c2-amenity-item">
+                      <i data-lucide="coffee"></i>
+                      <span>Breakfast Incl.</span>
+                    </div>
+                    <div class="c2-amenity-item">
+                      <i data-lucide="bath"></i>
+                      <span>Hot Water</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="c2-card-bottom">
+                  <div class="c2-price-wrap">
+                    <span class="c2-price-label">Direct Reception Rate</span>
+                    <div class="c2-price-num"><span id="c2RoomPrice">₹2,400</span> <small>/ night</small></div>
+                  </div>
+                  <button class="btn-c2-select" onclick="proceedToBookingFromHero()">
+                    <span>Select Room (0% Fee)</span>
+                    <i data-lucide="arrow-right" style="width: 15px; height: 15px; vertical-align: middle;"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Direct Savings Meter Card -->
+            <div class="c2-savings-card">
+              <span class="c2-savings-badge">⚡ DIRECT BOOKING ADVANTAGE</span>
+              <h3 class="c2-savings-heading">Direct Savings Meter</h3>
+
+              <!-- SVG Speedometer Gauge -->
+              <div class="c2-gauge-wrapper">
+                <svg viewBox="0 0 160 90" class="gauge-svg">
+                  <!-- Background Track -->
+                  <path d="M 20 80 A 60 60 0 0 1 140 80" fill="none" stroke="#e2e8f0" stroke-width="14" stroke-linecap="round"/>
+                  <!-- Colored Active Arc -->
+                  <path d="M 20 80 A 60 60 0 0 1 125 45" fill="none" stroke="url(#savingsGradient)" stroke-width="14" stroke-linecap="round"/>
+                  <defs>
+                    <linearGradient id="savingsGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#0284c7" />
+                      <stop offset="100%" stop-color="#10b981" />
+                    </linearGradient>
+                  </defs>
+                  <!-- Needle Center -->
+                  <circle cx="80" cy="80" r="7" fill="#0f172a" />
+                  <!-- Needle Pointer -->
+                  <polygon points="77,80 83,80 115,48" fill="#0f172a" />
+                </svg>
+              </div>
+
+              <div class="c2-savings-title" id="c2SavingsVal">You Save ₹800</div>
+              <span class="c2-savings-sub">by Booking Direct on Official Website</span>
+
+              <!-- Live Rate Breakdown Box -->
+              <div class="c2-comparison-box">
+                <div class="c2-comp-row">
+                  <span>Official Direct Rate:</span>
+                  <strong style="color: #047857;" id="c2DirectComp">₹2,400</strong>
+                </div>
+                <div class="c2-comp-row">
+                  <span>MakeMyTrip / Agoda:</span>
+                  <del id="c2OtaComp">₹3,200</del>
+                </div>
+                <div class="c2-comp-row bold">
+                  <span>Commission Passed to You:</span>
+                  <span id="c2SaveComp">✓ ₹800/night</span>
+                </div>
+              </div>
+
+              <!-- Instant WhatsApp Booking Action -->
+              <button class="btn-c2-savings" onclick="openWhatsAppInquiry()">
+                <i data-lucide="message-circle" style="width: 18px; height: 18px;"></i>
+                <span>Claim Direct Rate via WhatsApp</span>
+              </button>
+
+              <div style="margin-top: 12px; font-size: 0.72rem; color: #64748b;">
+                ✓ Pay at Hotel • ✓ 0% Advance Penalty • ✓ Instant Room Key
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trust Ribbon -->
+        <div class="hero-trust-ribbon" style="margin-top: 40px;">
+          <div class="container trust-ribbon-grid">
+            <div class="ribbon-item">
+              <div class="ribbon-icon"><i data-lucide="sparkles"></i></div>
+              <div class="ribbon-text">
+                <strong>Spotless &amp; Sanitized</strong>
+                <span>Fresh linens &amp; daily housekeeping</span>
+              </div>
+            </div>
+            <div class="ribbon-item">
+              <div class="ribbon-icon"><i data-lucide="zap"></i></div>
+              <div class="ribbon-text">
+                <strong>24/7 Power &amp; Hot Water</strong>
+                <span>Generator backup &amp; chilled AC</span>
+              </div>
+            </div>
+            <div class="ribbon-item">
+              <div class="ribbon-icon"><i data-lucide="map-pin"></i></div>
+              <div class="ribbon-text">
+                <strong>Central City Connectivity</strong>
+                <span>Close to Station &amp; Bus Terminus</span>
+              </div>
+            </div>
+            <div class="ribbon-item">
+              <div class="ribbon-icon"><i data-lucide="message-square"></i></div>
+              <div class="ribbon-text">
+                <strong>Direct Front Desk Support</strong>
+                <span>Chat directly with local hotelier</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
 
   <!-- 4. Direct Booking Perks (0% Commission Advantage) -->
   <section class="benefits-section" id="direct-benefits">

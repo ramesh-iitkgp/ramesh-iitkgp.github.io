@@ -284,6 +284,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
+  // Hero Concept Selection (?concept=1 or ?concept=2)
+  const qConcept = urlParams.get('concept') || urlParams.get('hero') || urlParams.get('c');
+  if (qConcept === '2' || qConcept === 'c2') {
+    switchHeroConcept('2');
+  } else {
+    switchHeroConcept('1');
+  }
+
   // Refresh icons
   if (window.lucide) window.lucide.createIcons();
 });
@@ -1470,6 +1478,16 @@ function applyHotelPersonalization() {
     heroImg.src = 'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1800&q=85';
   }
 
+  // Concept 2 Hero Personalization
+  const c2CityTag = document.getElementById('c2CityTag');
+  if (c2CityTag) c2CityTag.textContent = city;
+
+  const c2CityTitle = document.getElementById('c2CityTitle');
+  if (c2CityTitle) c2CityTitle.textContent = city;
+
+  const c2HotelNameInline = document.getElementById('c2HotelNameInline');
+  if (c2HotelNameInline) c2HotelNameInline.textContent = name;
+
   // 4. Booking Quote Summaries (Modal & 0% Engine)
   const summaryHotelName = document.getElementById('summaryHotelName');
   if (summaryHotelName) summaryHotelName.textContent = name;
@@ -1683,3 +1701,108 @@ function deepReplaceHotelPlaceholders(name, city, shortName, phone, email, addre
   // Run on body
   walkTextNodes(document.body);
 }
+
+// ==========================================================================
+// Hero Concept Switcher (Concept 1: Split Hero vs Concept 2: Room Showcase)
+// ==========================================================================
+window.switchHeroConcept = function(conceptId) {
+  const c1 = document.getElementById('heroConcept1');
+  const c2 = document.getElementById('heroConcept2');
+  const btn1 = document.getElementById('btnConcept1');
+  const btn2 = document.getElementById('btnConcept2');
+
+  if (conceptId === '2') {
+    if (c1) c1.style.display = 'none';
+    if (c2) c2.style.display = 'block';
+    if (btn1) btn1.classList.remove('active');
+    if (btn2) btn2.classList.add('active');
+  } else {
+    if (c1) c1.style.display = 'block';
+    if (c2) c2.style.display = 'none';
+    if (btn1) btn1.classList.add('active');
+    if (btn2) btn2.classList.remove('active');
+  }
+
+  // Update URL without reload for easy bookmarking and sharing
+  try {
+    const url = new URL(window.location.href);
+    url.searchParams.set('concept', conceptId);
+    window.history.replaceState({}, '', url.toString());
+  } catch (e) {}
+
+  if (window.lucide) window.lucide.createIcons();
+};
+
+// Concept 2 Room Interactive Switcher
+const C2_ROOM_DATA = {
+  'oak-standard': {
+    title: 'Oak (Standard AC Room)',
+    desc: 'Spotless sanitization, crisp white linens, high-speed fiber Wi-Fi, chilled AC, and 24/7 power backup.',
+    img: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1000&q=80',
+    direct: '₹2,400',
+    ota: '₹3,200',
+    save: '₹800',
+    needlePoints: '77,80 83,80 115,48'
+  },
+  'maple-deluxe': {
+    title: 'Maple (Deluxe Suite)',
+    desc: 'Spacious luxury living area, king size spring mattress, smart 4K TV, work desk, and complimentary hot breakfast.',
+    img: 'https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1000&q=80',
+    direct: '₹3,800',
+    ota: '₹4,900',
+    save: '₹1,100',
+    needlePoints: '77,80 83,80 128,42'
+  },
+  'mahogany-executive': {
+    title: 'Mahogany (Executive Suite)',
+    desc: 'Panoramic private balcony, dual AC zones, deep bathtub & jacuzzi, mini-bar, and VIP front desk priority service.',
+    img: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1000&q=80',
+    direct: '₹5,500',
+    ota: '₹6,800',
+    save: '₹1,300',
+    needlePoints: '77,80 83,80 138,55'
+  }
+};
+
+window.selectC2Room = function(roomId) {
+  const data = C2_ROOM_DATA[roomId] || C2_ROOM_DATA['oak-standard'];
+
+  // Update active pill button
+  const btnOak = document.getElementById('c2BtnOak');
+  const btnMaple = document.getElementById('c2BtnMaple');
+  const btnMahogany = document.getElementById('c2BtnMahogany');
+
+  if (btnOak) btnOak.classList.toggle('active', roomId === 'oak-standard');
+  if (btnMaple) btnMaple.classList.toggle('active', roomId === 'maple-deluxe');
+  if (btnMahogany) btnMahogany.classList.toggle('active', roomId === 'mahogany-executive');
+
+  // Update room details
+  const img = document.getElementById('c2RoomImg');
+  const title = document.getElementById('c2RoomTitle');
+  const desc = document.getElementById('c2RoomDesc');
+  const price = document.getElementById('c2RoomPrice');
+
+  if (img) img.src = data.img;
+  if (title) title.textContent = data.title;
+  if (desc) desc.textContent = data.desc;
+  if (price) price.innerHTML = `${data.direct} <small>/ night</small>`;
+
+  // Update savings meter & breakdown
+  const savingsVal = document.getElementById('c2SavingsVal');
+  const directComp = document.getElementById('c2DirectComp');
+  const otaComp = document.getElementById('c2OtaComp');
+  const saveComp = document.getElementById('c2SaveComp');
+
+  if (savingsVal) savingsVal.textContent = `You Save ${data.save}`;
+  if (directComp) directComp.textContent = data.direct;
+  if (otaComp) otaComp.textContent = data.ota;
+  if (saveComp) saveComp.textContent = `✓ ${data.save}/night`;
+
+  // Update needle in gauge SVG
+  const gaugeSvg = document.querySelector('.gauge-svg polygon');
+  if (gaugeSvg) {
+    gaugeSvg.setAttribute('points', data.needlePoints);
+  }
+
+  if (window.lucide) window.lucide.createIcons();
+};
