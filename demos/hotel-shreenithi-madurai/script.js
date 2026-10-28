@@ -1785,6 +1785,23 @@ window.syncC3DatesToEngine = function() {
   if (typeof calculateEngineStay === 'function') calculateEngineStay();
 };
 
+window.toggleHeroVideo = function() {
+  const vid = document.getElementById('c3HeroVideo');
+  const txt = document.getElementById('videoToggleText');
+  const dot = document.querySelector('.video-indicator-dot');
+  if (!vid) return;
+
+  if (vid.paused) {
+    vid.play();
+    if (txt) txt.textContent = 'Live Hotel Ambiance';
+    if (dot) dot.style.display = 'inline-block';
+  } else {
+    vid.pause();
+    if (txt) txt.textContent = 'Video Paused';
+    if (dot) dot.style.display = 'none';
+  }
+};
+
 // Concept 2 Room Interactive Switcher
 const C2_ROOM_DATA = {
   'oak-standard': {

@@ -474,8 +474,20 @@
     <div id="heroConcept3" class="hero-concept-container" style="display: block;">
       <section class="c3-ginger-hero">
         <div class="c3-ginger-bg">
+          <video autoplay loop muted playsinline class="c3-hero-video" id="c3HeroVideo" poster="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1920&q=85">
+            <source src="./assets/videos/hotel-hero-loop.mp4" type="video/mp4">
+            <source src="https://raw.githubusercontent.com/SwapnilGole/Travel-Tourism-Website-Template/main/images/vid-2.mp4" type="video/mp4">
+          </video>
           <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1920&q=85" alt="Lean Luxe Hotel Room" class="c3-hero-img" id="c3HeroImg">
           <div class="c3-hero-gradient"></div>
+          <!-- Discreet Video Play/Pause Switcher Badge -->
+          <div class="c3-video-badge">
+            <button class="btn-video-toggle" id="btnVideoToggle" onclick="toggleHeroVideo()" title="Pause/Play ambient background video">
+              <span class="video-indicator-dot"></span>
+              <i data-lucide="video" id="videoToggleIcon" style="width: 13px; height: 13px;"></i>
+              <span id="videoToggleText">Live Hotel Ambiance</span>
+            </button>
+          </div>
         </div>
 
         <div class="container c3-hero-inner">
