@@ -1278,6 +1278,25 @@ function recalculateTotal() {
   const taxes = Math.round(subtotal * 0.12);
   const grandTotal = subtotal + taxes;
 
+  const setQuoteText = (id, text) => { const el = document.getElementById(id); if (el) el.textContent = text; };
+  setQuoteText('summaryRoomName', roomData.name);
+  setQuoteText('summaryDateLine', `${calcIn.value} to ${calcOut.value} · ${nights} night${nights === 1 ? '' : 's'}`);
+  setQuoteText('labelRoomNights', `${nights} night${nights === 1 ? '' : 's'} × ₹${roomData.price.toLocaleString('en-IN')}`);
+  setQuoteText('labelMealPlan', mealTitle);
+  setQuoteText('valSavings', `₹${((roomData.original - roomData.price) * nights).toLocaleString('en-IN')}`);
+  const addonsRow = document.getElementById('rowAddons');
+  if (addonsRow) addonsRow.style.display = addonsTotal ? 'flex' : 'none';
+  setQuoteText('valAddons', `₹${addonsTotal.toLocaleString('en-IN')}`);
+  document.querySelectorAll('#booking-engine .radio-option, #booking-engine .meal-option').forEach(el => {
+    el.classList.toggle('selected', !!el.querySelector('input:checked'));
+  });
+  const waBook = document.getElementById('btnWhatsappBook');
+  if (waBook) {
+    const text = `Hello ${window.currentHotel.name}, I'd like to enquire about ${roomData.name} from ${calcIn.value} to ${calcOut.value} (${nights} nights), ${mealTitle}. Quoted total: ₹${grandTotal.toLocaleString('en-IN')}. Please confirm availability.`;
+    waBook.href = `https://wa.me/${window.currentHotel.phoneDigits}?text=${encodeURIComponent(text)}`;
+    waBook.rel = 'noopener noreferrer';
+  }
+
   const valBase = document.getElementById('valRoomBase');
   const valMeal = document.getElementById('valMealPlan');
   const valTaxes = document.getElementById('valTaxes');
