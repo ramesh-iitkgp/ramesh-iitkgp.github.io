@@ -1,0 +1,132 @@
+/* Fresh hospitality — shared guest-facing design, October 2026. */
+.fresh-hotel{--primary:#e75628;--primary-hover:#c94118;--primary-light:#fff0e7;--accent-gold:#ed6738;--accent-gold-dark:#b84b25;--text-main:#262721;--text-muted:#75766d;--border-light:#e8e5dd;--font-serif:'Plus Jakarta Sans',sans-serif;background:#fffdf8;color:#262721}
+.fresh-hotel .container{max-width:1320px;padding-left:48px;padding-right:48px}
+.fresh-hotel button,.fresh-hotel input,.fresh-hotel select{font-family:inherit}
+.fresh-hotel a:focus-visible,.fresh-hotel button:focus-visible,.fresh-hotel input:focus-visible,.fresh-hotel select:focus-visible{outline:3px solid #e75628;outline-offset:4px}
+.fresh-hotel .platform-mode-bar{position:relative;top:auto;min-height:46px;padding:7px 28px;background:#282e26;border:0;box-shadow:none;gap:20px}
+.fresh-hotel .platform-mode-brand .live-pill{color:#f7c5ac;background:none;border:0;font-size:9px;letter-spacing:1.4px;padding:0}
+.fresh-hotel .platform-mode-brand .live-pill .dot{display:none}
+.fresh-hotel .hotel-mode-title,.fresh-hotel .mode-hint{display:none}
+.fresh-hotel .platform-tabs{gap:4px;background:transparent;border:0;padding:0}
+.fresh-hotel .mode-tab{padding:5px 13px;font-size:10px;background:transparent;border:0;color:#e2e5dc;border-radius:4px;min-height:29px;box-shadow:none}
+.fresh-hotel .mode-tab.active{color:#fff;background:#50564b;box-shadow:none}
+.fresh-hotel .mode-tab .badge-accent{display:none}
+.fresh-hotel .preview-banner{position:relative;top:auto;padding:9px 48px;background:#f9e9dc;color:#744a35;justify-content:center;border:0;min-height:33px;font-size:10px;letter-spacing:.1px}
+.fresh-hotel .preview-banner .pulse-dot{display:none}
+.fresh-hotel .preview-banner .right-action{display:none!important}
+.fresh-hotel .site-header{position:sticky;top:0;background:#fffdf8;border-bottom:1px solid #e8e5dd;box-shadow:none;z-index:900}
+.fresh-hotel .header-inner{height:86px;gap:28px}
+.fresh-hotel .logo-mark{background:none;color:#e75628;width:36px;height:42px;box-shadow:none;transform:none;border:0}
+.fresh-hotel .logo-mark svg{width:30px;height:30px}
+.fresh-hotel .hotel-title{font-size:21px;font-weight:800;letter-spacing:-1px;line-height:1.2;color:#282e26}
+.fresh-hotel .hotel-subtitle{font-size:8px;letter-spacing:1.4px;color:#858174;margin-top:4px}
+.fresh-hotel .nav-links{gap:23px;margin-left:auto}
+.fresh-hotel .nav-links a{font-size:10px;font-weight:600;color:#44463e;white-space:nowrap}
+.fresh-hotel .nav-links a:nth-child(2),.fresh-hotel .nav-links a:nth-child(5){display:none}
+.fresh-hotel .header-actions{gap:20px}
+.fresh-hotel .btn-phone-nav{font-size:10px;color:#555b4e;gap:7px}
+.fresh-hotel .btn-book-nav{background:#e75628;border-radius:5px;padding:12px 19px;font-size:11px;box-shadow:none;white-space:nowrap;color:white}
+.fresh-stay-hero{height:560px;position:relative;background:#57574d;overflow:hidden;isolation:isolate}
+.fresh-hero-photo{position:absolute;width:100%;height:100%;object-fit:cover;object-position:center 57%;z-index:-3}
+.fresh-photo-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,25,18,.72),rgba(20,25,18,.28) 50%,rgba(20,25,18,.02) 78%);z-index:-2}
+.fresh-hero-content{position:relative;padding-top:58px;color:#fff;height:100%}
+.fresh-location{font-size:9px;font-weight:600;letter-spacing:2.5px;display:flex;align-items:center;gap:8px;text-transform:uppercase}
+.fresh-location-dot{background:#f78c58;width:6px;height:6px;border-radius:50%;display:inline-block}
+.fresh-stay-hero h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(68px,7.6vw,106px);line-height:1.02;letter-spacing:-6px;font-weight:500;margin:26px 0 20px;position:relative;width:max-content}
+.fresh-stay-hero h1 em{font-family:Georgia,serif;color:#ffb78e;font-weight:400;letter-spacing:-7px}
+.fresh-spark{position:absolute;right:-74px;top:48px;color:#ffa46f;font-size:72px;line-height:1;font-weight:400;transform:rotate(12deg)}
+.fresh-hero-description{font-size:13px;line-height:1.9;color:#f1eee6;max-width:420px}
+.fresh-explore{color:#fff;text-decoration:none;display:flex;align-items:center;gap:25px;font-size:11px;margin-top:22px;width:max-content;border-bottom:1px solid #ffffff80;padding-bottom:7px}
+.fresh-explore span{font-size:20px}
+.fresh-hero-bottom{display:flex;justify-content:space-between;position:absolute;bottom:39px;left:48px;right:48px;font-size:8px;letter-spacing:2px;color:#f5f4ed}
+.fresh-hero-bottom a{color:inherit;text-decoration:none}
+.fresh-direct-seal{position:absolute;right:8%;top:53px;width:131px;height:131px;border-radius:50%;background:#fac5b3;color:#6b3527;display:flex;align-items:center;justify-content:center;flex-direction:column;transform:rotate(11deg);box-shadow:0 0 0 7px #fac5b33d}
+.fresh-direct-seal span{font-size:7px;font-weight:700;letter-spacing:1px}
+.fresh-direct-seal strong{text-align:center;font-size:22px;font-family:Georgia,serif;font-style:italic;line-height:1.15;margin:9px 0}
+.fresh-photo-caption{position:absolute;right:8%;bottom:125px;color:white;font-family:Georgia,serif;font-style:italic;font-size:20px;text-shadow:0 1px 12px #0009}
+.fresh-booking-container{position:relative;z-index:4;margin-top:-25px}
+.fresh-booking{display:grid;grid-template-columns:.9fr 1.4fr 1fr 1fr .7fr 1.05fr;align-items:center;background:#fffdf8;border:1px solid #eee7dd;border-radius:7px;box-shadow:0 12px 28px #382a1a0a;min-height:102px;padding:17px 20px;gap:18px}
+.fresh-booking-heading{display:flex;gap:12px;align-items:center;font-size:14px;line-height:1.4;letter-spacing:-.5px}
+.fresh-mini-spark{color:#e75628;font-size:34px;line-height:1}
+.fresh-field-label{display:block;font-size:8px;color:#8b887e;letter-spacing:1.3px;margin-bottom:8px;font-weight:700}
+.fresh-booking-property,.fresh-booking-field{border-left:1px solid #e8e5dd;padding-left:20px;min-width:0}
+.fresh-booking-property strong{display:block;max-width:195px;font-size:11px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}
+.fresh-booking input,.fresh-booking select{background:transparent;border:0;color:#34372d;font-size:11px;font-weight:600;width:100%;padding:0;min-height:20px;cursor:pointer;min-width:0}
+.fresh-search{border:0;background:#e75628;color:#fff;min-height:53px;border-radius:4px;font-size:11px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:19px;cursor:pointer;white-space:nowrap}
+.fresh-search:hover,.fresh-hotel .btn-book-nav:hover{background:#c8461e}
+.fresh-search span{font-size:20px}
+.fresh-booking-note{display:flex;align-items:center;justify-content:space-between;padding:15px 0;color:#76796e;font-size:9px}
+.fresh-booking-note button{background:none;border:0;font-size:9px;color:#545b4a;cursor:pointer;border-bottom:1px solid #c6c7ba;padding-bottom:3px}
+.fresh-intro{display:grid;grid-template-columns:1.2fr 1fr;gap:100px;padding-top:68px;padding-bottom:63px;align-items:center}
+.fresh-kicker{font-size:8px;letter-spacing:2px;color:#b34c2c;font-weight:700}
+.fresh-intro h2{font-size:35px;font-weight:500;line-height:1.3;letter-spacing:-1.5px;margin-top:16px}
+.fresh-intro h2 em{font-family:Georgia,serif;color:#d55d37;font-weight:400}
+.fresh-intro-copy{max-width:380px;padding-top:25px}
+.fresh-intro-copy p{font-size:11px;color:#74776b;line-height:1.9}
+.fresh-intro-copy a{font-size:10px;color:#343b2c;text-decoration:none;display:flex;gap:26px;margin-top:22px;font-weight:600}
+.fresh-amenities{background:#f3f1e8;border-top:1px solid #e9e7dc;border-bottom:1px solid #e9e7dc;padding:22px 0}
+.fresh-amenities .container{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.fresh-amenities span{font-size:10px;color:#4c5443;display:flex;align-items:center;gap:10px}
+.fresh-amenities svg{width:17px;height:17px;stroke-width:1.5}
+.fresh-amenities b{font-size:19px;color:#b7b7a1;font-weight:400}
+.fresh-hotel #viewWebsite .rooms-section{padding:80px 0;background:#fffdf8}
+.fresh-hotel #viewWebsite .section-header{max-width:650px;margin:0 0 34px;text-align:left}
+.fresh-hotel #viewWebsite .eyebrow{font-size:9px;letter-spacing:2px;color:#b34c2c;font-weight:700;margin-bottom:10px}
+.fresh-hotel #viewWebsite .section-title{font-size:36px;font-weight:500;letter-spacing:-1.5px;color:#2d3327;line-height:1.25}
+.fresh-hotel #viewWebsite .section-desc{font-size:11px;line-height:1.9;color:#787b70;margin-top:14px}
+.fresh-hotel .rooms-grid{gap:25px;align-items:stretch}
+.fresh-hotel .room-card,.fresh-hotel .room-card.featured{border:0;background:transparent;border-radius:0;box-shadow:none;overflow:visible;transform:none}
+.fresh-hotel .room-card:hover{transform:translateY(-4px);box-shadow:none}
+.fresh-hotel .room-img-wrap{height:250px;border-radius:6px;overflow:hidden}
+.fresh-hotel .room-img{transition:transform .6s}
+.fresh-hotel .room-card:hover .room-img{transform:scale(1.035)}
+.fresh-hotel .room-body{padding:23px 0 0}
+.fresh-hotel .room-top{display:block}
+.fresh-hotel .room-name{font-size:17px;letter-spacing:-.5px;font-weight:600;line-height:1.5;color:#2d3327}
+.fresh-hotel .room-price-box{text-align:left;display:flex;align-items:baseline;gap:12px;margin-top:8px}
+.fresh-hotel .direct-price,.fresh-hotel .direct-price.highlight{font-size:22px;color:#b64b29;font-weight:600}
+.fresh-hotel .direct-price small{color:#8c8c7e;font-size:9px;font-weight:400}
+.fresh-hotel .original-price{font-size:10px;color:#9a978d}
+.fresh-hotel .room-desc{font-size:11px;line-height:1.9;color:#777b70;margin:16px 0;min-height:63px}
+.fresh-hotel .room-meta{font-size:9px;gap:10px;border-bottom:1px solid #e6e5da;padding-bottom:17px;min-height:60px}
+.fresh-hotel .room-meta span{font-size:9px;color:#707666}
+.fresh-hotel .room-meta svg{width:13px;height:13px;color:#8a947b}
+.fresh-hotel .room-type-tag{top:15px;left:15px;background:#fffdf4;color:#4b5341;border-radius:3px;font-size:8px;letter-spacing:1px;box-shadow:none}
+.fresh-hotel .room-photos-badge{background:#252d2199;font-size:8px;bottom:12px;right:12px;border-radius:3px;backdrop-filter:blur(8px)}
+.fresh-hotel .room-badge-featured{background:#e75628;color:white;right:15px;top:-12px;left:auto;border-radius:3px;padding:6px 11px;font-size:8px;box-shadow:none}
+.fresh-hotel .btn-card-gallery{border:0;background:none;padding:6px 0;font-size:9px;color:#79806e;justify-content:flex-start}
+.fresh-hotel .btn-card-gallery span{font-size:0}
+.fresh-hotel .btn-card-gallery span:after{content:'Take a look around';font-size:10px}
+.fresh-hotel .btn-card-engine{background:#e75628;border-radius:4px;font-size:10px;box-shadow:none}
+.fresh-hotel .btn-card-wa{background:transparent;border:1px solid #d9ddd0;color:#58634b;border-radius:4px;font-size:10px}
+.fresh-hotel #viewWebsite .benefits-section{background:#f8e8da;padding:70px 0}
+.fresh-hotel .benefits-grid{gap:30px}
+.fresh-hotel .benefit-card{background:transparent;border:0;box-shadow:none;padding:5px 0;text-align:left}
+.fresh-hotel .benefit-icon{background:#f3d6c2!important;border-radius:50%;width:45px;height:45px;color:#ac4a29!important;margin:0 0 20px}
+.fresh-hotel .benefit-card h3{font-family:inherit;font-size:13px;color:#3f4334;font-weight:600}
+.fresh-hotel .benefit-card p{font-size:10px;color:#7f776a;line-height:1.9;margin-top:11px}
+.fresh-hotel #viewWebsite .engine-section{padding:75px 0;background:#fffdf8}
+.fresh-hotel #viewWebsite .engine-wrapper{box-shadow:none;border:1px solid #e8e5dc;border-radius:8px}
+.fresh-hotel #viewWebsite .engine-header{background:#343d2d}
+.fresh-hotel #viewWebsite .engine-header h2{font-family:inherit;font-size:24px;letter-spacing:-.6px}
+.fresh-hotel #viewWebsite .dining-section{background:#f4f1e7;padding:75px 0}
+.fresh-hotel #viewWebsite .dining-image{border-radius:7px;box-shadow:none}
+.fresh-hotel #viewWebsite .reviews-section{background:#fffdf8;padding:75px 0}
+.fresh-hotel #viewWebsite .review-card{border:1px solid #e7e4d9;border-radius:5px;box-shadow:none;background:#fffdf8}
+.fresh-hotel #viewWebsite .location-section{background:#f3f1e8;padding:75px 0}
+.fresh-hotel .site-footer{background:#2c3427;color:#e5e5d9}
+.fresh-hotel .floating-pms-btn{font-size:10px;padding:10px 15px;border-radius:5px;box-shadow:0 4px 15px #0001;background:#303b29}
+@media(min-width:1500px){.fresh-stay-hero{height:620px}.fresh-hero-content{padding-top:80px}}
+@media(max-width:1100px){.fresh-hotel .container{padding-left:28px;padding-right:28px}.fresh-hotel .nav-links{gap:16px}.fresh-hotel .btn-phone-nav{display:none}.fresh-booking{gap:12px;padding:16px;grid-template-columns:.8fr 1.1fr 1fr 1fr .7fr 1fr}.fresh-booking-property,.fresh-booking-field{padding-left:12px}.fresh-booking-heading{font-size:12px}.fresh-mini-spark{display:none}.fresh-hero-bottom{left:28px;right:28px}.fresh-intro{gap:40px}.fresh-hotel .room-img-wrap{height:210px}}
+@media(max-width:760px){.fresh-hotel .container{padding-left:22px;padding-right:22px}.fresh-hotel .platform-mode-bar{padding:6px 12px;gap:8px;justify-content:center;flex-wrap:wrap}.fresh-hotel .platform-mode-brand{display:none}.fresh-hotel .mode-tab{padding:5px 9px;font-size:9px}.fresh-hotel .preview-banner{font-size:9px;line-height:1.6;padding:7px 17px;text-align:center}.fresh-hotel .header-inner{height:73px;gap:10px}.fresh-hotel .hotel-title{font-size:18px}.fresh-hotel .hotel-subtitle{font-size:6px;letter-spacing:1px}.fresh-hotel .nav-links{display:none}.fresh-hotel .header-actions{margin-left:auto}.fresh-hotel .btn-book-nav{padding:10px 13px;font-size:10px}.fresh-hotel .btn-book-nav svg{display:none}.fresh-hotel .logo-mark{width:25px}.fresh-stay-hero{height:540px}.fresh-hero-photo{object-position:60% center}.fresh-photo-shade{background:linear-gradient(90deg,#172015bd,#17201540)}.fresh-hero-content{padding-top:68px}.fresh-location{font-size:7px;letter-spacing:1.5px;gap:6px}.fresh-stay-hero h1{font-size:76px;letter-spacing:-4.5px;margin-top:28px}.fresh-stay-hero h1 em{letter-spacing:-5px}.fresh-spark{font-size:48px;right:-42px;top:46px}.fresh-hero-description{font-size:11px;max-width:270px}.fresh-direct-seal{width:84px;height:84px;top:24px;right:25px}.fresh-direct-seal strong{font-size:16px;margin:5px 0}.fresh-direct-seal span{font-size:5px}.fresh-photo-caption{display:none}.fresh-hero-bottom{left:22px;right:22px;font-size:6px;letter-spacing:1px;bottom:48px}.fresh-booking-container{margin-top:-22px}.fresh-booking{grid-template-columns:1fr 1fr;gap:19px 10px;padding:22px 18px}.fresh-booking-heading{display:none}.fresh-booking-property{grid-column:1/-1;border:0;padding:0;border-bottom:1px solid #e9e5db;padding-bottom:15px}.fresh-booking-property strong{max-width:100%;font-size:12px}.fresh-booking-field{padding-left:0;border:0}.fresh-guests{border-top:1px solid #e9e5db;padding-top:10px}.fresh-field-label{font-size:8px}.fresh-booking input,.fresh-booking select{font-size:12px;min-height:28px}.fresh-search{min-height:47px}.fresh-booking-note{font-size:7px;gap:12px;align-items:flex-start;line-height:1.8}.fresh-booking-note button{font-size:8px;max-width:125px;text-align:right;flex-shrink:0}.fresh-intro{grid-template-columns:1fr;gap:10px;padding-top:43px;padding-bottom:43px}.fresh-intro h2{font-size:29px;letter-spacing:-1px}.fresh-kicker{font-size:7px;letter-spacing:1.5px}.fresh-intro-copy{padding-top:12px;max-width:none}.fresh-amenities .container{display:grid;grid-template-columns:1fr 1fr;gap:20px 10px}.fresh-amenities b{display:none}.fresh-amenities span{font-size:8px;gap:7px}.fresh-amenities svg{width:14px;height:14px}.fresh-hotel #viewWebsite .rooms-section,.fresh-hotel #viewWebsite .benefits-section,.fresh-hotel #viewWebsite .engine-section,.fresh-hotel #viewWebsite .reviews-section,.fresh-hotel #viewWebsite .location-section,.fresh-hotel #viewWebsite .dining-section{padding:48px 0}.fresh-hotel #viewWebsite .section-title{font-size:29px}.fresh-hotel .rooms-grid{grid-template-columns:1fr;gap:38px}.fresh-hotel .room-img-wrap{height:260px}.fresh-hotel .room-desc{min-height:0}.fresh-hotel .room-meta{min-height:0}.fresh-hotel .benefits-grid{grid-template-columns:1fr 1fr;gap:28px 20px}.fresh-hotel .benefit-card h3{font-size:12px}.fresh-hotel .benefit-card p{font-size:10px}.fresh-hotel .floating-pms-btn{bottom:16px;left:16px;font-size:9px;max-width:190px}.fresh-hotel #viewWebsite .engine-header h2{font-size:21px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.fresh-hotel *{animation:none!important;transition:none!important}}
+.fresh-hotel .btn-card-gallery span{font-size:10px}
+.fresh-hotel .btn-card-gallery span:after{content:none}
+.fresh-hotel .floating-pms-pill{background:#303b29;border:1px solid #748069;border-radius:5px;font-size:10px;padding:10px 14px;box-shadow:0 4px 16px #0002}
+.fresh-hotel .floating-pms-pill .pill-badge{background:#68765d;border-radius:3px;font-size:9px}
+@media(min-width:761px) and (max-height:800px){.fresh-stay-hero{height:475px}.fresh-hero-content{padding-top:37px}.fresh-stay-hero h1{font-size:86px;margin:19px 0 14px}.fresh-hero-bottom{bottom:42px}.fresh-hero-description{font-size:12px}.fresh-explore{margin-top:13px}}
+.fresh-hotel .engine-grid>*{min-width:0}
+.fresh-hotel #viewWebsite .engine-header p{color:#d9dfd0;font-size:12px}
+@media(max-width:760px){.fresh-hotel .engine-grid{grid-template-columns:minmax(0,1fr);gap:22px}.fresh-hotel .engine-wrapper{padding:18px}.fresh-hotel .control-group{padding:13px;min-width:0}.fresh-hotel .date-inputs-row{flex-wrap:wrap;gap:8px}.fresh-hotel .date-box{min-width:0;padding:8px}.fresh-hotel .date-box input{width:100%;min-width:0;font-size:12px}.fresh-hotel .radio-content{flex-wrap:wrap;gap:6px}.fresh-hotel .meal-options{flex-direction:column}.fresh-hotel .room-radios,.fresh-hotel .radio-option,.fresh-hotel .addon-info{min-width:0}.fresh-hotel .engine-summary{padding:18px;min-width:0}.fresh-hotel .engine-summary *{overflow-wrap:anywhere}.fresh-hotel .rooms-grid{max-width:none}}
+/* The top preview switcher already exposes the hotel dashboard. */
+.fresh-hotel:has(#viewWebsite.active-view) .floating-pms-pill{display:none}

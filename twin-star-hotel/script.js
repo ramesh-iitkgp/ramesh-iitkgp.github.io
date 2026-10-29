@@ -285,7 +285,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   // Hero Concept Selection (?concept=1, 2, or 3/ginger)
-  const qConcept = urlParams.get('concept') || urlParams.get('hero') || urlParams.get('c');
+  const fileConcept = location.pathname.endsWith('concept-1.html') ? '1' : location.pathname.endsWith('concept-2.html') ? '2' : '3';
+  const qConcept = urlParams.get('concept') || urlParams.get('c') || fileConcept;
   if (qConcept === '1' || qConcept === 'c1') {
     switchHeroConcept('1');
   } else if (qConcept === '2' || qConcept === 'c2') {
@@ -294,6 +295,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Default to Ginger Lean Luxe template (Concept 3)
     switchHeroConcept('3');
   }
+
+  window.refreshFreshDesign?.();
 
   // Refresh icons
   if (window.lucide) window.lucide.createIcons();
@@ -1656,17 +1659,10 @@ function deepReplaceHotelPlaceholders(name, city, shortName, phone, email, addre
       let txt = node.nodeValue;
       if (!txt || !txt.trim()) return;
 
-      // Replace Hotel Name variants
+      // Protect already-personalized names and replace each placeholder only once.
       if (name) {
-        txt = txt.replace(/Twin\s*Star\s*Hotel\s*(&|and)?\s*Suites/gi, name);
-        txt = txt.replace(/Twin\s*Star\s*Hotel/gi, name);
-        txt = txt.replace(/Twin\s*Star\s*Bistro/gi, `${name} Dining`);
-        txt = txt.replace(/Twin\s*Star/gi, name);
-        txt = txt.replace(/Grand\s*Star\s*Resort\s*(&|and)?\s*(Luxury\s*)?Suites/gi, name);
-        txt = txt.replace(/Grand\s*Star\s*Resort/gi, name);
-        txt = txt.replace(/Grand\s*Star/gi, name);
-        txt = txt.replace(/TWIN\s*STAR/g, (shortName || name).toUpperCase());
-        txt = txt.replace(/GRAND\s*STAR/g, (shortName || name).toUpperCase());
+        const replaceName = text => text.replace(/Twin\s*Star\s*Hotel\s*(?:&|and)?\s*Suites|Twin\s*Star\s*Hotel|Twin\s*Star\s*Bistro|Twin\s*Star|Grand\s*Star\s*Resort\s*(?:&|and)?\s*(?:Luxury\s*)?Suites|Grand\s*Star\s*Resort|Grand\s*Star/gi, match => /Bistro/i.test(match) ? `${name} Dining` : name);
+        txt = txt.split(name).map(replaceName).join(name);
       }
 
       // Replace City variants (if city is provided and not Chennai)
@@ -1699,9 +1695,7 @@ function deepReplaceHotelPlaceholders(name, city, shortName, phone, email, addre
         if (node.hasAttribute(attr)) {
           let val = node.getAttribute(attr);
           if (name) {
-            val = val.replace(/Twin\s*Star\s*Hotel\s*(&|and)?\s*Suites/gi, name);
-            val = val.replace(/Twin\s*Star/gi, name);
-            val = val.replace(/Grand\s*Star/gi, name);
+            val = val.split(name).map(part => part.replace(/Twin\s*Star\s*Hotel\s*(?:&|and)?\s*Suites|Twin\s*Star\s*Hotel|Twin\s*Star|Grand\s*Star\s*Resort\s*(?:&|and)?\s*(?:Luxury\s*)?Suites|Grand\s*Star/gi, () => name)).join(name);
           }
           if (city && city.toLowerCase() !== 'chennai') {
             val = val.replace(/Chennai/gi, city);

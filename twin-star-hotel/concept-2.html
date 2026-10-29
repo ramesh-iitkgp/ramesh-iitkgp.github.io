@@ -31,36 +31,37 @@
 
   <!-- Master Stylesheet -->
   <link rel="stylesheet" href="./style.css?v=20261001_v5">
+  <link rel="stylesheet" href="./fresh.css?v=20261029">
 </head>
-<body>
+<body class="fresh-hotel">
 
   <!-- ==========================================================================
        TOP UNIFIED 3-IN-1 HOSPITALITY PLATFORM SWITCHER BAR
        ========================================================================== -->
   <div class="platform-mode-bar">
     <div class="platform-mode-brand">
-      <span class="live-pill"><span class="dot"></span> COMPLETE 3-IN-1 SUITE</span>
+      <span class="live-pill"><span class="dot"></span> YOUR HOTEL. YOUR BOOKINGS.</span>
       <span class="hotel-mode-title" id="platformHotelTitle">Grand Star Luxury Resort & Suites</span>
     </div>
 
     <div class="platform-tabs" role="tablist">
       <button class="mode-tab active" id="tabModeWebsite" onclick="switchPlatformMode('website')">
         <i data-lucide="globe" style="width: 15px; height: 15px;"></i>
-        <span>1. Guest Website</span>
+        <span>Website preview</span>
       </button>
       <button class="mode-tab" id="tabModeEngine" onclick="switchPlatformMode('engine')">
         <i data-lucide="calendar-check" style="width: 15px; height: 15px;"></i>
-        <span>2. Booking Engine (0% Fee)</span>
+        <span>Booking engine</span>
       </button>
       <button class="mode-tab tab-admin" id="tabModeOps" onclick="switchPlatformMode('operations')">
         <i data-lucide="layout-dashboard" style="width: 15px; height: 15px;"></i>
-        <span>3. Hotelier PMS & CRM</span>
+        <span>Hotel dashboard</span>
         <span class="badge-accent">Admin</span>
       </button>
     </div>
 
     <div class="platform-quick-actions">
-      <span class="mode-hint">💡 Switch views to test website, 0% booking engine & front desk PMS</span>
+      <span class="mode-hint">An interactive preview for your hotel</span>
     </div>
   </div>
 
@@ -72,7 +73,7 @@
   <div class="preview-banner" id="previewBanner">
     <div class="left-tag">
       <span class="pulse-dot"></span>
-      <span id="bannerText">Interactive Hotel Concept Preview — Specially Generated for <strong id="leadHotelName">Grand Star Resort & Suites Management</strong></span>
+      <span id="bannerText">Your own booking engine. 0% booking commission. Made for <strong id="leadHotelName">Grand Star Resort & Suites Management</strong></span>
     </div>
     <div class="right-action" style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
       <div class="concept-switcher-pills">
@@ -103,10 +104,10 @@
 
       <nav class="nav-links">
         <a href="#rooms">Rooms & Suites</a>
-        <a href="#booking-engine">Direct Booking Engine</a>
-        <a href="#direct-benefits">Direct Perks</a>
-        <a href="#dining">Bistro & Dining</a>
-        <a href="#reviews">Guest Reviews</a>
+        <a href="#booking-engine">Book your stay</a>
+        <a href="#direct-benefits">Why book direct</a>
+        <a href="#dining">Eat & unwind</a>
+        <a href="#reviews">Happy guests</a>
         <a href="#location">Location</a>
       </nav>
 
@@ -126,7 +127,7 @@
     <!-- ======================================================================
          CONCEPT 1: MODERN SPLIT HERO WITH FROSTED GLASS BOOKING CARD
          ====================================================================== -->
-    <div id="heroConcept1" class="hero-concept-container" style="display: none;">
+    <div id="heroConcept1" class="hero-concept-container">
       <section class="hero-section fresh-hero">
         <div class="hero-bg-container">
       <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1800&q=85" alt="Clean Modern AC Hotel Room" class="hero-img" id="heroImage">
@@ -304,7 +305,7 @@
     <!-- ======================================================================
          CONCEPT 2: INTERACTIVE ROOM SHOWCASE & DIRECT SAVINGS METER
          ====================================================================== -->
-    <div id="heroConcept2" class="hero-concept-container" style="display: block;">
+    <div id="heroConcept2" class="hero-concept-container" style="display: none;">
       <section class="c2-hero-section">
         <div class="container">
           <!-- Top Centered Header -->
@@ -471,208 +472,45 @@
     <!-- ======================================================================
          CONCEPT 3: GINGER HOTELS "LEAN LUXE" TEMPLATE REDESIGN
          ====================================================================== -->
-    <div id="heroConcept3" class="hero-concept-container" style="display: none;">
-      <section class="c3-ginger-hero">
-        <div class="c3-ginger-bg">
-          <video autoplay loop muted playsinline class="c3-hero-video" id="c3HeroVideo" poster="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1920&q=85">
-            <source src="./assets/videos/hotel-hero-loop.mp4" type="video/mp4">
-            <source src="https://raw.githubusercontent.com/SwapnilGole/Travel-Tourism-Website-Template/main/images/vid-2.mp4" type="video/mp4">
-          </video>
-          <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1920&q=85" alt="Lean Luxe Hotel Room" class="c3-hero-img" id="c3HeroImg">
-          <div class="c3-hero-gradient"></div>
-          <!-- Discreet Video Play/Pause Switcher Badge -->
-          <div class="c3-video-badge">
-            <button class="btn-video-toggle" id="btnVideoToggle" onclick="toggleHeroVideo()" title="Pause/Play ambient background video">
-              <span class="video-indicator-dot"></span>
-              <i data-lucide="video" id="videoToggleIcon" style="width: 13px; height: 13px;"></i>
-              <span id="videoToggleText">Live Hotel Ambiance</span>
-            </button>
-          </div>
+    <div id="heroConcept3" class="hero-concept-container" style="display:block">
+      <section class="fresh-stay-hero" aria-label="Welcome to your next stay">
+        <img id="c3HeroImg" class="fresh-hero-photo" src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=2200&q=85" alt="A bright hotel room with a beautifully dressed bed and warm natural light" fetchpriority="high">
+        <div class="fresh-photo-shade"></div>
+        <div class="container fresh-hero-content">
+          <div class="fresh-location"><span class="fresh-location-dot"></span> YOUR LITTLE ESCAPE IN <span id="c3CityTitle">CHENNAI</span></div>
+          <h1>Check in.<br>Switch <em>off.</em><span class="fresh-spark" aria-hidden="true">✳</span></h1>
+          <p class="fresh-hero-description">Good sleep. Great food. A city to discover.<br>Your kind of stay, at <span id="c3HotelTitle">Grand Star</span>.</p>
+          <a class="fresh-explore" href="#rooms">Find your happy place <span>↗</span></a>
+          <div class="fresh-hero-bottom"><span>MAKE ROOM FOR THE GOOD DAYS.</span><a href="#rooms" aria-label="Explore rooms below">SCROLL TO EXPLORE ↓</a></div>
         </div>
-
-        <div class="container c3-hero-inner">
-          <!-- Top Floating Eyebrow & Brand Mark -->
-          <div class="c3-brand-eyebrow">
-            <span class="c3-orange-dot"></span>
-            <span id="c3EyebrowText">LEAN LUXE HOSPITALITY • OFFICIAL DIRECT STAY</span>
-          </div>
-
-          <!-- Bold Ginger Style Title & Value Statement -->
-          <h1 class="c3-hero-title">
-            Stay Smart. Stay Fresh in <span id="c3CityTitle" class="c3-city-highlight">Madurai</span> at <span id="c3HotelTitle">Avea Accommodation</span>.
-          </h1>
-
-          <p class="c3-hero-tagline" id="c3HeroTagline">
-            Experience modern hospitality designed for smart travelers. Spotless AC suites, complimentary high-speed Wi-Fi, 24/7 hot water, delicious in-house dining, and guaranteed 0% commission direct rates.
-          </p>
-
-          <!-- The Signature Ginger Horizontal Booking Bar -->
-          <div class="c3-booking-bar-wrapper">
-            <div class="c3-booking-bar">
-              <!-- Col 1: Destination & Hotel -->
-              <div class="c3-bar-col c3-col-destination">
-                <div class="c3-col-icon"><i data-lucide="map-pin"></i></div>
-                <div class="c3-col-meta">
-                  <span class="c3-col-label">DESTINATION &amp; HOTEL</span>
-                  <div class="c3-col-val" id="c3BarDestination">Madurai • Avea Accommodation</div>
-                </div>
-              </div>
-
-              <!-- Col 2: Stay Dates -->
-              <div class="c3-bar-col c3-col-dates">
-                <div class="c3-col-icon"><i data-lucide="calendar"></i></div>
-                <div class="c3-col-meta">
-                  <span class="c3-col-label">CHECK-IN &amp; CHECK-OUT</span>
-                  <div class="c3-dates-inputs">
-                    <input type="date" id="c3CheckIn" onchange="syncC3DatesToEngine()">
-                    <span class="c3-date-separator">→</span>
-                    <input type="date" id="c3CheckOut" onchange="syncC3DatesToEngine()">
-                  </div>
-                </div>
-              </div>
-
-              <!-- Col 3: Guests & Rooms -->
-              <div class="c3-bar-col c3-col-guests">
-                <div class="c3-col-icon"><i data-lucide="users"></i></div>
-                <div class="c3-col-meta">
-                  <span class="c3-col-label">ROOMS &amp; GUESTS</span>
-                  <select id="c3GuestSelect" class="c3-select-compact">
-                    <option value="1">1 Room, 1 Guest</option>
-                    <option value="2" selected>1 Room, 2 Guests</option>
-                    <option value="3">1 Room, 3 Guests</option>
-                    <option value="4">2 Rooms, 4 Guests</option>
-                  </select>
-                </div>
-              </div>
-
-              <!-- Col 4: Special Code / Direct Advantage -->
-              <div class="c3-bar-col c3-col-offer">
-                <div class="c3-col-icon"><i data-lucide="badge-percent"></i></div>
-                <div class="c3-col-meta">
-                  <span class="c3-col-label">DIRECT PERK</span>
-                  <div class="c3-direct-tag">
-                    <span>✓ 0% Fee • Save ₹800</span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Col 5: The Signature Ginger Orange CTA Button -->
-              <div class="c3-bar-action">
-                <button class="btn-c3-search" onclick="proceedToBookingFromHero()">
-                  <span>CHECK AVAILABILITY</span>
-                  <i data-lucide="arrow-right"></i>
-                </button>
-              </div>
-            </div>
-
-            <!-- Instant WhatsApp Concierge Strip under Booking Bar -->
-            <div class="c3-bar-footer-strip">
-              <div class="c3-strip-item">
-                <i data-lucide="check-circle-2"></i>
-                <span>Direct Reception Guarantee: Best Price Found Anywhere</span>
-              </div>
-              <div class="c3-strip-item">
-                <i data-lucide="credit-card"></i>
-                <span>Pay at Hotel Available • Zero Advance Penalty</span>
-              </div>
-              <a href="javascript:void(0)" onclick="openWhatsAppInquiry()" class="c3-strip-wa">
-                <i data-lucide="message-circle"></i>
-                <span>Instant Front Desk WhatsApp Key</span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- The Signature Ginger "Lean Luxe Stays" 4-Column Feature Ribbon -->
-        <div class="c3-lean-luxe-ribbon">
-          <div class="container">
-            <div class="c3-luxe-header">
-              <h3 class="c3-luxe-title">The Lean Luxe Experience</h3>
-              <p class="c3-luxe-sub">Smart, vibrant, and hassle-free essentials designed for contemporary business &amp; leisure stays.</p>
-            </div>
-
-            <div class="c3-luxe-grid">
-              <div class="c3-luxe-card">
-                <div class="c3-luxe-icon"><i data-lucide="bed-double"></i></div>
-                <h4>Sleep Smart AC Rooms</h4>
-                <p>300-thread count sanitized linens, posture-support plush mattress, 100% chilled AC &amp; sound insulation.</p>
-              </div>
-
-              <div class="c3-luxe-card">
-                <div class="c3-luxe-icon"><i data-lucide="wifi"></i></div>
-                <h4>High-Speed Fiber Wi-Fi</h4>
-                <p>Complimentary seamless high-speed connectivity across the hotel with ergonomic work spaces.</p>
-              </div>
-
-              <div class="c3-luxe-card">
-                <div class="c3-luxe-icon"><i data-lucide="utensils"></i></div>
-                <h4>Fresh In-House Dining</h4>
-                <p>Piping hot South Indian and multi-cuisine breakfast buffet, all-day diner, and 24/7 in-room dining.</p>
-              </div>
-
-              <div class="c3-luxe-card">
-                <div class="c3-luxe-icon"><i data-lucide="message-square"></i></div>
-                <h4>Direct WhatsApp Check-In</h4>
-                <p>Skip front desk queues with fast mobile arrival key, local city guides, and 1-tap reception chat.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="fresh-direct-seal"><span>BOOK DIRECT</span><strong>More stay.<br>Less pay.</strong><span>YOUR ROOM. YOUR PERKS.</span></div>
+        <div class="fresh-photo-caption">A slower morning looks good on you.</div>
       </section>
-    </div>
-
-  <!-- 4. Direct Booking Perks (0% Commission Advantage) -->
-  <section class="benefits-section" id="direct-benefits">
-    <div class="container">
-      <div class="section-header text-center">
-        <span class="eyebrow">Direct Guest Exclusives</span>
-        <h2 class="section-title">Why Smart Guests Book Direct</h2>
-        <p class="section-desc">By skipping third-party aggregators, we pass 100% of the commission savings directly to you with complimentary VIP upgrades.</p>
+      <div class="container fresh-booking-container">
+        <form class="fresh-booking" onsubmit="event.preventDefault(); searchFreshStay()">
+          <div class="fresh-booking-heading"><span class="fresh-mini-spark">✳</span><strong>Let’s make<br>it a stay.</strong></div>
+          <div class="fresh-booking-property"><span class="fresh-field-label">YOUR DESTINATION</span><strong id="c3BarDestination">Chennai · Grand Star</strong></div>
+          <label class="fresh-booking-field"><span class="fresh-field-label">CHECK-IN</span><input id="c3CheckIn" aria-label="Check-in date" type="date" required onchange="syncC3DatesToEngine()"></label>
+          <label class="fresh-booking-field"><span class="fresh-field-label">CHECK-OUT</span><input id="c3CheckOut" aria-label="Check-out date" type="date" required onchange="syncC3DatesToEngine()"></label>
+          <label class="fresh-booking-field fresh-guests"><span class="fresh-field-label">GUESTS</span><select id="c3GuestSelect" aria-label="Number of guests"><option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option><option value="4">4 guests</option></select></label>
+          <button class="fresh-search" type="submit">Find my room <span>↗</span></button>
+        </form>
+        <div class="fresh-booking-note"><span>✓ Direct hotel rates &nbsp; &nbsp; ✓ No booking platform fees</span><button onclick="openWhatsAppInquiry()">Have a question? Let’s WhatsApp ↗</button></div>
       </div>
-
-      <div class="benefits-grid">
-        <div class="benefit-card">
-          <div class="benefit-icon gold">
-            <i data-lucide="badge-percent"></i>
-          </div>
-          <h3>Best Rate Guarantee</h3>
-          <p>Always ₹400 to ₹750 lower than OTAs. Zero hidden service fees or surprise charges at checkout.</p>
-        </div>
-
-        <div class="benefit-card">
-          <div class="benefit-icon blue">
-            <i data-lucide="clock"></i>
-          </div>
-          <h3>Priority 12:00 PM Check-In</h3>
-          <p>Direct bookers receive top priority room allocation and complimentary early check-in when available.</p>
-        </div>
-
-        <div class="benefit-card">
-          <div class="benefit-icon emerald">
-            <i data-lucide="coffee"></i>
-          </div>
-          <h3>Welcome Beverage & Treats</h3>
-          <p>Enjoy our signature local filter coffee or fresh tropical cooler upon arrival at our lobby reception.</p>
-        </div>
-
-        <div class="benefit-card">
-          <div class="benefit-icon purple">
-            <i data-lucide="message-circle"></i>
-          </div>
-          <h3>Instant WhatsApp Confirmation</h3>
-          <p>Instant booking voucher, live hotel reception support, and direct room requests handled seamlessly.</p>
-        </div>
-      </div>
+      <section class="fresh-intro container">
+        <div><span class="fresh-kicker">A LITTLE FRESH AIR. A LOT OF YOU TIME.</span><h2>Stay for the comfort.<br>Come back for the <em>feeling.</em></h2></div>
+        <div class="fresh-intro-copy"><p>Business trip, spontaneous weekend, or a well-earned pause. Settle into thoughtfully designed rooms, feel right at home, and enjoy the city at your own pace.</p><a href="#direct-benefits">Good things come with booking direct <span>↗</span></a></div>
+      </section>
+      <div class="fresh-amenities"><div class="container"><span><i data-lucide="bed-double"></i> Really good sleep</span><b>✳</b><span><i data-lucide="wifi"></i> Wi-Fi that keeps up</span><b>✳</b><span><i data-lucide="coffee"></i> Fresh starts, daily</span><b>✳</b><span><i data-lucide="map-pin"></i> Right where you want to be</span></div></div>
     </div>
-  </section>
 
   <!-- 5. Rooms & Suites Showcase -->
   <section class="rooms-section" id="rooms">
     <div class="container">
       <div class="section-header">
         <span class="eyebrow">Accommodations</span>
-        <h2 class="section-title">Refined Accommodations</h2>
-        <p class="section-desc">Each room is soundproofed, fully air-conditioned, and appointed with plush bedding, fast fiber Wi-Fi, and spotless private bathrooms.</p>
+        <h2 class="section-title">Your room. Your rhythm.</h2>
+        <p class="section-desc">Unpack, unwind, and make yourself at home. There’s a room for every kind of traveller.</p>
       </div>
 
       <div class="rooms-grid">
@@ -701,7 +539,7 @@
             <div class="room-footer-dual">
               <button class="btn-card-gallery" onclick="openRoomDetailModal('oak-standard')">
                 <i data-lucide="images" style="width: 14px; height: 14px;"></i>
-                <span>Explore Suite Photos (Bedroom, Balcony, Bath)</span>
+                <span>Take a look around</span>
               </button>
               <div class="room-btns-row">
                 <button class="btn-card-wa" onclick="openWhatsAppForRoom('oak-standard')">
@@ -743,7 +581,7 @@
             <div class="room-footer-dual">
               <button class="btn-card-gallery" onclick="openRoomDetailModal('maple-deluxe')">
                 <i data-lucide="images" style="width: 14px; height: 14px;"></i>
-                <span>Explore Suite Photos (Bedroom, Balcony, Bath)</span>
+                <span>Take a look around</span>
               </button>
               <div class="room-btns-row">
                 <button class="btn-card-wa" onclick="openWhatsAppForRoom('maple-deluxe')">
@@ -784,7 +622,7 @@
             <div class="room-footer-dual">
               <button class="btn-card-gallery" onclick="openRoomDetailModal('mahogany-executive')">
                 <i data-lucide="images" style="width: 14px; height: 14px;"></i>
-                <span>Explore Suite Photos (Bedroom, Balcony, Bath)</span>
+                <span>Take a look around</span>
               </button>
               <div class="room-btns-row">
                 <button class="btn-card-wa" onclick="openWhatsAppForRoom('mahogany-executive')">
@@ -798,6 +636,51 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Direct Booking Perks (0% Commission Advantage) -->
+  <section class="benefits-section" id="direct-benefits">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="eyebrow">THE DIRECT DIFFERENCE</span>
+        <h2 class="section-title">Good stays. Better direct.</h2>
+        <p class="section-desc">A more personal stay starts here. Book with the people who will welcome you.</p>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon gold">
+            <i data-lucide="badge-percent"></i>
+          </div>
+          <h3>Best Rate Guarantee</h3>
+          <p>Explore our direct rates with no third-party booking platform fees. See your full quotation before you confirm.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon blue">
+            <i data-lucide="clock"></i>
+          </div>
+          <h3>Priority 12:00 PM Check-In</h3>
+          <p>Direct bookers receive top priority room allocation and complimentary early check-in when available.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon emerald">
+            <i data-lucide="coffee"></i>
+          </div>
+          <h3>Welcome Beverage & Treats</h3>
+          <p>Enjoy our signature local filter coffee or fresh tropical cooler upon arrival at our lobby reception.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon purple">
+            <i data-lucide="message-circle"></i>
+          </div>
+          <h3>Instant WhatsApp Confirmation</h3>
+          <p>Instant booking voucher, live hotel reception support, and direct room requests handled seamlessly.</p>
         </div>
       </div>
     </div>
@@ -989,7 +872,7 @@
       <div class="dining-grid">
         <div class="dining-content">
           <span class="eyebrow">Gastronomy & Café</span>
-          <h2 class="section-title">In-House Dining & Bistro Café</h2>
+          <h2 class="section-title">A good day starts with a great bite.</h2>
           <p class="section-desc">From piping hot breakfast buffets to fresh local filter coffee, chef's multi-cuisine specialties, and 24/7 in-room dining.</p>
           
           <div class="dining-features">
@@ -1028,7 +911,7 @@
     <div class="container">
       <div class="section-header text-center">
         <span class="eyebrow">Guest Impressions</span>
-        <h2 class="section-title">Loved by Travelers & Business Executives</h2>
+        <h2 class="section-title">Happy stays. Happy people.</h2>
         <div class="rating-badge-overall">
           <div class="stars">★★★★★</div>
           <span><strong>4.8 / 5.0</strong> based on 246+ verified guest stays</span>
@@ -1084,7 +967,7 @@
       <div class="location-grid">
         <div class="location-info">
           <span class="eyebrow">Neighborhood & Access</span>
-          <h2 class="section-title">Prime City Connectivity & Access</h2>
+          <h2 class="section-title">A great stay. A great location.</h2>
           <p class="section-desc" id="locationDescText">Centrally located, offering quiet surroundings with effortless reach to key business, transit, and cultural destinations.</p>
 
           <div class="landmarks-list">
@@ -2212,6 +2095,7 @@
 
 
   <!-- Master Interactive Script -->
-  <script src="./script.js?v=20261001_v5"></script>
+  <script src="./script.js?v=20261029"></script>
+  <script src="./fresh.js?v=20261029"></script>
 </body>
 </html>
