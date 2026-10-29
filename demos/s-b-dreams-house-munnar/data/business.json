@@ -1,0 +1,66 @@
+{
+    "business_name": "S&B Dreams House",
+    "hero_brand_name": "S&B Dreams",
+    "source_business_name": "S&B Dreams House",
+    "tagline": "Experience Refined Hospitality in South Chennai",
+    "category": "Hotel",
+    "phone": "919946130019",
+    "whatsapp": "919946130019",
+    "email": "",
+    "website_url": "",
+    "address": "\nEngineering College Rd, near KSEB office & inspection bungalow, Ikka Nagar, Munnar, Keralam 685612",
+    "city": "Munnar",
+    "state": "",
+    "country": "India",
+    "currency_symbol": "₹",
+    "currency_code": "INR",
+    "opening_hours": "",
+    "rating": "3",
+    "review_count": "",
+    "google_maps_url": "https://www.google.com/maps/place/S%26B+Dreams+House/data=!4m10!3m9!1s0x3b07998ba5985253:0xb27e32674cfde369!5m2!4m1!1i2!8m2!3d10.0884838!4d77.0637322!16s%2Fg%2F11lp630d41!19sChIJU1KYpYuZBzsRaeP9TGcyfrI?authuser=0&hl=en&g_ep=EgoyMDI2MTAyMC4wIJJjKgBIAVAD&rclk=1",
+    "logo_url": "",
+    "hero_image": "",
+    "service_areas": [
+        "Munnar"
+    ],
+    "social": {
+        "instagram": "",
+        "facebook": "",
+        "tiktok": ""
+    },
+    "before_after_pairs": [],
+    "services": [
+        {
+            "name": "Luxury Rooms & Oceanfront Villas",
+            "description": "Bespoke suites and private villa living with panoramic ocean views and private plunge pools.",
+            "image": ""
+        },
+        {
+            "name": "Direct Online Booking Guarantee",
+            "description": "Best rate guaranteed with instant confirmation, early check-in, and zero third-party commissions.",
+            "image": ""
+        },
+        {
+            "name": "Beachfront Dining & Sunset Lounges",
+            "description": "World-class restaurants serving fresh coastal fare, chef's tasting menus, and artisan cocktails.",
+            "image": ""
+        },
+        {
+            "name": "Holistic Spa & Wellness Therapies",
+            "description": "Signature massages, organic treatments, sea rituals, and rejuvenating wellness journeys.",
+            "image": ""
+        },
+        {
+            "name": "Private VIP Airport Transfers",
+            "description": "Seamless point-to-point luxury transfers from the terminal straight to your villa suite.",
+            "image": ""
+        },
+        {
+            "name": "Curated Coastal & Island Experiences",
+            "description": "Private yacht charters, marine wildlife safaris, sunset cruises, and tailored island tours.",
+            "image": ""
+        }
+    ],
+    "business_images": [],
+    "reviews": []
+}

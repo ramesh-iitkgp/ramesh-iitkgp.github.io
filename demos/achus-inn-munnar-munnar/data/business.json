@@ -1,0 +1,66 @@
+{
+    "business_name": "Achus Inn",
+    "hero_brand_name": "Achus Inn",
+    "source_business_name": "Achus Inn",
+    "tagline": "Experience Refined Hospitality in South Chennai",
+    "category": "Hotel",
+    "phone": "919447201696",
+    "whatsapp": "919447201696",
+    "email": "",
+    "website_url": "",
+    "address": "\n33QF+JC4, New Colony Rd, New Colony, Munnar, Keralam 685612",
+    "city": "Munnar",
+    "state": "",
+    "country": "India",
+    "currency_symbol": "₹",
+    "currency_code": "INR",
+    "opening_hours": "",
+    "rating": "1",
+    "review_count": "",
+    "google_maps_url": "https://www.google.com/maps/place/Achus+Inn+Munnar/data=!4m10!3m9!1s0x3b0799617d8942bf:0xc5a80ecc68025212!5m2!4m1!1i2!8m2!3d10.0886322!4d77.0737415!16s%2Fg%2F11f4wt8vzj!19sChIJv0KJfWGZBzsRElICaMwOqMU?authuser=0&hl=en&g_ep=EgoyMDI2MTAyMC4wIJJjKgBIAVAD&rclk=1",
+    "logo_url": "",
+    "hero_image": "",
+    "service_areas": [
+        "Munnar"
+    ],
+    "social": {
+        "instagram": "",
+        "facebook": "",
+        "tiktok": ""
+    },
+    "before_after_pairs": [],
+    "services": [
+        {
+            "name": "Luxury Rooms & Oceanfront Villas",
+            "description": "Bespoke suites and private villa living with panoramic ocean views and private plunge pools.",
+            "image": ""
+        },
+        {
+            "name": "Direct Online Booking Guarantee",
+            "description": "Best rate guaranteed with instant confirmation, early check-in, and zero third-party commissions.",
+            "image": ""
+        },
+        {
+            "name": "Beachfront Dining & Sunset Lounges",
+            "description": "World-class restaurants serving fresh coastal fare, chef's tasting menus, and artisan cocktails.",
+            "image": ""
+        },
+        {
+            "name": "Holistic Spa & Wellness Therapies",
+            "description": "Signature massages, organic treatments, sea rituals, and rejuvenating wellness journeys.",
+            "image": ""
+        },
+        {
+            "name": "Private VIP Airport Transfers",
+            "description": "Seamless point-to-point luxury transfers from the terminal straight to your villa suite.",
+            "image": ""
+        },
+        {
+            "name": "Curated Coastal & Island Experiences",
+            "description": "Private yacht charters, marine wildlife safaris, sunset cruises, and tailored island tours.",
+            "image": ""
+        }
+    ],
+    "business_images": [],
+    "reviews": []
+}
