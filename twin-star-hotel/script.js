@@ -284,17 +284,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
   }
 
-  // Hero Concept Selection (?concept=1, 2, or 3/ginger)
-  const fileConcept = location.pathname.endsWith('concept-1.html') ? '1' : location.pathname.endsWith('concept-2.html') ? '2' : '3';
-  const qConcept = urlParams.get('concept') || urlParams.get('c') || fileConcept;
-  if (qConcept === '1' || qConcept === 'c1') {
-    switchHeroConcept('1');
-  } else if (qConcept === '2' || qConcept === 'c2') {
-    switchHeroConcept('2');
-  } else {
-    // Default to Ginger Lean Luxe template (Concept 3)
-    switchHeroConcept('3');
-  }
+  // All prospect links, including historical concept URLs, use the current template.
+  switchHeroConcept('3');
 
   window.refreshFreshDesign?.();
 
@@ -1728,6 +1719,7 @@ function deepReplaceHotelPlaceholders(name, city, shortName, phone, email, addre
 // Hero Concept Switcher (Concept 1: Split Hero vs Concept 2: Room Showcase vs Concept 3: Ginger Lean Luxe)
 // ==========================================================================
 window.switchHeroConcept = function(conceptId) {
+  conceptId = '3'; // Migrate legacy concept links to the current hotel design.
   const c1 = document.getElementById('heroConcept1');
   const c2 = document.getElementById('heroConcept2');
   const c3 = document.getElementById('heroConcept3');

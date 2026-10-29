@@ -130,3 +130,7 @@
 @media(max-width:760px){.fresh-hotel .engine-grid{grid-template-columns:minmax(0,1fr);gap:22px}.fresh-hotel .engine-wrapper{padding:18px}.fresh-hotel .control-group{padding:13px;min-width:0}.fresh-hotel .date-inputs-row{flex-wrap:wrap;gap:8px}.fresh-hotel .date-box{min-width:0;padding:8px}.fresh-hotel .date-box input{width:100%;min-width:0;font-size:12px}.fresh-hotel .radio-content{flex-wrap:wrap;gap:6px}.fresh-hotel .meal-options{flex-direction:column}.fresh-hotel .room-radios,.fresh-hotel .radio-option,.fresh-hotel .addon-info{min-width:0}.fresh-hotel .engine-summary{padding:18px;min-width:0}.fresh-hotel .engine-summary *{overflow-wrap:anywhere}.fresh-hotel .rooms-grid{max-width:none}}
 /* The top preview switcher already exposes the hotel dashboard. */
 .fresh-hotel:has(#viewWebsite.active-view) .floating-pms-pill{display:none}
+
+/* Preserve the current hero even when a browser holds an older concept script. */
+.fresh-hotel #heroConcept1,.fresh-hotel #heroConcept2{display:none!important}
+.fresh-hotel #heroConcept3{display:block!important}
