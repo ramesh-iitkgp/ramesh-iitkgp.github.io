@@ -134,3 +134,17 @@
 /* Preserve the current hero even when a browser holds an older concept script. */
 .fresh-hotel #heroConcept1,.fresh-hotel #heroConcept2{display:none!important}
 .fresh-hotel #heroConcept3{display:block!important}
+/* Small-phone layout and touch controls, including embedded mobile browsers. */
+@media(max-width:760px){
+  .fresh-stay-hero h1{font-size:clamp(60px,19.4vw,76px);max-width:100%}
+  .fresh-spark{right:-8px;top:35px;font-size:36px}
+  .fresh-hotel .brand-logo{min-width:0;flex-shrink:1}
+  .fresh-hotel .logo-text{min-width:0}
+  .fresh-hotel .hotel-title{overflow-wrap:anywhere}
+  .fresh-hotel .header-actions{flex-shrink:0}
+  .fresh-booking input,.fresh-booking select{font-size:16px;min-height:44px}
+  .fresh-booking-note button{min-height:44px}
+  .fresh-hotel .btn-book-nav,.fresh-hotel .btn-card-engine,.fresh-hotel .btn-card-wa,.fresh-hotel .btn-card-gallery{min-height:44px}
+  .fresh-hotel .mode-tab{min-height:40px}
+  .fresh-hotel input,.fresh-hotel select,.fresh-hotel textarea{font-size:16px}
+}
