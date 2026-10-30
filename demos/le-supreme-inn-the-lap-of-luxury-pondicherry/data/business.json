@@ -1,0 +1,66 @@
+{
+    "business_name": "Le Supreme Inn The Lap Of Luxury",
+    "hero_brand_name": "Le Supreme",
+    "source_business_name": "Le Supreme Inn The Lap Of Luxury",
+    "tagline": "Experience Refined Hospitality in South Chennai",
+    "category": "Hotel",
+    "phone": "918870331828",
+    "whatsapp": "918870331828",
+    "email": "",
+    "website_url": "",
+    "address": "\nsupreme complex, 317, Mission St, MG Road Area, Puducherry, 605001",
+    "city": "Pondicherry",
+    "state": "",
+    "country": "India",
+    "currency_symbol": "₹",
+    "currency_code": "INR",
+    "opening_hours": "",
+    "rating": "1",
+    "review_count": "",
+    "google_maps_url": "https://www.google.com/maps/place/Le+Supreme+Inn+%28the+lap+of+luxury%29/data=!4m10!3m9!1s0x3a5363f57451b16f:0x9854408f487c670f!5m2!4m1!1i2!8m2!3d11.9299416!4d79.8302165!16s%2Fg%2F11qnlhqf85!19sChIJb7FRdPVjUzoRD2d8SI9AVJg?authuser=0&hl=en&g_ep=EgoyMDI2MTAyNy4wIJJjKgBIAVAD&rclk=1",
+    "logo_url": "",
+    "hero_image": "",
+    "service_areas": [
+        "Pondicherry"
+    ],
+    "social": {
+        "instagram": "",
+        "facebook": "",
+        "tiktok": ""
+    },
+    "before_after_pairs": [],
+    "services": [
+        {
+            "name": "Luxury Rooms & Oceanfront Villas",
+            "description": "Bespoke suites and private villa living with panoramic ocean views and private plunge pools.",
+            "image": ""
+        },
+        {
+            "name": "Direct Online Booking Guarantee",
+            "description": "Best rate guaranteed with instant confirmation, early check-in, and zero third-party commissions.",
+            "image": ""
+        },
+        {
+            "name": "Beachfront Dining & Sunset Lounges",
+            "description": "World-class restaurants serving fresh coastal fare, chef's tasting menus, and artisan cocktails.",
+            "image": ""
+        },
+        {
+            "name": "Holistic Spa & Wellness Therapies",
+            "description": "Signature massages, organic treatments, sea rituals, and rejuvenating wellness journeys.",
+            "image": ""
+        },
+        {
+            "name": "Private VIP Airport Transfers",
+            "description": "Seamless point-to-point luxury transfers from the terminal straight to your villa suite.",
+            "image": ""
+        },
+        {
+            "name": "Curated Coastal & Island Experiences",
+            "description": "Private yacht charters, marine wildlife safaris, sunset cruises, and tailored island tours.",
+            "image": ""
+        }
+    ],
+    "business_images": [],
+    "reviews": []
+}
